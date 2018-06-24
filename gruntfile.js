@@ -2,6 +2,7 @@ module.exports = function(grunt) {
     // Project Configuration
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        
         watch: {
             sass: {
                 files: ['public/assets/css/sass/*.scss'],
@@ -22,8 +23,11 @@ module.exports = function(grunt) {
         },
         sass: {
             dist: {
+                options: {
+                    loadPath: ['node_modules/foundation-sites/scss']
+                },
                 files: {
-                    'public/assets/css/happylager.css': 'public/assets/css/sass/happylager.scss'
+                    'public/assets/css/app.css': 'public/assets/css/sass/app.scss'
                 }
             }
         },
