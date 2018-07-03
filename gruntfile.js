@@ -24,7 +24,8 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    loadPath: ['node_modules/foundation-sites/scss']
+                    loadPath: ['node_modules/foundation-sites/scss','node_modules/motion-ui/src']
+
                 },
                 files: {
                     'public/assets/css/app.css': 'public/assets/css/sass/app.scss'

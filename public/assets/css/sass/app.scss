@@ -1,5 +1,6 @@
 @charset 'utf-8';
 @import 'settings';
+@import 'motion-ui';
 @import 'foundation';
 
 @include foundation-global-styles;
@@ -38,7 +39,8 @@
 @include foundation-top-bar;
 @include foundation-visibility-classes;
 @include foundation-flex-classes;
-
+@include motion-ui-transitions;
+@include motion-ui-animations;
 
 // TYPOGRAPHY
 a {letter-spacing: 1px; transition: all 0.5s ease;}
@@ -124,11 +126,11 @@ audio#pickup-sound {width: 90%;}
 .no-gutters {padding: 0 !important;}
 .full{width: 100%;}
 .light-bg { background:$light-gray;}
-.red-bg { background:$apex-red; background-image: url('../img/bg-texture-a.jpg'); background-repeat: repeat;
+.red-bg { background:$apex-red; background-image: url('../images/bg-texture-a.jpg'); background-repeat: repeat;
   a  {color: $apex-body;
   }
 }
-.concrete-bg { background-image: url('../img/concrete-texture.png'); background-repeat: repeat;}
+.concrete-bg { background-image: url('../images/concrete-texture.png'); background-repeat: repeat;}
 .dark-bg {background: $apex-body; color:white;
   a{ color: white;}
 }
@@ -162,7 +164,6 @@ audio#pickup-sound {width: 90%;}
 .signup-wrapper { position: relative;
   p {font-weight: 600; padding-top: 2em;}
   .mountain-bg {position: absolute;  background-repeat: no-repeat;
-    //background-image: url('{{root}}assets/img/apex-mountain.svg');
     background-attachment: fixed;
     background-position: center; }
 }
@@ -230,7 +231,7 @@ ul.resistance {
 }
 
 .pickups { 
-  background: url(../img/pickups-bg.png) no-repeat center center ; 
+  background: url(../images/pickups-bg.png) no-repeat center center ; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -238,7 +239,7 @@ ul.resistance {
 }
 
 .studio { 
-  background: url(../img/studio-bg.png) no-repeat center center ; 
+  background: url(../images/studio-bg.png) no-repeat center center ; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -246,7 +247,7 @@ ul.resistance {
 }
 
 .workshop { 
-  background: url(../img/workshop-bg.png) no-repeat center center ; 
+  background: url(../images/workshop-bg.png) no-repeat center center ; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

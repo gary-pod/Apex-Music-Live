@@ -1,117 +1,236 @@
-{#
- # Homepage template
- # -----------------
- #
- # This template gets loaded whenever the site's homepage is requested, because
- # the "Homepage" single-entry section's Template setting is set to "index".
- #
- # An `entry` variable will be automatically passed to this template, which will
- # be set to the Homepage entry.
--#}
-
 {% extends "_layouts/site" %}
 
 {% block main %}
-	<div id="hero">
-		{% set image = entry.heroImage.first() %}
-		{% if image %}
-			<img src="{{ image.getUrl({ height: 916 }) }}" alt="{{ image.title }}"/>
-		{% endif %}
-
-		<div class="hero-info">
-			<h1>We always see the glass<br>
-				<span class="ir">Half Full</span>
-			</h1>
-			<p class="center reverse">Work with Happy Lager and you will find an endless<br>
-				tap of ideas, wit and creativity.
-			</p>
-			<p class="center"><a href="mailto:hi@happylager.dev" class="hero-cta">Pull up a bar stool</a></p>
+	<!-- HERO IMAGE -->
+	<div class="hero-image">
+		<img src="{{ siteUrl }}/assets/images/hero-logo.svg" alt="apex hero logo">
+	</div>
+	<!-- INTRO -->
+	<div class="full concrete-bg">
+		<div class="row ptb">
+			<div class="large-10 small-centered columns text-center">
+			<h1>Custom pickups, recording studio &amp; Guitar work shop. We do it all at Apex.</h1>
+			<p class="bigger">Apex Music Co is your one stop for all your needs as a musician. We offer a wide range of services such as professional instrument repairs, music videos, live performance videos, hand wound electric pickup manufacturing, music photography, high quality audio recording and rehearsal facility rental.</p>
+			<a href="" class=" button">discover more about apex<i class="fas fa-long-arrow-alt-right"></i></a>
+			</div>
 		</div>
 	</div>
 
-	<section id="on-tap">
-		<div class="flex">
-			<div class="g1-flex4 g2-flex6 g3-flex12">
-				<div class="on-tap-buttons-wrap">
-					<a class="button-w-icon icon-beer" href="{{ url('work') }}">What’s on Tap</a>
-					<a href="{{ url('work') }}" class="view-more">View More</a>
+	<div class="row expanded ptb">
+		<div class="large-4 column">
+			<h3 class="styled center-text pb-s"><span>Apex Pickups</span></h3>
+			<div class="square pickups">
+				<div class="content">
+				<div class="service-details">
+					<h4>Shop our range of hand crafted pickups. Your tone quest starts here.</h4>
+					<a href="#">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="flex">
-
-			{# Pull in the three latest Work entries #}
-			{% for workEntry in craft.entries.section('work').limit(3) %}
-				<div class="g1-flex4 g2-flex2 g3-flex4">
-					<a href="{{ workEntry.url }}" class="services-entry-wrap">
-						{% set image = workEntry.featuredThumb.first() %}
-						{% if image %}
-							<img src="{{ image.getUrl('thumb') }}" alt="image.title"/>
-						{% endif %}
-						<h3 class="center">{{ workEntry.title }}</h3>
-						{{ workEntry.shortDescription }}
-					</a>
+		
+		<div class="large-4 column">
+			<h3 class="styled center-text pb-s"><span>Apex Studio</span></h3>
+			<div class="square studio">
+				<div class="content">
+					<div class="service-details">
+					<h4>SIndustry standard recording &amp; rehearsal facilities coupled with professional photography and videography.</h4>
+					<a href="#">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+					</div>
 				</div>
-			{% endfor %}
-
-		</div>
-	</section>
-
-	<section id="how-made">
-		<div class="flex">
-			<div class="g1-flex4 g2-flex6 g3-flex10 g3-offset1">
-					<hr class="horz-rule alt">
-					<a class="button-w-icon alt icon-beaker" href="{{ url('about') }}">How it’s made</a>
-			</div>
-		</div>
-		<div class="flex">
-			<div class="g1-flex4 g2-flex6 g3-flex10 g3-offset1">
-				<h1 class="beta">Uncap Happy Lager to find out how it’s made</h1>
-				<h2 class="subfont delta center">Our Experience &middot; Our Services &middot; And more</h2>
-			</div>
-		</div>
-		<div class="flex">
-			<div class="g1-flex4 g2-flex6 g3-flex10 g3-offset1">
-				<hr class="horz-rule alt2">
-				<a class="big-arrow" href="{{ url('about') }}">Go</a>
-			</div>
-		</div>
-	</section>
-
-	<section id="testimonials">
-		<div class="flex">
-			{% for block in entry.testimonials %}
-				<div class="g1-flex4 g2-flex2 g3-flex4 bubble">
-					<blockquote>{{ block.quote }}</blockquote>
-					{% set photo = block.photo.first() %}
-					{% if photo %}
-						<img class="" src="{{ photo.url({ width: 84, height: 84 }) }}" alt="{{ photo.title }}">
-					{% endif %}
-					<p><cite class="gamma reverse">{{ block.cite }}</cite></p>
 				</div>
-			{% endfor %}
 		</div>
-	</section>
 
-	<section id="best-buddies">
-		<div class="flex">
-			<div class="g1-flex4 g2-flex6 g3-flex10 g3-offset1">
-				<hr class="horz-rule alt3">
-				<a class="button-w-icon alt2 icon-beercan">Our best Drinking Buddies</a>
-				<ul class="logos">
-					{% for logo in entry.clientLogos %}
-						<li>
-							<img src="{{ logo.getUrl() }}" alt="logo.title"/>
-						</li>
-					{% endfor %}
-				</ul>
+		<div class="large-4 column">
+			<h3 class="styled center-text pb-s"><span>Instrument repairs</span></h3>
+			<div class="square workshop">
+				<div class="content">
+					<div class="service-details">
+					<h4>Top quality instrument repairs and modification from neck repairs to full rebuilds and refinishes.</h4>
+					<a href="#">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+					</div>
+				</div>
+				</div>
+		</div>
+	</div>
+	
+	<div class="red-bg">
+		<div class="row ptb">
+			<div class="large-12 columns">
+				<div class="orbit pt-s" role="region" aria-label="Favorite Space Pictures" data-orbit>
+						<div class="orbit-wrapper">
+							<div class="orbit-controls">
+							<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+							<button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+							</div>
+							<ul class="orbit-container">
+							<li class="is-active orbit-slide">
+								<figure class="orbit-figure">
+									<img class="orbit-image" src="{{ siteUrl }}assets/images/pat.png" alt="Space">
+									<figcaption class="orbit-caption">
+										<div class="caption-box">
+											<h1>Pat McManus</h1>
+											<p class="bigger">Pickups: <b>Apex 50's</b></p>
+											<a href="#" class="readmore-excerpt">View Pickups <i class="fas fa-long-arrow-alt-right"></i></a>
+										</div>
+									</figcaption>
+								</figure>
+							</li>
+							<li class="orbit-slide">
+								<figure class="orbit-figure">
+								<img class="orbit-image" src="{{ siteUrl }}assets/images/pat.png" alt="Space">
+								</figure>
+							</li>
+							</ul>
+						</div>
+						<nav class="orbit-bullets">
+							<button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+							<button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+						</nav>
+					</div>
 			</div>
 		</div>
-		<div class="flex">
-			<div class="g1-flex4 g2-flex6 g3-flex10 g3-offset1">
-				<h1 class="beta center">Some Partners Make it all worth while</h1>
-				<h2 class="subfont delta center">Robin Richards &middot; President, Happy Lager</h2>
+	</div>
+
+	<!-- BLOG POSTS SECTION -->
+	<div class="row pt">
+		<div class="large-12 columns text-center">
+				<h2 class="styled"><span>Hits from the blog</span></h2>
+		</div>
+	</div>
+	<div class="post-excerpts pb">
+		<div class="row">
+			<div class="large-9 columns">
+				<h3>blog post title</h3>
+				<span>24 mar 2018</span>
+			</div>
+			<div class="large-3 columns">
+				<button class="button ">read more
+					<i class="fas fa-long-arrow-alt-right"></i>
+				</button>
 			</div>
 		</div>
-	</section>
+		<div class="row">
+			<div class="large-9 columns">
+				<h3>blog post title</h3>
+				<span>24 mar 2018</span>
+			</div>
+			<div class="large-3 columns">
+				<button class="button ">read more
+					<i class="fas fa-long-arrow-alt-right"></i>
+				</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-9 columns">
+				<h3>blog post title</h3>
+				<span>24 mar 2018</span>
+			</div>
+			<div class="large-3 columns">
+				<button class="button ">read more
+					<i class="fas fa-long-arrow-alt-right"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- INSTAGRAM FEED -->
+	<div class="full light-bg ptb">
+		<div class="row small-up-2 medium-up-3 large-up-6">
+	
+		  <div id="instafeed"></div> 
+
+		  <div class="column column-block">
+			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
+		  </div>
+		  <div class="column column-block">
+			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
+		  </div>
+		  <div class="column column-block">
+			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
+		  </div>
+		  <div class="column column-block">
+			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
+		  </div>
+		  <div class="column column-block">
+			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
+		  </div>
+		  <div class="column column-block">
+			  <img src="https://placehold.it/600x600" class="thumbnail" alt="">
+			</div>
+			<div class="column column-block">
+			  <img src="https://placehold.it/600x600" class="thumbnail" alt="">
+			</div>
+			<div class="column column-block">
+			  <img src="https://placehold.it/600x600" class="thumbnail" alt="">
+			</div>
+			<div class="column column-block">
+			  <img src="https://placehold.it/600x600" class="thumbnail" alt="">
+			</div>
+			<div class="column column-block">
+			  <img src="https://placehold.it/600x600" class="thumbnail" alt="">
+			</div>
+			<div class="column column-block">
+			  <img src="https://placehold.it/600x600" class="thumbnail" alt="">
+			</div>
+			<div class="column column-block">
+			  <img src="https://placehold.it/600x600" class="thumbnail" alt="">
+			</div> 
+		</div>
+		<div class="row">
+		  <div class="large-8 small-centered columns text-center">
+			<a href="" class="button">folow us on instagram <i class="fab fa-instagram"></i></a>
+		  </div>
+		</div>
+	</div>
+
+	<!-- MAILING LIST -->
+	<div class="full red-bg ptb signup-wrapper">
+		<div class="mountain-bg"></div>
+	
+		<div class="row">
+			<div class="large-9 small-centered columns text-center">
+			<h2 class="styled"><span>Mailing list</span></h2>
+			<p class="bigger">Subscribe to the Apex Music Co news letter &amp; get the latest updates. #spamfree :)</p>
+			</div>
+			<!-- Begin MailChimp Signup Form -->
+			<div class="large-9 small-centered columns">
+			<div id="mc_embed_signup">
+				<form action="https://apexmusicco.us17.list-manage.com/subscribe/post?u=bfc5d8a2a72bc6611d7df0494&amp;id=3b47856daf" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				<div class="row">
+				<!-- name -->
+				<div class="large-4 columns">
+					<div class="mc-field-group">
+						<label for="mce-FNAME">NAME </label>
+						<input type="text" value="" name="FNAME" class="" placeholder="Name" id="mce-FNAME">
+					</div>
+					</div>
+				<!-- emailaddress -->
+				<div class="large-4 columns">
+					<div id="mc_embed_signup_scroll">
+					<div class="mc-field-group">
+						<label for="mce-EMAIL">EMAIL ADDRESS  <span class="asterisk">*</span></label>
+						<input type="email" value="" name="EMAIL" class="required email" placeholder="Email Address" id="mce-EMAIL">
+					</div>
+					</div>
+				</div>
+				<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+				<div id="mce-responses" class="clear">
+					<div class="response" id="mce-error-response" style="display:none"></div>
+					<div class="response" id="mce-success-response" style="display:none"></div>
+				</div>    
+				<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_bfc5d8a2a72bc6611d7df0494_3b47856daf" tabindex="-1" value=""></div>
+				<!-- submit button -->
+				<div class="large-4 columns">
+					<div class="clear">
+					<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button expanded">
+					</div>
+				</div>
+				</div>
+			</form>
+			</div>
+		</div>
+		</div>
+	</div>
+
 {% endblock %}

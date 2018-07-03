@@ -12,6 +12,7 @@
         "grunt-imageoptim": "latest"
     },
     "dependencies": {
-        "foundation-sites": "^6.4.4-rc1"
+        "foundation-sites": "^6.4.4-rc1",
+        "motion-ui": "^2.0.3"
     }
 }

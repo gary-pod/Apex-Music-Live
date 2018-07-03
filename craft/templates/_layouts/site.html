@@ -1,76 +1,67 @@
-{#
-
- # The site layout template
- # ------------------------
- #
- # This layout template extends the _layouts/base.html layout, and defines the
- # main site layout: the header, footer, and main content area.
- #
- # It’s never accessed directly. Instead it is extended by all of our main site
- # templates.
- #
- # This template defines one block region, `main`, which should be extended by
- # child templates to define the main contents for the page.
--#}
 
 {% extends "_layouts/base" %}
 
-{# Define the site navigation #}
-{% set nav = {
-	about:    { title: "The Brewery", desc: "About Us" },
-	services: { title: "How It’s Made", desc: "Services" },
-	work:     { title: "What’s On Tap", desc: "Our Work" },
-	news:     { title: "Brew News", desc: "The Latest" }
-} %}
-
-{# Set the `bodyClass` variable to the entry's section handle if there is one,
-   or the first URI segment (this is used by the parent template) #}
-{% if bodyClass is not defined %}
-	{% set bodyClass = entry is defined ? entry.section.handle : craft.request.firstSegment %}
-{% endif %}
-
-{# Set the `title` variable to the nav item that matches the first segment #}
-{% if nav[bodyClass] is defined %}
-	{% set title %}{% if title is defined %}{{ title }} - {% endif %}{{ nav[bodyClass].title }}{% endset %}
-{% endif %}
-
-
 {% block body %}
-	<div id="bar">
-		<div class="flex">
-			<div class="g1-flex4 g2-flex6 g3-flex12">
-				<div id="social">
-					<a href="https://dribbble.com/" data-icon="dribbble" title="Happy Lager on Dribbble"></a>
-					<a href="https://twitter.com/" data-icon="twitter" title="Happy Lager on Twitter"></a>
-					<a href="https://www.facebook.com/" data-icon="facebook" title="Happy Lager on Facebook"></a>
-				</div>
-				<div id="search">
-					<form action="{{ url('search/results') }}" class="search-form">
-						<input type="search" name="q" placeholder="Search">
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<header id="header">
-		<div class="flex">
-			<div class="g1-flex4 g2-flex6 g3-flex12">
-				<h1><a href="{{ siteUrl }}"><img src="{{ craft.config.environmentVariables.assetsBaseUrl }}/images/happylager.svg" width="300" height="125" alt="Happy Lager - Enjoying Every Bit - Since 2006"></a></h1>
-				<nav>
-					<ul>
-						{% for slug, item in nav %}
-							<li>
-								<a href="{{ url(slug) }}" {% if craft.request.firstSegment == slug %}class="sel"{% endif %}>
-									<strong>{{ item.title }}</strong>
-									<span>-</span>
-									<em>{{ item.desc }}</em>
-								</a>
-							</li>
-						{% endfor %}
+		<div data-sticky-container>
+			<div class="sticky" data-sticky data-margin-top="0">
+		
+		<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+			<button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+			<!-- <div class="title-bar-title"></div> -->
+		  </div>
+		  <!-- TOPBAR -->
+		  <div class="top-bar" id="responsive-menu" data-animate="fade-in fade-out">
+			  <!-- topbar left -->
+			  <div class="top-bar-left">
+				<ul class="vertical medium-horizontal dropdown menu" data-responsive-menu="drilldown medium-dropdown">
+				  <li><a href="" class="logo-link"><img class="menu-logo hide-for-small-only" src="../assets/images/menu-logo.png" width="65%" alt="apex menu logo"></a></li>
+				  <li><a href="">About</a></li>
+				  <li>
+					<a href="">Pickups</a>
+					<ul class="menu">
+					  <li><a href="">Strat style</a>
+						<ul class="menu">
+						  <li><a href="">apex 50's</a></li>
+						  <li><a href="#">pickup name</a></li>
+						  <li><a href="#">pickup name</a></li>
+						</ul>
+					  </li>
+					  <li>
+						<a href="#">Tele Style</a>
+						<ul class="menu">
+						  <li><a href="#">pickup name</a></li>
+						  <li><a href="#">pickup name</a></li>
+						  <li><a href="#">pickup name</a></li>
+						</ul>
+					  </li>
+					  <li>
+						<a href="#">Humbuckers</a>
+						<ul class="menu">
+						  <li><a href="#">pickup name</a></li>
+						  <li><a href="#">pickup name</a></li>
+						  <li><a href="#">pickup name</a></li>
+						</ul>
+					  </li>
+					  <li><a href="#">Custom &amp; Bespoke</a></li>
 					</ul>
-				</nav>
-			</div>
+				  </li>
+				  <li><a href="">apex studio</a></li>
+				  <li><a href="">instrument repairs</a></li>
+				  <li><a href="">blog</a></li>
+				  <li><a href="">contact</a></li>
+				</ul>
+			  </div>
+			  <!-- topbar right -->
+			  <div class="top-bar-right">
+				<ul class="menu">
+				  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+				  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+				  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+				</ul>
+			  </div>
+		  </div>
+		</div>
 		</div>
 	</header>
 
@@ -78,15 +69,74 @@
 		{% block main %}{% endblock %}
 	</main>
 
-	<footer id="footer">
-		<div class="flex">
-			<div class="g1-flex4 g2-flex3 g3-flex6">
-				<img src="{{ craft.config.environmentVariables.assetsBaseUrl }}/images/hl.svg" width="76" height="76" alt="H.L.">
-				<p class="copyright">{{ footer.copyrightNotice|replace('{year}', now|date('Y')) }}</p>
+	<footer class="full dark-bg footer">
+		<div class="row ptb">
+		  <div class="large-2 columns">
+			<dl>
+			  <dt><a href="">Quick Links</a></dt>
+			  <dd><a href="">About</a></dd>
+			  <dd><a href="">Apex Studio</a></dd>
+			  <dd><a href="">Work Shop</a></dd>
+			  <dd><a href="">Blog</a></dd>
+			</dl>
+		  </div>
+		  <div class="large-2 columns">
+			<dl>
+			  <dt><a href="">Strat Pickups</a></dt>
+			  <dd><a href="">About</a></dd>
+			  <dd><a href="">Apex Studio</a></dd>
+			  <dd><a href="">Work Shop</a></dd>
+			  <dd><a href="">Blog</a></dd>
+			</dl>
+		  </div>
+		  <div class="large-2 columns">
+			  <dl>
+				<dt><a href="">Tele Pickups</a></dt>
+				<dd><a href="">About</a></dd>
+				<dd><a href="">Apex Studio</a></dd>
+				<dd><a href="">Work Shop</a></dd>
+				<dd><a href="">Blog</a></dd>
+			  </dl>
 			</div>
-			<div class="g1-flex4 g2-flex3 g3-flex6">
-				<a class="contact" href="mailto:{{ footer.email }}">{{ footer.contactUsLabel }}</a>
-			</div>
+			<div class="large-2 columns">
+				<dl>
+				  <dt><a href="">Humbuckers</a></dt>
+				  <dd><a href="">About</a></dd>
+				  <dd><a href="">Apex Studio</a></dd>
+				  <dd><a href="">Work Shop</a></dd>
+				  <dd><a href="">Blog</a></dd>
+				</dl>
+			  </div>
+		  <div class="large-3 columns">
+			<dl>
+			  <dt><a href="">Contact</a></dt>
+			  <dd><a href="">E: hello@apexmusic.co</a></dd>
+			  <dd><a href="">T:  0759 1132 008</a></dd>
+			</dl>
+			<ul class="social-footer">
+			  <li>
+				<a href="#">
+				  <i class="fab fa-facebook"></i>
+				</a>
+			  </li>
+			  <li>
+				<a href="#">
+				  <i class="fab fa-twitter"></i>
+				</a>
+			  </li>
+			  <li>
+				<a href="#">
+				  <i class="fab fa-instagram"></i>
+				</a>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+		<div class="row">
+		  <div class="large-12 columns">
+			<p class="small text-center">&copy; Copyright Apex Music Co 2017</p>
+		  </div>
 		</div>
 	</footer>
+
 {% endblock %}
