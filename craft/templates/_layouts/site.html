@@ -1,142 +1,178 @@
-
-{% extends "_layouts/base" %}
-
-{% block body %}
-	<header id="header">
-		<div data-sticky-container>
-			<div class="sticky" data-sticky data-margin-top="0">
-		
-		<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
-			<button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
-			<!-- <div class="title-bar-title"></div> -->
-		  </div>
-		  <!-- TOPBAR -->
-		  <div class="top-bar" id="responsive-menu" data-animate="fade-in fade-out">
-			  <!-- topbar left -->
-			  <div class="top-bar-left">
-				<ul class="vertical medium-horizontal dropdown menu" data-responsive-menu="drilldown medium-dropdown">
-				  <li><a href="" class="logo-link"><img class="menu-logo hide-for-small-only" src="../assets/images/menu-logo.png" width="65%" alt="apex menu logo"></a></li>
-				  <li><a href="">About</a></li>
-				  <li>
-					<a href="">Pickups</a>
-					<ul class="menu">
-					  <li><a href="">Strat style</a>
-						<ul class="menu">
-						  <li><a href="">apex 50's</a></li>
-						  <li><a href="#">pickup name</a></li>
-						  <li><a href="#">pickup name</a></li>
-						</ul>
-					  </li>
-					  <li>
-						<a href="#">Tele Style</a>
-						<ul class="menu">
-						  <li><a href="#">pickup name</a></li>
-						  <li><a href="#">pickup name</a></li>
-						  <li><a href="#">pickup name</a></li>
-						</ul>
-					  </li>
-					  <li>
-						<a href="#">Humbuckers</a>
-						<ul class="menu">
-						  <li><a href="#">pickup name</a></li>
-						  <li><a href="#">pickup name</a></li>
-						  <li><a href="#">pickup name</a></li>
-						</ul>
-					  </li>
-					  <li><a href="#">Custom &amp; Bespoke</a></li>
-					</ul>
-				  </li>
-				  <li><a href="">apex studio</a></li>
-				  <li><a href="">instrument repairs</a></li>
-				  <li><a href="">blog</a></li>
-				  <li><a href="">contact</a></li>
-				</ul>
-			  </div>
-			  <!-- topbar right -->
-			  <div class="top-bar-right">
-				<ul class="menu">
-				  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-				  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-				  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-				</ul>
-			  </div>
-		  </div>
-		</div>
-		</div>
-	</header>
-
-	<main id="main" role="main">
-		{% block main %}{% endblock %}
-	</main>
-
-	<footer class="full dark-bg footer">
-		<div class="row ptb">
-		  <div class="large-2 columns">
-			<dl>
-			  <dt><a href="">Quick Links</a></dt>
-			  <dd><a href="">About</a></dd>
-			  <dd><a href="">Apex Studio</a></dd>
-			  <dd><a href="">Work Shop</a></dd>
-			  <dd><a href="">Blog</a></dd>
-			</dl>
-		  </div>
-		  <div class="large-2 columns">
-			<dl>
-			  <dt><a href="">Strat Pickups</a></dt>
-			  <dd><a href="">About</a></dd>
-			  <dd><a href="">Apex Studio</a></dd>
-			  <dd><a href="">Work Shop</a></dd>
-			  <dd><a href="">Blog</a></dd>
-			</dl>
-		  </div>
-		  <div class="large-2 columns">
-			  <dl>
-				<dt><a href="">Tele Pickups</a></dt>
-				<dd><a href="">About</a></dd>
-				<dd><a href="">Apex Studio</a></dd>
-				<dd><a href="">Work Shop</a></dd>
-				<dd><a href="">Blog</a></dd>
-			  </dl>
+ {% extends "_layouts/base" %} {% block body %}
+<header id="header">
+	<div data-sticky-container>
+		<div class="sticky" data-sticky data-margin-top="0">
+			<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+				<button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
+				<!-- <div class="title-bar-title"></div> -->
 			</div>
-			<div class="large-2 columns">
-				<dl>
-				  <dt><a href="">Humbuckers</a></dt>
-				  <dd><a href="">About</a></dd>
-				  <dd><a href="">Apex Studio</a></dd>
-				  <dd><a href="">Work Shop</a></dd>
-				  <dd><a href="">Blog</a></dd>
-				</dl>
-			  </div>
-		  <div class="large-3 columns">
+			<!-- TOPBAR -->
+			<div class="top-bar" id="responsive-menu" data-animate="fade-in fade-out">
+				<!-- topbar left -->
+				<div class="top-bar-left">
+					<ul class="vertical medium-horizontal dropdown menu" data-responsive-menu="drilldown medium-dropdown">
+						<li>
+							<a href="{{ siteUrl }}" class="logo-link">
+								<img class="menu-logo hide-for-small-only" src="{{ siteUrl }}assets/images/menu-logo.png" width="65%" alt="apex menu logo">
+							</a>
+						</li>
+						{% nav node in craft.menus.getNodes('mainMenu') %}
+						<li role="presentation">
+							<a href="{{node.link}}" class="dropdown-toggle" data-toggle="dropdown">
+								{{ node.title }}
+							</a>
+							{% ifchildren %}
+							<ul class="menu" role="menu">
+								{% children %}
+							</ul>
+							{% endifchildren %}
+						</li>
+						{% endnav %}
+					</ul>
+				</div>
+				<!-- topbar right -->
+				<div class="top-bar-right">
+					<ul class="menu">
+						<li>
+							<a href="{{ contactMeta.facebooklink }}" target="_blank">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+						</li>
+						<li>
+							<a href="{{ contactMeta.twitterLink }}"  target="_blank">
+								<i class="fab fa-twitter"></i>
+							</a>
+						</li>
+						<li>
+							<a href="{{ contactMeta.instagramLink }}" target="_blank">
+								<i class="fab fa-instagram"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
+<main id="main" role="main">
+	{% block main %}{% endblock %}
+</main>
+
+<footer class="full dark-bg footer">
+	<div class="row ptb">
+		<div class="large-2 columns">
 			<dl>
-			  <dt><a href="">Contact</a></dt>
-			  <dd><a href="">E: hello@apexmusic.co</a></dd>
-			  <dd><a href="">T:  0759 1132 008</a></dd>
+				<dt3>
+					<a href="">Quick Links</a>
+					</dt>
+					<dd>
+						<a href="">About</a>
+					</dd>
+					<dd>
+						<a href="">Apex Studio</a>
+					</dd>
+					<dd>
+						<a href="">Work Shop</a>
+					</dd>
+					<dd>
+						<a href="">Blog</a>
+					</dd>
+			</dl>
+		</div>
+		<div class="large-2 columns">
+			<dl>
+				<dt>
+					<a href="">Strat Pickups</a>
+				</dt>
+				<dd>
+					<a href="">About</a>
+				</dd>
+				<dd>
+					<a href="">Apex Studio</a>
+				</dd>
+				<dd>
+					<a href="">Work Shop</a>
+				</dd>
+				<dd>
+					<a href="">Blog</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="large-2 columns">
+			<dl>
+				<dt>
+					<a href="">Tele Pickups</a>
+				</dt>
+				<dd>
+					<a href="">About</a>
+				</dd>
+				<dd>
+					<a href="">Apex Studio</a>
+				</dd>
+				<dd>
+					<a href="">Work Shop</a>
+				</dd>
+				<dd>
+					<a href="">Blog</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="large-2 columns">
+			<dl>
+				<dt>
+					<a href="">Humbuckers</a>
+				</dt>
+				<dd>
+					<a href="">About</a>
+				</dd>
+				<dd>
+					<a href="">Apex Studio</a>
+				</dd>
+				<dd>
+					<a href="">Work Shop</a>
+				</dd>
+				<dd>
+					<a href="">Blog</a>
+				</dd>
+			</dl>
+		</div>
+		<div class="large-3 columns">
+			<dl>
+				<dt>
+					<a href="">Contact</a>
+				</dt>
+				<dd>
+					<a href="">E: hello@apexmusic.co</a>
+				</dd>
+				<dd>
+					<a href="">T: 0759 1132 008</a>
+				</dd>
 			</dl>
 			<ul class="social-footer">
-			  <li>
-				<a href="#">
-				  <i class="fab fa-facebook"></i>
-				</a>
-			  </li>
-			  <li>
-				<a href="#">
-				  <i class="fab fa-twitter"></i>
-				</a>
-			  </li>
-			  <li>
-				<a href="#">
-				  <i class="fab fa-instagram"></i>
-				</a>
-			  </li>
+				<li>
+					<a href="{{ contactMeta.facebooklink }}" target="_blank">
+						<i class="fab fa-facebook"></i>
+					</a>
+				</li>
+				<li>
+					<a href="{{ contactMeta.twitterLink }}"  target="_blank">
+						<i class="fab fa-twitter"></i>
+					</a>
+				</li>
+				<li>
+					<a href="{{ contactMeta.instagramLink }}" target="_blank">
+						<i class="fab fa-instagram"></i>
+					</a>
+				</li>
 			</ul>
-		  </div>
 		</div>
-		<div class="row">
-		  <div class="large-12 columns">
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
 			<p class="small text-center">&copy; Copyright Apex Music Co 2017</p>
-		  </div>
 		</div>
-	</footer>
+	</div>
+</footer>
 
 {% endblock %}
