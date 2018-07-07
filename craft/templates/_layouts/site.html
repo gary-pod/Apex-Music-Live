@@ -62,22 +62,17 @@
 <footer class="full dark-bg footer">
 	<div class="row ptb">
 		<div class="large-2 columns">
-			<dl>
-				<dt3>
-					<a href="">Quick Links</a>
-					</dt>
-					<dd>
-						<a href="">About</a>
-					</dd>
-					<dd>
-						<a href="">Apex Studio</a>
-					</dd>
-					<dd>
-						<a href="">Work Shop</a>
-					</dd>
-					<dd>
-						<a href="">Blog</a>
-					</dd>
+			<ul>
+				<li>
+					<a><strong>Quick Links</strong></a>
+				</li>
+				{% nav node in craft.menus.getNodes('quickLinks') %}
+				<li role="presentation">
+					<a href="{{node.link}}">
+						{{ node.title }}
+					</a>
+				</li>
+				{% endnav %}
 			</dl>
 		</div>
 		<div class="large-2 columns">

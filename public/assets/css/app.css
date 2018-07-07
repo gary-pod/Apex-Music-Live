@@ -4611,7 +4611,11 @@ p.bigger {
 .center-text {
   text-align: center; }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   text-transform: uppercase; }
 
 h2.styled {
@@ -4792,7 +4796,7 @@ audio#pickup-sound {
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #e6e6e6 0%, #ffffff 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff', GradientType=0);
   /* IE6-9 */ }
 
 .divider {
@@ -4815,7 +4819,8 @@ audio#pickup-sound {
   .valign-middle > .columns {
     display: table-cell;
     vertical-align: middle; }
-  .valign-middle > .columns, .valign-middle > [class*="column"] + [class*="column"]:last-child {
+  .valign-middle > .columns,
+  .valign-middle > [class*="column"] + [class*="column"]:last-child {
     float: none; }
 
 .signup-wrapper {
@@ -4867,6 +4872,8 @@ div.contact-details dl {
   color: white; }
 .footer a:hover {
   color: #DA253F; }
+.footer ul li {
+  list-style: none; }
 
 ul.social-footer {
   margin-left: 0;

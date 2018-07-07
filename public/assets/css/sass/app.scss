@@ -2,7 +2,6 @@
 @import 'settings';
 @import 'motion-ui';
 @import 'foundation';
-
 @include foundation-global-styles;
 @include foundation-grid;
 @include foundation-typography;
@@ -41,239 +40,496 @@
 @include foundation-flex-classes;
 @include motion-ui-transitions;
 @include motion-ui-animations;
-
 // TYPOGRAPHY
-a {letter-spacing: 1px; transition: all 0.5s ease;}
-p.bigger {font-size: 1.125rem; line-height: 2rem;}
-.left {float: left;}
-.right {float: right;}
-.center-text {text-align: center;}
-h1, h2, h3, h4, h5 {text-transform: uppercase;}
-h2.styled{ color: #fff;
-  span {background: black; padding: 0.5em;}
-}
-h2.styled-reverse{ color: black;
-  span {background: white; padding: 0.5em;}
+a {
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
 }
 
-h3.styled{ color: #fff; padding-bottom: 0.5em;
-  span {background: black; padding: 0.3em;}
+p.bigger {
+  font-size: 1.125rem;
+  line-height: 2rem;
 }
-.white-text {color: #ffffff;}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center-text {
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
+}
+
+h2.styled {
+  color: #fff;
+  span {
+    background: black;
+    padding: 0.5em;
+  }
+}
+
+h2.styled-reverse {
+  color: black;
+  span {
+    background: white;
+    padding: 0.5em;
+  }
+}
+
+h3.styled {
+  color: #fff;
+  padding-bottom: 0.5em;
+  span {
+    background: black;
+    padding: 0.3em;
+  }
+}
+
+.white-text {
+  color: #ffffff;
+}
+
 // span.highlight {background:$apex-red; color: $apex-body; padding: 0.2em; font-weight: 600;}
-span.highlight {color: $apex-red;  font-weight: 600;}
-
+span.highlight {
+  color: $apex-red;
+  font-weight: 600;
+}
 
 // BUTTON STYLES 
 .button {
-  text-transform: uppercase; font-size: 1.125rem; letter-spacing: 1px; transition: all 0.5s ease; font-weight: 500;}
-.button.hollow {border: 3px solid #DA253F;color:$apex-body;
-    &:hover {color: $apex-body;}
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
+  font-weight: 500;
+}
+
+.button.hollow {
+  border: 3px solid #DA253F;
+  color: $apex-body;
+  &:hover {
+    color: $apex-body;
   }
+}
+
 .paypal-form {
   display: inline-block;
 }
-input[type=text]  {border:none; height: 2.8rem;}
-input[type=email] {border:none; height: 2.8rem;}
-input[type=submit] {background: #000;height:2.8rem; font-size: 0.825rem; margin-top: 1.3rem; cursor:pointer;}
-span.price { color:white; padding: 1em;  text-transform: uppercase; font-size: 1.125rem; letter-spacing: 1px; font-weight: 500; display: inline-block; vertical-align: middle; margin: 0 0 1rem 0; line-height: 1; text-align: center; background: $apex-body;
+
+input[type=text] {
+  border: none;
+  height: 2.8rem;
 }
 
+input[type=email] {
+  border: none;
+  height: 2.8rem;
+}
+
+input[type=submit] {
+  background: #000;
+  height: 2.8rem;
+  font-size: 0.825rem;
+  margin-top: 1.3rem;
+  cursor: pointer;
+}
+
+span.price {
+  color: white;
+  padding: 1em;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem 0;
+  line-height: 1;
+  text-align: center;
+  background: $apex-body;
+}
 
 // NAVIGATION
-ul.menu{
-    a {color: $apex-body; text-transform: uppercase;
-        &:hover {color:$apex-red;}
+ul.menu {
+  a {
+    color: $apex-body;
+    text-transform: uppercase;
+    &:hover {
+      color: $apex-red;
     }
-}
-ul.menu li a.logo-link {padding:0;} 
-.title-bar .menu-icon {float: right;}
-.dropdown.menu a {padding-top: 1.2rem;} 
-.dropdown.menu>li.is-dropdown-submenu-parent>a::after {margin-top: 1px !important;}
-img.menu-logo {padding-right:2rem;}
-div#responsive-menu.top-bar {-webkit-box-shadow: 0px 5px 10px 2px rgba(0,0,0,0.2);
-  -moz-box-shadow: 0px 5px 10px 2px rgba(0,0,0,0.2);
-  box-shadow: 0px 5px 10px 2px rgba(0,0,0,0.2);
   }
+}
+
+ul.menu li a.logo-link {
+  padding: 0;
+}
+
+.title-bar .menu-icon {
+  float: right;
+}
+
+.dropdown.menu a {
+  padding-top: 1.2rem;
+}
+
+.dropdown.menu>li.is-dropdown-submenu-parent>a::after {
+  margin-top: 1px !important;
+}
+
+img.menu-logo {
+  padding-right: 2rem;
+}
+
+div#responsive-menu.top-bar {
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+}
 
 // AUDIO PLAYER
-audio#pickup-sound {width: 90%;}
+audio#pickup-sound {
+  width: 90%;
+}
 
 //BREADCRUMBS
-.breadcrumbs {padding-top: 1em; padding-left:1em;}
+.breadcrumbs {
+  padding-top: 1em;
+  padding-left: 1em;
+}
 
 // HERO IMAGE
-.hero-image { width: 100%; height:650px;
-  img {   position: absolute;
+.hero-image {
+  width: 100%;
+  height: 650px;
+  img {
+    position: absolute;
     top: 50%;
     left: 50%;
     width: 100%;
     height: 450px;
-    margin-top: -225px; /* Half the height */
-    margin-left: -50%; /* Half the width */}
+    margin-top: -225px;
+    /* Half the height */
+    margin-left: -50%;
+    /* Half the width */
+  }
 }
 
 // SIDE KICK IMAGE
-.sidekick-image { width:100%;}
+.sidekick-image {
+  width: 100%;
+}
 
 // GLOBAL PADDING CLASSES
-.ptb {padding: 5rem 0;}
-.pb {padding-bottom: 5rem;}
-.pt {padding-top: 5rem;}
-.ptb-s {padding: 2.5rem 0;}
-.pb-s {padding-bottom: 2.5rem;}
-.pt-s {padding-top: 2.5rem;}
-.no-gutters {padding: 0 !important;}
-.full{width: 100%;}
-.light-bg { background:$light-gray;}
-.red-bg { background:$apex-red; background-image: url('../images/bg-texture-a.jpg'); background-repeat: repeat;
-  a  {color: $apex-body;
+.ptb {
+  padding: 5rem 0;
+}
+
+.pb {
+  padding-bottom: 5rem;
+}
+
+.pt {
+  padding-top: 5rem;
+}
+
+.ptb-s {
+  padding: 2.5rem 0;
+}
+
+.pb-s {
+  padding-bottom: 2.5rem;
+}
+
+.pt-s {
+  padding-top: 2.5rem;
+}
+
+.no-gutters {
+  padding: 0 !important;
+}
+
+.full {
+  width: 100%;
+}
+
+.light-bg {
+  background: $light-gray;
+}
+
+.red-bg {
+  background: $apex-red;
+  background-image: url('../images/bg-texture-a.jpg');
+  background-repeat: repeat;
+  a {
+    color: $apex-body;
   }
 }
-.concrete-bg { background-image: url('../images/concrete-texture.png'); background-repeat: repeat;}
-.dark-bg {background: $apex-body; color:white;
-  a{ color: white;}
+
+.concrete-bg {
+  background-image: url('../images/concrete-texture.png');
+  background-repeat: repeat;
 }
-.flush-nudge {margin-top: -4px;}
-.light-gradient-bg {/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e6e6e6+0,ffffff+100 */
-  background: #e6e6e6; /* Old browsers */
-  background: -moz-linear-gradient(top, #e6e6e6 0%, #ffffff 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #e6e6e6 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #e6e6e6 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */}
-.divider {border-right:1px solid $medium-gray;}
-.red-border {border:3px solid $apex-red;}
-.valign-wrapper { display: table; height: 100%; width: 100%; }
-.valign-wrapper .valign-content { display: table-cell; vertical-align: middle; }
+
+.dark-bg {
+  background: $apex-body;
+  color: white;
+  a {
+    color: white;
+  }
+}
+
+.flush-nudge {
+  margin-top: -4px;
+}
+
+.light-gradient-bg {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e6e6e6+0,ffffff+100 */
+  background: #e6e6e6;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #e6e6e6 0%, #ffffff 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #e6e6e6 0%, #ffffff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #e6e6e6 0%, #ffffff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#ffffff', GradientType=0);
+  /* IE6-9 */
+}
+
+.divider {
+  border-right: 1px solid $medium-gray;
+}
+
+.red-border {
+  border: 3px solid $apex-red;
+}
+
+.valign-wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.valign-wrapper .valign-content {
+  display: table-cell;
+  vertical-align: middle;
+}
 
 // VERTICL ALIGN
 .valign-middle {
   display: table;
-
-  > .columns {
-      display: table-cell;
-      vertical-align: middle;
+  >.columns {
+    display: table-cell;
+    vertical-align: middle;
   }
-
-  > .columns, > [class*="column"] + [class*="column"]:last-child {
-      float: none;
+  >.columns,
+  >[class*="column"]+[class*="column"]:last-child {
+    float: none;
   }
 }
-  
+
 // MAIL SIGN UP
-.signup-wrapper { position: relative;
-  p {font-weight: 600; padding-top: 2em;}
-  .mountain-bg {position: absolute;  background-repeat: no-repeat;
+.signup-wrapper {
+  position: relative;
+  p {
+    font-weight: 600;
+    padding-top: 2em;
+  }
+  .mountain-bg {
+    position: absolute;
+    background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center; }
+    background-position: center;
+  }
 }
-
 
 ul.repairs {
   list-style: none;
 }
-.repair-price { color:$apex-red; padding: 1em;  text-transform: uppercase; font-size: 1.125rem; letter-spacing: 1px; font-weight: 500; display: inline-block; vertical-align: middle; margin: 0 0 1rem 0; line-height: 1;}
 
+.repair-price {
+  color: $apex-red;
+  padding: 1em;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem 0;
+  line-height: 1;
+}
 
 // VIDEO PRICE BOX
 .price-box {
-  border-bottom: 1px solid #fff; width: 99.9%;
-    p.package {font-weight: 600;}
-    p.description {}
-    p.price{ text-align: center; background-color: #DA253F; padding: 1em; font-family: "Contrail One", cursive;}
+  border-bottom: 1px solid #fff;
+  width: 99.9%;
+  p.package {
+    font-weight: 600;
+  }
+  p.description {}
+  p.price {
+    text-align: center;
+    background-color: #DA253F;
+    padding: 1em;
+    font-family: "Contrail One", cursive;
+  }
 }
-
-
 
 // CONTACT PAGE
 div.contact-details dl {
   text-align: center;
-    dt {font-family: Consolas, 'Contrail One', cursive; font-size: 1.525em;font-weight: 100; margin-bottom: 0;}
+  dt {
+    font-family: Consolas, 'Contrail One', cursive;
+    font-size: 1.525em;
+    font-weight: 100;
+    margin-bottom: 0;
+  }
 }
 
 // FOOTER STYLES
 .footer {
-  p { color: white;}
+  p {
+    color: white;
+  }
   a {
-    &:hover{ color: #DA253F;}
+    &:hover {
+      color: #DA253F;
+    }
+  }
+  ul {
+    li {
+      list-style: none;
+    }
   }
 }
-ul.social-footer { margin-left: 0; font-size: 2rem;
-  li { display: inline-block;  padding: 0 2rem 0 0;}
+
+ul.social-footer {
+  margin-left: 0;
+  font-size: 2rem;
+  li {
+    display: inline-block;
+    padding: 0 2rem 0 0;
+  }
 }
 
 // PICKUP SELECTION
 .pickup-selection {
-  img {border: 3px solid $apex-red;}
+  img {
+    border: 3px solid $apex-red;
+  }
 }
 
 // PICKUP RESISTANCE 
 ul.resistance {
   margin-left: 0;
   list-style: none;
-    li {display: inline; padding-right:1em;}
+  li {
+    display: inline;
+    padding-right: 1em;
+  }
 }
 
-
-.no-gutters {padding: 0 !important; 
-  a{color: white; text-align: center;}
+.no-gutters {
+  padding: 0 !important;
+  a {
+    color: white;
+    text-align: center;
+  }
 }
-
 
 // NEW SERVICE SECTION
-.square { position: relative; width: 100%;}
-.square:after { content: ""; display: block; padding-bottom: 100%;}
-.content { position: absolute; width: 90%;  height: 100%; padding: 2em;
-  .service-details { background: #000; padding: 2em; position: absolute; bottom: 0; margin-bottom: 2em;
-    h4{  color: #fff; }
+.square {
+  position: relative;
+  width: 100%;
+}
+
+.square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.content {
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  padding: 2em;
+  .service-details {
+    background: #000;
+    padding: 2em;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 2em;
+    h4 {
+      color: #fff;
+    }
   }
-  
 }
 
-.pickups { 
-  background: url(../images/pickups-bg.png) no-repeat center center ; 
+.pickups {
+  background: url(../images/pickups-bg.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-.studio { 
-  background: url(../images/studio-bg.png) no-repeat center center ; 
+.studio {
+  background: url(../images/studio-bg.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-.workshop { 
-  background: url(../images/workshop-bg.png) no-repeat center center ; 
+.workshop {
+  background: url(../images/workshop-bg.png) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-
 
 // BLOG EXCERPTS
-.post-excerpts{
-  .row {border-bottom: 1px solid $medium-gray; padding: 1em 0;
+.post-excerpts {
+  .row {
+    border-bottom: 1px solid $medium-gray;
+    padding: 1em 0;
     span {
       text-transform: uppercase;
-      color: $apex-body;}
+      color: $apex-body;
+    }
     button {
       margin-top: 1em;
     }
   }
 }
 
-
 // BLOG POST SINGLE
-.blog-box { border:1px solid #cacaca; padding: 3em; background: #fff; margin-bottom: 2em;
-  h3{text-align: center;}
-  img {padding:1em 0;}
+.blog-box {
+  border: 1px solid #cacaca;
+  padding: 3em;
+  background: #fff;
+  margin-bottom: 2em;
+  h3 {
+    text-align: center;
+  }
+  img {
+    padding: 1em 0;
+  }
 }
-
 
 // ORBIT SLIDER TWEAKS
 .orbit-previous {
@@ -290,35 +546,57 @@ ul.resistance {
   background: #000;
   display: inline-block;
   padding: 1em 2em;
-    p {font-family: 'Roboto', sans-serif;}
-    a {color: $apex-red;}
+  p {
+    font-family: 'Roboto', sans-serif;
+  }
+  a {
+    color: $apex-red;
+  }
 }
 
 .orbit-caption {
-  font-family: 'Contrail One', cursive;  padding: 1em; 
+  font-family: 'Contrail One', cursive;
+  padding: 1em;
 }
 
 ul.orbit-container {
--webkit-box-shadow: 0px 5px 20px 1px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0px 5px 20px 1px rgba(0,0,0,0.5);
-  box-shadow: 0px 5px 20px 1px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 20px 1px rgba(0, 0, 0, 0.5);
 }
-
 
 // CTA
-  p.cta-links { font-size: 24px; color: $apex-red; padding-top: 2rem; font-weight: 500;
-    a{padding:2rem; text-decoration: underline;}
+p.cta-links {
+  font-size: 24px;
+  color: $apex-red;
+  padding-top: 2rem;
+  font-weight: 500;
+  a {
+    padding: 2rem;
+    text-decoration: underline;
   }
-
-// MAP
-  .map-container {
-    position: relative; height: 0; overflow: hidden; padding-bottom: 56.25%; padding-top: 35px;
-      iframe { position: absolute; top:0; left: 0; width: 100%; height: 100%;
-      }
-    }
-    
-// TEAM BOX
-.team-box {
-  img {padding-bottom: 1em; min-height: 300px;}
 }
 
+// MAP
+.map-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// TEAM BOX
+.team-box {
+  img {
+    padding-bottom: 1em;
+    min-height: 300px;
+  }
+}
