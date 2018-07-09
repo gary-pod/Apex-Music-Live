@@ -15,22 +15,18 @@
 	{% block body %}{% endblock %}
 	{% block foot %}{% endblock %}
 	
+	
 	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 	<script src="{{ siteUrl }}assets/js/jquery-3.3.1.min.js"></script>
 	<script src="{{ siteUrl }}assets/js/foundation.min.js"></script>
 	<script src="{{ siteUrl }}assets/js/backstrech.js"></script>
+	<script src="{{ siteUrl }}assets/js/instafeed.js"></script>
+	<script src="{{ siteUrl }}assets/js/master.min.js"></script>
 	<script>
 		$(document).foundation();
 		$(document).ready(function() {
-		$(".hero-image").backstretch([
-			"{{ siteUrl }}assets/images/apex-studio-1.jpg",
-			"{{ siteUrl }}assets/images/apex-studio-3.jpg",
-			"{{ siteUrl }}assets/images/apex-studio-4.jpg",
-			"{{ siteUrl }}assets/images/apex-studio-5.jpg",
-			"{{ siteUrl }}assets/images/apex-studio-6.jpg",
-			"{{ siteUrl }}assets/images/apex-studio-7.jpg",
-			"{{ siteUrl }}assets/images/apex-studio-8.jpg"
-		], {duration: 3000, fade: 750});
+			let slides = slide_images[0].split(',');
+			$(".hero-image").backstretch([slides], {duration: 3000, fade: 750});
 		});
 	</script>
 

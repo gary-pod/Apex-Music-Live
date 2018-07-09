@@ -76,23 +76,18 @@
 			</dl>
 		</div>
 		<div class="large-2 columns">
-			<dl>
-				<dt>
-					<a href="">Strat Pickups</a>
-				</dt>
-				<dd>
-					<a href="">About</a>
-				</dd>
-				<dd>
-					<a href="">Apex Studio</a>
-				</dd>
-				<dd>
-					<a href="">Work Shop</a>
-				</dd>
-				<dd>
-					<a href="">Blog</a>
-				</dd>
-			</dl>
+			<ul>
+				<li>
+					<a><strong>Strat Pickups</strong></a>
+				</li>
+				{% set entries = craft.entries.relatedTo(261) %}
+				{# Output them #}
+				{% for entry in entries %}
+					<li>
+						<a href="{{ entry.url }}">{{ entry.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
 		</div>
 		<div class="large-2 columns">
 			<dl>

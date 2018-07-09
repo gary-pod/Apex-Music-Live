@@ -51,12 +51,12 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['public/assets/js/jquery-1.10.2.js', 'public/assets/js/plugins/*.js', 'public/assets/js/main.js'],
+                src: ['public/assets/js/jquery-1.10.2.js', 'public/assets/js/plugins/*.js', 'public/assets/js/master.js'],
                 dest: 'public/assets/js/master.js'
             }
         },
         jshint: {
-            all: ['gruntfile.js', 'src/js/main.js']
+            all: ['gruntfile.js', 'src/js/master.js']
         }
     });
 

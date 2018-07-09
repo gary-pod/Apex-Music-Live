@@ -3,14 +3,14 @@
 {% block main %}
 	<div class="full light-gradient-bg">
 		<div class="row ptb">
+			{% for block in entry.dualContent %} {% set image = block.imageBlock.first() %}
 			<div class="large-6 columns">
-					<h3 class="styled"><span>About Apex</span></h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-				<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				{{ block.textblock }}
 			</div>
 			<div class="large-6 columns">
-				<img src="{{ siteUrl }}assets/images/about-images-1.jpg" alt="about images">
+				<img src="{{ image.getUrl() }}" alt="about images">
 			</div>
+			{% endfor %}
 		</div>
 	</div>
 	<div class="full concrete-bg ">
