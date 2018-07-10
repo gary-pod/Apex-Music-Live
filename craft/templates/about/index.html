@@ -1,48 +1,30 @@
-{% extends "_layouts/site" %}
-
-{% block main %}
-	<div class="full light-gradient-bg">
-		<div class="row ptb">
-			{% for block in entry.dualContent %} {% set image = block.imageBlock.first() %}
-			<div class="large-6 columns">
-				{{ block.textblock }}
-			</div>
-			<div class="large-6 columns">
-				<img src="{{ image.getUrl() }}" alt="about images">
+{% extends "_layouts/site" %} {% block main %}
+<div class="full light-gradient-bg">
+	<div class="row ptb">
+		{% for block in entry.dualContent %} {% set image = block.imageBlock.first() %}
+		<div class="large-6 columns">
+			{{ block.textblock }}
+		</div>
+		<div class="large-6 columns">
+			<img src="{{ image.getUrl() }}" alt="about images">
+		</div>
+		{% endfor %}
+	</div>
+</div>
+<div class="full concrete-bg ">
+	<div class="row ptb">
+		<h3 class="styled center-text">
+			<strong>The Apex Team</strong>
+		</h3>
+		<div class="team-box">
+			{% for block in entry.teamGrid %} {% set image = block.teamMemberPhoto.first() %}
+			<div class="small-6 large-4 columns">
+				<img src="{{ image.getUrl() }}" alt="{{ block.teamMemberName }} photo">
+				<h4>{{ block.teamMemberName }}</h4>
+				<p class="bigger">{{ block.teamMemberPosition }}</p>
 			</div>
 			{% endfor %}
 		</div>
 	</div>
-	<div class="full concrete-bg ">
-		<div class="row ptb">
-			<h3 class="styled center-text"><span>The Apex Team</span></h3>
-		<div>
-			<div class="row ptb team-box">
-				<div class="large-4 columns">
-					<img src="{{ siteUrl }}assets/images/team-oran.jpg">
-					<h4>Oran McGuckin </h4>
-					<p class="bigger">Owner &amp; creator</p>
-				</div>
-	
-				<div class="large-4 columns">
-						<img src="{{ siteUrl }}assets/images/team-dani.jpg">
-						<h4>Dani Rooney</h4>
-					<p class="bigger">Video &amp; photography</p>
-				</div>
-	
-				<div class="large-4 columns">
-						<img src="{{ siteUrl }}assets/images/team-graham.jpg">
-						<h4>Graham McKinstry</h4>
-					<p class="bigger">Social Media, marketing &amp; management</p>
-				</div>
-	
-				<div class="large-4 columns end">
-						<img src="{{ siteUrl }}assets/images/team-willy.jpg">
-						<h4>William Martin</h4>
-					<p class="bigger">Workshop apprentice</p>
-				</div>
-			</div>
-		</div>
-	</div>
 
-{% endblock %}
+	{% endblock %}

@@ -41,6 +41,13 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 // TYPOGRAPHY
+
+p {
+	strong {
+		color: $apex-red;
+	}
+}
+
 a {
 	letter-spacing: 1px;
 	transition: all 0.5s ease;
@@ -73,17 +80,19 @@ h5 {
 
 h2.styled {
 	color: #fff;
-	span {
+	strong {
 		background: black;
 		padding: 0.5em;
+		font-weight: 400;
 	}
 }
 
 h2.styled-reverse {
 	color: black;
-	span {
+	strong {
 		background: white;
 		padding: 0.5em;
+		font-weight: 400;
 	}
 }
 
@@ -551,6 +560,9 @@ ul.resistance {
 	background: #000;
 	display: inline-block;
 	padding: 1em 2em;
+	h3 {
+		margin-bottom: 0;
+	}
 	p {
 		font-family: 'Roboto', sans-serif;
 	}
@@ -600,8 +612,17 @@ p.cta-links {
 
 // TEAM BOX
 .team-box {
+	padding: 20px 0 0 0;
+	.columns {
+		float: left !important;
+		&:last-child {
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
 	img {
 		padding-bottom: 1em;
-		min-height: 300px;
+		width: 100%;
 	}
 }

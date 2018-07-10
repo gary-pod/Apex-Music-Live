@@ -4,8 +4,15 @@
 	<img src="{{ siteUrl }}/assets/images/hero-logo.svg" alt="apex hero logo">
 </div>
 
-{% set slides = [] %} {% for block in entry.heroSlider%} {% set image = block.image.first() %} {% if image %} {% set slides
-= slides|merge([image.getUrl()]) %} {% endif %} {% endfor %} {% includejs %} var slide_images = ["{{ slides | join(',') }}"];
+{% set slides = [] %} 
+{% for block in entry.heroSlider%} 
+{% set image = block.image.first() %} 
+	{% if image %} 
+		{% set slides= slides|merge([image.getUrl()]) %} 
+	{% endif %}
+{% endfor %} 
+{% includejs %}
+	var slide_images = ["{{ slides | join(',') }}"];
 {% endincludejs %}
 
 <!-- INTRO -->
@@ -21,7 +28,7 @@
 	{% for block in entry.hotspotLinks %} {% set image = block.backgroundImage.first() %}
 	<div class="large-4 column">
 		<h3 class="styled center-text pb-s">
-			<span>{{block.hotspotTitle}}</span>
+			<strong>{{block.hotspotTitle}}</strong>
 		</h3>
 		<div class="square" style="background-image:url( {{ image.getUrl() }} )">
 			<div class="content">
@@ -37,55 +44,15 @@
 	{% endfor %}
 </div>
 
-<div class="red-bg">
-	<div class="row ptb">
-		<div class="large-12 columns">
-			<div class="orbit pt-s" role="region" aria-label="Favorite Space Pictures" data-orbit>
-				<div class="orbit-wrapper">
-					<div class="orbit-controls">
-						<button class="orbit-previous">
-							<span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-						<button class="orbit-next">
-							<span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-					</div>
-					<ul class="orbit-container">
-						{% for block in entry.pageSlider %} {% set image = block.image.first() %}
-						<li class="is-active orbit-slide">
-							<figure class="orbit-figure">
-								<img class="orbit-image" src="{{ image.getUrl('pageSliderSize') }}" alt="Space">
-								<figcaption class="orbit-caption">
-									<div class="caption-box">
-										<h3>{{ block.slideTitle }}</h3>
-										<p class="bigger">{{ block.slideSubTile }}</p>
-										<a href="{{ block.slideLink }}" class="readmore-excerpt">{{ block.slideLinkText }}
-											<i class="fas fa-long-arrow-alt-right"></i>
-										</a>
-									</div>
-								</figcaption>
-							</figure>
-						</li>
-						{% endfor %}
-					</ul>
-				</div>
-				<nav class="orbit-bullets">
-					<button class="is-active" data-slide="0">
-						<span class="show-for-sr">First slide details.</span>
-						<span class="show-for-sr">Current Slide</span>
-					</button>
-					<button data-slide="1">
-						<span class="show-for-sr">Second slide details.</span>
-					</button>
-				</nav>
-			</div>
-		</div>
-	</div>
-</div>
+{% if entry.pageSlider %}
+	{% include "_includes/pageSlider" %}	
+{% endif %}
 
 <!-- BLOG POSTS SECTION -->
 <div class="row pt">
 	<div class="large-12 columns text-center">
 		<h2 class="styled">
-			<span>Hits from the blog</span>
+			<strong>Hits from the blog</strong>
 		</h2>
 	</div>
 </div>
@@ -125,7 +92,7 @@
 	<div class="row">
 		<div class="large-9 small-centered columns text-center">
 			<h2 class="styled">
-				<span>Mailing list</span>
+				<strong>Mailing list</strong>
 			</h2>
 			<p class="bigger">Subscribe to the Apex Music Co news letter &amp; get the latest updates. #spamfree :)</p>
 		</div>

@@ -4594,6 +4594,9 @@ a.thumbnail {
 .long-delay {
   animation-delay: 700ms !important; }
 
+p strong {
+  color: #DA253F; }
+
 a {
   letter-spacing: 1px;
   transition: all 0.5s ease; }
@@ -4620,15 +4623,17 @@ h5 {
 
 h2.styled {
   color: #fff; }
-  h2.styled span {
+  h2.styled strong {
     background: black;
-    padding: 0.5em; }
+    padding: 0.5em;
+    font-weight: 400; }
 
 h2.styled-reverse {
   color: black; }
-  h2.styled-reverse span {
+  h2.styled-reverse strong {
     background: white;
-    padding: 0.5em; }
+    padding: 0.5em;
+    font-weight: 400; }
 
 h3.styled {
   color: #fff;
@@ -4977,6 +4982,8 @@ ul.resistance {
   background: #000;
   display: inline-block;
   padding: 1em 2em; }
+  .caption-box h3 {
+    margin-bottom: 0; }
   .caption-box p {
     font-family: 'Roboto', sans-serif; }
   .caption-box a {
@@ -5013,8 +5020,14 @@ p.cta-links {
     width: 100%;
     height: 100%; }
 
-.team-box img {
-  padding-bottom: 1em;
-  min-height: 300px; }
+.team-box {
+  padding: 20px 0 0 0; }
+  .team-box .columns {
+    float: left !important; }
+    .team-box .columns:last-child p {
+      margin-bottom: 0; }
+  .team-box img {
+    padding-bottom: 1em;
+    width: 100%; }
 
 /*# sourceMappingURL=app.css.map */
