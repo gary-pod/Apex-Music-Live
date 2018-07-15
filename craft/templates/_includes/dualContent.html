@@ -1,0 +1,20 @@
+{% for block in entry.dualContent %} 
+    <div class="row pb">
+        {% set image = block.imageBlock.first() %}
+        {% if block.imageBlockPosition %}
+            <div class="large-6 columns pb">
+                {{ block.textblock }}
+            </div>
+            <div class="large-6 columns">
+                <img src="{{ image.getUrl() }}" alt="about images">
+            </div>
+        {% else %}
+            <div class="large-6 columns">
+                <img src="{{ image.getUrl() }}" alt="about images">
+            </div>	
+            <div class="large-6 columns">
+                {{ block.textblock }}
+            </div>
+        {% endif %}
+    </div>
+{% endfor %}

@@ -1,0 +1,17 @@
+<div class="columns">
+    {% for block in entry.pricingList %} 
+        <div class="price-box pt-s">
+            <div class="row">
+                <div class="large-3 columns">
+                    <p class="package">{{ block.productName }}</p>
+                </div>
+                <div class="large-6 columns">
+                    <p class="description">{{ block.description }}</p>
+                </div>
+                <div class="large-3 columns">
+                    <p class="price">{{ block.price }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

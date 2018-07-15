@@ -21,13 +21,19 @@
 	<script src="{{ siteUrl }}assets/js/foundation.min.js"></script>
 	<script src="{{ siteUrl }}assets/js/backstrech.js"></script>
 	<script src="{{ siteUrl }}assets/js/instafeed.js"></script>
+	<script src="{{ siteUrl }}assets/js/plugins.js"></script>
 	<script src="{{ siteUrl }}assets/js/master.min.js"></script>
 	<script>
 		$(document).foundation();
-		$(document).ready(function() {
-			let slides = slide_images[0].split(',');
-			$(".hero-image").backstretch([slides], {duration: 3000, fade: 750});
-		});
+		if(window.location.pathname == '/') {
+			$(document).ready(function() {
+				let slides = slide_images[0].split(',');
+				$(".hero-image").backstretch([slides], {duration: 3000, fade: 750});
+			});
+		}
+		if(window.location.pathname == '/apex-studio') {
+			const player = new Plyr('#player');
+		}
 	</script>
 
 </body>

@@ -2,6 +2,7 @@
 @import 'settings';
 @import 'motion-ui';
 @import 'foundation';
+@import 'plyr';
 @include foundation-global-styles;
 @include foundation-grid;
 @include foundation-typography;
@@ -41,7 +42,6 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 // TYPOGRAPHY
-
 p {
 	strong {
 		color: $apex-red;
@@ -99,6 +99,8 @@ h2.styled-reverse {
 h3.styled {
 	color: #fff;
 	padding-bottom: 0.5em;
+	margin-top: 7px;
+	margin-bottom: 30px;
 	strong {
 		background: black;
 		padding: 0.3em;
@@ -366,11 +368,11 @@ audio#pickup-sound {
 
 ul.repairs {
 	list-style: none;
+	margin-left: 0;
 }
 
 .repair-price {
 	color: $apex-red;
-	padding: 1em;
 	text-transform: uppercase;
 	font-size: 1.125rem;
 	letter-spacing: 1px;
@@ -381,31 +383,46 @@ ul.repairs {
 	line-height: 1;
 }
 
-// VIDEO PRICE BOX
+.concrete-bg .price-box {
+	border-bottom: 1px solid #000;
+}
+
 .price-box {
 	border-bottom: 1px solid #fff;
-	width: 99.9%;
+	padding: 20px 0px;
+	float: left;
+	max-height: 98px;
+	margin: 0 1%;
+	width: 48%;
 	p.package {
 		font-weight: 600;
 	}
-	p.description {}
+	p.description {
+		margin-bottom: 0;
+	}
 	p.price {
 		text-align: center;
 		background-color: #DA253F;
 		padding: 1em;
 		font-family: "Contrail One", cursive;
+		margin-bottom: 0;
 	}
 }
 
 // CONTACT PAGE
-div.contact-details dl {
+div.contact-details {
 	text-align: center;
-	dt {
+	h4 {
 		font-family: Consolas, 'Contrail One', cursive;
 		font-size: 1.525em;
 		font-weight: 100;
 		margin-bottom: 0;
 	}
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}	
 }
 
 // FOOTER STYLES
@@ -535,6 +552,27 @@ ul.resistance {
 	margin-bottom: 2em;
 	h3 {
 		text-align: center;
+		a {
+			color: #000;
+			&:hover,
+			&:visited {
+				color: #000;
+			}
+		}
+	}
+	img {
+		padding: 1em 0;
+	}
+}
+
+// OTHER BLOGS EXCERPT BOX
+.blog-box-excerpt {
+	border: 1px solid #cacaca;
+	padding: 3em;
+	background: #fff;
+	margin-bottom: 2em;
+	h3 {
+		text-align: center;
 	}
 	img {
 		padding: 1em 0;
@@ -595,19 +633,13 @@ p.cta-links {
 }
 
 // MAP
-.map-container {
-	position: relative;
-	height: 0;
-	overflow: hidden;
-	padding-bottom: 56.25%;
-	padding-top: 35px;
-	iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
+#map_wrapper {
+    height: 400px;
+}
+
+#map_canvas {
+    width: 100%;
+    height: 100%;
 }
 
 // TEAM BOX

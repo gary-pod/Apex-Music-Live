@@ -1,29 +1,55 @@
-{#
- # News entry template
- # -------------------
- #
- # This template gets loaded whenever a News entry's URL is requested, because
- # the News section's Template setting is set to "news/_entry".
- #
- # An `entry` variable will be automatically passed to this template, which will
- # be set to the requested News entry.
--#}
-
-{% extends "_layouts/site" %}
-{% set title = entry.title %}
-
+{# # News entry template # ------------------- # # This template gets loaded whenever a News entry's URL is requested, because
+# the News section's Template setting is set to "news/_entry". # # An `entry` variable will be automatically passed to this
+template, which will # be set to the requested News entry. -#} {% extends "_layouts/site" %} {% set title = entry.title %}
 {% block main %}
-	<article>
-		{% include "_includes/content_header" with { showFeaturedImage: true } %}
-		{% include "_includes/article_heading" %}
-		{% include "_includes/article_body" %}
-	</article>
 
-	<footer class="authorinfo">
-		<div class="flex">
-			<div class="g1-flex4 g2-flex6 g3-flex12">
-				<p class="center author">{{ entry.author.name }}</p>
+<div class="full">
+	<div class="row pt pb-s">
+		<div class="large-12 large-centered columns">
+			<h2 class="styled center-text pb-s">
+				<strong>{{ title }}</strong>
+			</h2>
+			{% set image = entry.featuredImage.first() %} 
+			{% if image %}
+				<img src="{{ image.getUrl() }}" alt="{{ image.title }}">
+			{% endif %}
+			<div class="row">
+				<div class="large-8 large-centered columns pt-s">
+					<p class="blog-stamp">Posted: <b>{{ entry.postDate | date("M d, Y") }}</b></p>
+					{% for block in entry.articleBody %} 
+						{{ block.text }}
+					{% endfor %}
+				</div>
 			</div>
 		</div>
-	</footer>
+	</div>
+</div>
+
+<div class="full concrete-bg ptb">
+	<div class="row">
+		<h3 class="styled center-text pb-s">
+			<strong>other blog posts</strong>
+		</h3>
+		
+		{% for blogEntry in craft.entries.section('blog').limit(3) %}
+			<div class="large-4 columns ">
+				<div class="blog-box-excerpt">
+					<h3>{{ blogEntry.title }}</h3>
+					{% set image = blogEntry.featuredImage.first() %}
+					{% if image %}
+						<img src="{{ image.getUrl() }}" alt="{{ image.title }}">
+					{% endif %}
+					<p class="blog-stamp">Posted: <b>{{ blogEntry.postDate | date("M d, Y") }}</b></p>
+					{{ blogEntry.shortDescription  }}
+					<a href="{{ blogEntry.url }}" class="readmore-excerpt">Read more
+						<i class="fas fa-long-arrow-alt-right"></i>
+					</a>
+				</div>
+			</div>
+		{% endfor %}
+
+	</div>
+</div>
+
+
 {% endblock %}

@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    loadPath: ['node_modules/foundation-sites/scss','node_modules/motion-ui/src']
+                    loadPath: ['node_modules/foundation-sites/scss','node_modules/motion-ui/src', 'node_modules/plyr/src/sass']
 
                 },
                 files: {
@@ -51,8 +51,8 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['public/assets/js/jquery-1.10.2.js', 'public/assets/js/plugins/*.js', 'public/assets/js/master.js'],
-                dest: 'public/assets/js/master.js'
+                src: ['node_modules/plyr/dist/plyr.min.js'],
+                dest: 'public/assets/js/plugins.js'
             }
         },
         jshint: {

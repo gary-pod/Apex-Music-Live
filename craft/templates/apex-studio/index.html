@@ -14,211 +14,42 @@
 {% endif %}
 
 <section class="pt">
-	{% for block in entry.dualContent %} 
-		<div class="row pb">
-			{% set image = block.imageBlock.first() %}
-			{% if block.imageBlockPosition %}
-				<div class="large-6 columns pb">
-					{{ block.textblock }}
-				</div>
-				<div class="large-6 columns">
-					<img src="{{ image.getUrl() }}" alt="about images">
-				</div>
-			{% else %}
-				<div class="large-6 columns">
-					<img src="{{ image.getUrl() }}" alt="about images">
-				</div>	
-				<div class="large-6 columns">
-					{{ block.textblock }}
-				</div>
-			{% endif %}
-		</div>
-	{% endfor %}
+	{% if entry.dualContent %}
+		{% include "_includes/dualContent" %}
+	{% endif %}
 </section>
 
 <div class="full dark-bg pb">
 	<div class="row ptb">
 		<h2 class="styled-reverse center-text">
-			<span>video &amp; photography</span>
+			<strong>video &amp; photography</strong>
 		</h2>
 	</div>
-	<div class="row">
-		<div class="large-6 columns">
-			<p class="bigger">We have a range of packages to suit all needs and budgets, please get in touch if you would like avail of our video and
-				photography services. </p>
-			<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-			<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-				occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-		</div>
 
-		<div class="large-6 columns">
-			<div class="plyr__video-embed" id="player">
-				<iframe src="https://www.youtube.com/embed/bTqVqk7FSmY?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-				    allowfullscreen allowtransparency allow="autoplay"></iframe>
+	<div class="row">
+		{% for block in entry.videoBlock %}
+			<div class="large-6 columns">
+				{{ block.textBlock }}
 			</div>
-		</div>
+			<div class="large-6 columns">
+				<div class="plyr__video-embed" id="player">
+					<iframe src="{{ block.iframeLink }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+						allowfullscreen allowtransparency allow="autoplay"></iframe>
+				</div>
+			</div>
+		{% endfor %}
 	</div>
 	<div class="row pt-s">
-		<div class="large-6 columns">
-			<div class="row price-box pt-s">
-				<div class="large-3 columns">
-					<p class="package">Package 1</p>
-				</div>
-				<div class="large-6 columns">
-					<p class="description">8 hour live session shoot with full crew (4k)</p>
-				</div>
-				<div class="large-3 columns">
-					<p class="price">£1199</p>
-				</div>
-			</div>
-			<div class="row price-box pt-s">
-				<div class="large-3 columns">
-					<p class="package">Package 1</p>
-				</div>
-				<div class="large-6 columns">
-					<p class="description">8 hour live session shoot with full crew (4k)</p>
-				</div>
-				<div class="large-3 columns">
-					<p class="price">£1199</p>
-				</div>
-			</div>
-			<div class="row price-box pt-s">
-				<div class="large-3 columns">
-					<p class="package">Package 1</p>
-				</div>
-				<div class="large-6 columns">
-					<p class="description">8 hour live session shoot with full crew (4k)</p>
-				</div>
-				<div class="large-3 columns">
-					<p class="price">£1199</p>
-				</div>
-			</div>
-			<div class="row price-box pt-s">
-				<div class="large-3 columns">
-					<p class="package">Package 1</p>
-				</div>
-				<div class="large-6 columns">
-					<p class="description">8 hour live session shoot with full crew (4k)</p>
-				</div>
-				<div class="large-3 columns">
-					<p class="price">£1199</p>
-				</div>
-			</div>
-			<div class="row price-box pt-s">
-				<div class="large-3 columns">
-					<p class="package">Package 1</p>
-				</div>
-				<div class="large-6 columns">
-					<p class="description">8 hour live session shoot with full crew (4k)</p>
-				</div>
-				<div class="large-3 columns">
-					<p class="price">£1199</p>
-				</div>
-			</div>
-		</div>
-		<div class="large-6 columns">
-			<div class="row price-box pt-s">
-				<div class="large-3 columns">
-					<p class="package">Package 1</p>
-				</div>
-				<div class="large-6 columns">
-					<p class="description">8 hour live session shoot with full crew (4k)</p>
-				</div>
-				<div class="large-3 columns">
-					<p class="price">£1199</p>
-				</div>
-			</div>
-			<div class="row price-box pt-s">
-				<div class="large-3 columns">
-					<p class="package">Package 1</p>
-				</div>
-				<div class="large-6 columns">
-					<p class="description">8 hour live session shoot with full crew (4k)</p>
-				</div>
-				<div class="large-3 columns">
-					<p class="price">£1199</p>
-				</div>
-			</div>
-			<div class="row price-box pt-s">
-				<div class="large-3 columns">
-					<p class="package">Package 1</p>
-				</div>
-				<div class="large-6 columns">
-					<p class="description">8 hour live session shoot with full crew (4k)</p>
-				</div>
-				<div class="large-3 columns">
-					<p class="price">£1199</p>
-				</div>
-			</div>
-			<div class="row price-box pt-s">
-				<div class="large-3 columns">
-					<p class="package">Package 1</p>
-				</div>
-				<div class="large-6 columns">
-					<p class="description">8 hour live session shoot with full crew (4k)</p>
-				</div>
-				<div class="large-3 columns">
-					<p class="price">£1199</p>
-				</div>
-			</div>
-		</div>
+		{% if entry.pricingList %}
+			{% include "_includes/priceList" %}	
+		{% endif %}
 	</div>
 </div>
 
-<!-- INSTAGRAM FEED -->
-<div class="full light-bg ptb">
-	<div class="row small-up-2 medium-up-3 large-up-6">
 
-		<div id="instafeed"></div>
-
-
-		<div class="column column-block">
-			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
-		</div>
-		<div class="column column-block">
-			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
-		</div>
-		<div class="column column-block">
-			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
-		</div>
-		<div class="column column-block">
-			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
-		</div>
-		<div class="column column-block">
-			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
-		</div>
-		<div class="column column-block">
-			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
-		</div>
-		<div class="column column-block">
-			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
-		</div>
-		<div class="column column-block">
-			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
-		</div>
-		<div class="column column-block">
-			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
-		</div>
-		<div class="column column-block">
-			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
-		</div>
-		<div class="column column-block">
-			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
-		</div>
-		<div class="column column-block">
-			<img src="https://placehold.it/600x600" class="thumbnail" alt="">
-		</div>
-
-	</div>
-	<div class="row">
-		<div class="large-8 small-centered columns text-center">
-			<a href="" class="button">folow us on instagram
-				<i class="fab fa-instagram"></i>
-			</a>
-		</div>
-	</div>
-</div>
+{% if entry.instagramFeed.contains('includeFeed') %}
+	{% include "_includes/instagramFeed" %}	
+{% endif %}
 
 
 

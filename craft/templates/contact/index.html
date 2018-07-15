@@ -1,34 +1,29 @@
 {% extends "_layouts/site" %} {% block main %}
 
-<div class="row expanded light-gradient-bg ptb">
+<div class="full concrete-bg ptb">
 	<div class="large-8 small-centered columns text-center">
-		<h1>Get in touch if you'd like to use any of our services. </h1>
+		<h1>{{ entry.heading }}</h1>
 	</div>
 </div>
 <div class="row expanded">
 	<div class="large-6 columns contact-details red-bg ptb-s">
+		<h4>Apex Studio</h4>
+		{{ contactMeta.addressOne }}
 		<dl>
-			<dt>Apex studio</dt>
-			<dd>Unit 3, Derrycrin road </dd>
-			<dd>BT80 0HJ</dd>
-			<dd>Cookstown</dd>
 			<dd>
-				<a href="tel:028 867 12345">
-					<b><i class="fas fa-phone"></i> 028 867 12345</b>
+				<a href="tel:{{ contactMeta.telephone }}">
+					<b><i class="fas fa-phone"></i> {{ contactMeta.telephone }}</b>
 				</a>
 			</dd>
 		</dl>
 	</div>
 	<div class="large-6 columns contact-details dark-bg ptb-s">
+		<h4>Apex Workshop</h4>
+		{{ contactMeta.addressTwo }}
 		<dl>
-			<dt>Apex Workshop</dt>
-			<dd>14 Sullenboy park </dd>
-			<dd>BT80 8HP</dd>
-			<dd>Cookstown</dd>
 			<dd>
-				<a href="tel:028 867 12345">
-					<b>
-						<i class="fas fa-phone"></i> 028 867 12345</b>
+				<a href="tel:{{ contactMeta.telephone }}">
+					<b><i class="fas fa-phone"></i> {{ contactMeta.telephone }}</b>
 				</a>
 			</dd>
 		</dl>
@@ -36,9 +31,8 @@
 </div>
 <div class="row expanded collapse">
 	<div class="large-12 columns">
-		<div class="map-container">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2316.779672250366!2d-6.105085684332411!3d54.50210998023744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486103a02c785f39%3A0x89d9211d50972736!2sScaffold+Digital!5e0!3m2!1sen!2suk!4v1523391849334"
-			    width="800" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+		<div id="map_wrapper">
+			<div id="map_canvas" class="mapping"></div>
 		</div>
 	</div>
 </div>

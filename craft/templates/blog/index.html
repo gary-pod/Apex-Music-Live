@@ -14,22 +14,32 @@
 
 	<div class="row pt pb-s">
 		<div class="large-11 columns large-centered">
-			<h2 class="styled center-text"><span>Apex Blog</span></h2>
+			<h2 class="styled center-text"><strong>Apex Blog</strong></h2>
 			<h1 class="center-text pt-s">All the latest carry on form the Apex team - all killer no filler </h1>
 		</div>
 	</div>
 	<div class="full ptb concrete-bg">
-		<div class="large-8 large-centered columns blog-box">
-			<div class="row">
-				<div class="large-12 colums">
-					<h3>Introducing The Team: Pete</h3>
-					<img src="{{ siteUrl }}assets/images/blog-post-1.jpg">
-					<p class="blog-stamp">Posted: <b>24 March 2019</b>, by: <b>Oran</b>
-					<p>Pete is probably the most important member of the team and has a job list as long as Orans hair. Pete keeps an eye on the workshop, keeps away intruders and makes sure everything is in order, all the while flashing his signature toothy grin.</p>
-					<a href="#" class="readmore-excerpt">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+
+		{% for blogEntry in craft.entries.section('blog') %}
+
+			<article class="large-8 large-centered columns blog-box">
+				<div class="row">
+					<div class="large-12 colums">
+						<h3><a href="{{ blogEntry.url }}">{{ blogEntry.title }}</a></h3>
+						{% set image = blogEntry.featuredImage.first() %}
+						{% if image %}
+							<a href="{{ blogEntry.url }}">
+								<img src="{{ image.getUrl() }}" alt="{{ image.title }}">
+							</a>
+						{% endif %}
+						<p class="blog-stamp">Posted: <b>{{ blogEntry.postDate | date("M d, Y") }}</b></p>
+						{{ blogEntry.shortDescription  }}
+						<a href="{{ blogEntry.url }}" class="readmore-excerpt">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+					</div>
 				</div>
-			</div>
-		</div>
+			</article>
+
+		{% endfor %}
 	</div>
 
 {% endblock %}
