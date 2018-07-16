@@ -81,7 +81,6 @@
 					<a><strong>Strat Pickups</strong></a>
 				</li>
 				{% set entries = craft.entries.relatedTo(261) %}
-				{# Output them #}
 				{% for entry in entries %}
 					<li>
 						<a href="{{ entry.url }}">{{ entry.title }}</a>

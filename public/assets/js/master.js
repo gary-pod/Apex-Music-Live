@@ -16,7 +16,7 @@ if(window.location.pathname == '/' || window.location.pathname == '/apex-studio'
 jQuery(function($) {
   // Asynchronously Load the map API 
   var script = document.createElement('script');
-  script.src = "//maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+  script.src = "//maps.googleapis.com/maps/api/js?key=AIzaSyD6otD5di-JKgq0GSvxSm7Ytz6WnEu1O5k&callback=initialize";
   document.body.appendChild(script);
 });
 
@@ -33,8 +33,8 @@ function initialize() {
       
   // Multiple Markers
   var markers = [
-      ['London Eye, London', 51.503454,-0.119562],
-      ['Palace of Westminster, London', 51.499633,-0.124755]
+      ['APEX STUDIO, Unit 3, Derrycrin road  BT80 0HJ Cookstown', 54.643711,-6.5613988],
+      ['APEX WORKSHOP, 14 Sullenboy park BT80 8HPCookstown', 54.6401879,-6.7528764]
   ];
       
   // Display multiple markers on a map
@@ -56,7 +56,7 @@ function initialize() {
 
   // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
   var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-      this.setZoom(14);
+      this.setZoom(12);
       google.maps.event.removeListener(boundsListener);
   });
   

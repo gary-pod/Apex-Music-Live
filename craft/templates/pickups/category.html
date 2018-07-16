@@ -1,115 +1,27 @@
 {% extends "_layouts/site" %} {% block main %}
 
-<div class="sidekick-image">
-	<img src="{{ siteUrl }}assets/images/pickup-index-bg.png">
-</div>
-
-<div class="row ptb">
-	<div class="large-8 small-centered columns text-center">
-		<h1>Custom pickups, recording studio &amp; Guitar work shop. We do it all at Apex.</h1>
+<div class="full ptb">
+	<div class="row">
+		{{ category.body }}
 	</div>
 </div>
 
-<!-- PICKUP SELECTION  -->
-<div class="full concrete-bg ptb">
-	<div class="row pickup-selection">
-		<div class="large-4 columns">
-			<h3 class="styled text-center">
-				<span>strat style</span>
-			</h3>
-			<img src="{{ siteUrl }}assets/images/single-coil-cream.jpg" class="thumbnail" alt="">
-			<p>Our single coil pickups give your guitar the truest most open sound it will ever have, bringing out tones you never thought
-				you could hear from your guitar.</p>
-			<button class="button expanded">View strat style
-				<i class="fas fa-long-arrow-alt-right"></i>
-			</button>
-			</p>
-		</div>
-		<div class="large-4 columns">
-			<h3 class="styled text-center">
-				<span>tele style</span>
-			</h3>
-			<img src="{{ siteUrl }}assets/images/single-coil-cream.jpg" class="thumbnail" alt="">
-			<p>A successful marketing plan relies heavily on the pulling-power of advertising copy. Writing result-oriented ad copy is
-				difficult, as it must appeal to, entice, and convince consumers to take action. There is no magic formula to write.</p>
-			<button class="button expanded">View tele style
-				<i class="fas fa-long-arrow-alt-right"></i>
-			</button>
-			</p>
-		</div>
-		<div class="large-4 columns">
-			<h3 class="styled text-center">
-				<span>humbuckers</span>
-			</h3>
-			<img src="{{ siteUrl }}assets/images/single-coil-cream.jpg" class="thumbnail" alt="">
-			<p>A successful marketing plan relies heavily on the pulling-power of advertising copy. Writing result-oriented ad copy is
-				difficult, as it must appeal to, entice, and convince consumers to take action. There is no magic formula to write.</p>
-			<button class="button expanded">View humbuckers
-				<i class="fas fa-long-arrow-alt-right"></i>
-			</button>
-			</p>
-		</div>
-	</div>
-</div>
-
-<div class="full light-gradient-bg">
-	<div class="red-bg">
-		<div class="row ptb">
-			<div class="large-12 columns">
-
-				<div class="orbit pt-s" role="region" aria-label="Favorite Space Pictures" data-orbit>
-					<div class="orbit-wrapper">
-						<div class="orbit-controls">
-							<button class="orbit-previous">
-								<span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
-							<button class="orbit-next">
-								<span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
-						</div>
-						<ul class="orbit-container">
-							<li class="is-active orbit-slide">
-								<figure class="orbit-figure">
-									<img class="orbit-image" src="{{ siteUrl }}assets/images/pat.png" alt="Space">
-									<figcaption class="orbit-caption">
-										<div class="caption-box">
-											<h1>Pat McManus</h1>
-											<p class="bigger">Pickups:
-												<b>Apex 50's</b>
-											</p>
-											<a href="#" class="readmore-excerpt">View Pickups
-												<i class="fas fa-long-arrow-alt-right"></i>
-											</a>
-										</div>
-									</figcaption>
-								</figure>
-							</li>
-							<li class="orbit-slide">
-								<figure class="orbit-figure">
-									<img class="orbit-image" src="{{ siteUrl }}assets/images/pat.png" alt="Space">
-								</figure>
-							</li>
-						</ul>
-					</div>
-					<nav class="orbit-bullets">
-						<button class="is-active" data-slide="0">
-							<span class="show-for-sr">First slide details.</span>
-							<span class="show-for-sr">Current Slide</span>
-						</button>
-						<button data-slide="1">
-							<span class="show-for-sr">Second slide details.</span>
-						</button>
-					</nav>
-				</div>
+<div class="row">
+	<div class="large-10 large-centered columns">
+		<div class="row pt-s pb-s">
+			<div class="large-5 columns">
+				<img class="red-border" src="{{siteUrl}}assets/img/single-coil-cream.jpg" alt="pickup image">
+			</div>
+			<div class="large-7 columns">
+				<h1>Apex 50s Single Coil</h1>
+				<p>Apex 50's The Apex 50's the perfect aged tone your rig needs, with a beautiful mid-range these pickups really
+					sing with your valve driven tones or even your transistor jazz cleans.</p>
+				<button class="button ">details &amp; demo
+					<i class="fas fa-long-arrow-alt-right"></i>
+				</button>
 			</div>
 		</div>
-	</div>
-</div>
-
-<div class="full light-gradient-bg">
-	<div class="row ptb">
-		<div class=" large-9 small-centered columns text-center">
-			<h2>Nothing taking your fancy? If you have something custom in mind please
-				<a href="">get in touch.</a> We can craft any pickup to your exact spec. </h2>
-		</div>
+		<hr>
 	</div>
 </div>
 

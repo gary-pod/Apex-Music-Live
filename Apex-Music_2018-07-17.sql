@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.6.38)
 # Database: Apex-Music
-# Generation Time: 2018-07-15 13:46:36 +0000
+# Generation Time: 2018-07-16 23:17:39 +0000
 # ************************************************************
 
 
@@ -224,7 +224,8 @@ VALUES
 	(25,301,'pat.jpg','jpg','_pageSliderSize',1,1,0,'2018-07-10 23:16:10','2018-07-10 23:16:10','2018-07-10 23:16:12','af3ffa5d-bd6b-4031-a9fd-e002e8b2a1b1'),
 	(26,303,'pickups-bg.jpg','jpg','_pageSliderSize',1,1,0,'2018-07-10 23:16:10','2018-07-10 23:16:10','2018-07-10 23:16:12','d41b98ef-b314-4025-9ffe-467a2aca17f0'),
 	(27,303,'pickups-bg.png',NULL,'_fullWidthBanner',1,1,0,'2018-07-14 14:57:18','2018-07-14 14:57:18','2018-07-14 14:57:20','e1e306f6-bd87-40cf-81d1-d715fe995cb9'),
-	(31,303,'pickups-bg.jpg','jpg','_fullWidthBanner',1,1,0,'2018-07-14 14:58:57','2018-07-14 14:58:57','2018-07-14 14:58:58','1ff515fc-5171-4d78-b3cd-5eb80fcecade');
+	(31,303,'pickups-bg.jpg','jpg','_fullWidthBanner',1,1,0,'2018-07-14 14:58:57','2018-07-14 14:58:57','2018-07-14 14:58:58','1ff515fc-5171-4d78-b3cd-5eb80fcecade'),
+	(32,283,'apex-studio-5.jpg','jpg','_pageSliderSize',1,1,0,'2018-07-16 22:28:33','2018-07-16 22:28:33','2018-07-16 22:28:34','ae7839f8-5424-416e-aaa0-767d0528afbb');
 
 /*!40000 ALTER TABLE `craft_assettransformindex` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -291,7 +292,9 @@ LOCK TABLES `craft_categories` WRITE;
 
 INSERT INTO `craft_categories` (`id`, `groupId`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(261,1,'2018-07-05 19:58:38','2018-07-05 19:58:38','df44a98b-08cc-487c-b2ba-82c25da5c2fb');
+	(261,1,'2018-07-05 19:58:38','2018-07-16 23:10:51','df44a98b-08cc-487c-b2ba-82c25da5c2fb'),
+	(355,1,'2018-07-16 22:33:39','2018-07-16 22:33:39','f1fd7d81-9336-4921-96bf-3ae99aed03f7'),
+	(356,1,'2018-07-16 22:34:13','2018-07-16 22:34:13','ab3ae9f2-8a9e-4e07-8587-224c2868a765');
 
 /*!40000 ALTER TABLE `craft_categories` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -327,7 +330,7 @@ LOCK TABLES `craft_categorygroups` WRITE;
 
 INSERT INTO `craft_categorygroups` (`id`, `structureId`, `fieldLayoutId`, `name`, `handle`, `hasUrls`, `template`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(1,1,211,'Pickups','pickups',1,'pickups/category.html','2018-07-05 19:57:52','2018-07-05 21:23:46','897ea994-0336-4b48-ad0d-78d71c27963f');
+	(1,1,275,'Pickups','pickups',1,'pickups/category.html','2018-07-05 19:57:52','2018-07-16 22:30:07','897ea994-0336-4b48-ad0d-78d71c27963f');
 
 /*!40000 ALTER TABLE `craft_categorygroups` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -413,8 +416,8 @@ VALUES
 	(114,258,'en','Apex Studio',NULL,'<h2 class=\"styled center-text\"><strong>Apex Studio</strong></h2>\n<h1 class=\"center-text pt-s\">Fully loaded recording Studio, rehersal facilities with video and photogrpahy packages available. </h1>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]',NULL,NULL,'2018-06-24 18:35:36','2018-07-14 13:56:36','428a67f4-02dd-4ae2-ae3f-45316aabea1d'),
 	(115,259,'en','Instrument Repairs',NULL,'<h2 class=\"styled center-text\"><strong>instrument repairs</strong></h2>\n<h1 class=\"center-text pt-s\">All the latest carry on form the Apex team - all killer no filler </h1>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-24 18:36:23','2018-07-15 10:55:54','71c6bdbc-e80d-4530-a9a6-0a97448bf178'),
 	(116,260,'en',NULL,NULL,NULL,'\n<ul><li>Unit 3, Derrycrin road</li><li>BT80 0HJ</li><li>Cookstown</li></ul>','hello@apexmusic.co',NULL,NULL,NULL,'0759 1132 008','https://www.facebook.com/ApexMusicCo/','#apex-music','#apex-music','\n<ul><li>14 Sullenboy park</li><li>BT80 8HP</li><li>Cookstown</li></ul>',NULL,NULL,NULL,'2018-06-24 18:39:24','2018-07-15 13:25:00','27f31143-a4e2-4cd9-b788-9886e0765af6'),
-	(117,261,'en','Strat Style','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 19:58:37','2018-07-05 19:58:37','b37a1868-41fa-4fb0-9e16-d75c169f8737'),
-	(118,262,'en','Apex 50s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 20:00:18','2018-07-05 20:06:13','ea03d57f-e0c2-48a2-9ec2-8f4bda041ede'),
+	(117,261,'en','Strat Style','','<div class=\"large-12 small-centered columns text-center\">\n			<h1>Our single coil pickups give your guitar the truest most open sound it will ever have, bringing out tones you never thought you could hear from your guitar.</h1>\n		</div>',NULL,NULL,'<p>Our single coil pickups give your guitar the truest most open sound it will ever have, bringing out tones you never thought you could hear from your guitar.</p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 19:58:37','2018-07-16 23:10:51','b37a1868-41fa-4fb0-9e16-d75c169f8737'),
+	(118,262,'en','Apex 50s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'<div class=\"large-12 small-centered columns text-center\">\n			<h1>Our single coil pickups give your guitar the truest most open sound it will ever have, bringing out tones you never thought you could hear from your guitar.</h1>\n		</div>','2018-07-05 20:00:18','2018-07-16 23:08:46','ea03d57f-e0c2-48a2-9ec2-8f4bda041ede'),
 	(119,264,'en','About',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:10:16','2018-07-05 22:10:16','3fe52680-28b5-4654-9a4b-517c7d3ba9e8'),
 	(120,265,'en','Apex Studio',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:10:46','2018-07-05 22:10:46','4fef3364-7176-49b1-a36f-f44d8b855970'),
 	(121,266,'en','Instrument Repairs',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:11:12','2018-07-05 22:11:12','0f539fe6-389e-41ea-b78b-d0f396c3bdf0'),
@@ -465,7 +468,10 @@ VALUES
 	(166,311,'en','Team Willy',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:20','2018-07-10 22:27:32','64091b5d-d547-4997-a70b-ad35c13fb873'),
 	(167,312,'en','Team Willy',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:21','2018-07-10 22:27:32','601bc8e8-9b2b-4ce4-9902-46fccd445182'),
 	(168,313,'en','Workshop Bg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:21','2018-07-10 22:27:32','d2d65879-21ec-40f8-b797-11bbc0f81d9c'),
-	(171,350,'en','INTRODUCING THE TEAM: PETE','',NULL,NULL,NULL,'<p>Pete is probably the most important member of the team and has a job list as long as Orans hair. Pete keeps an eye on the workshop, keeps away intruders and makes sure everything is in order, all the while flashing his signature toothy grin.</p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-15 11:52:23','2018-07-15 12:42:27','816a90ee-d570-417f-bf38-2a363d8960f6');
+	(171,350,'en','INTRODUCING THE TEAM: PETE','',NULL,NULL,NULL,'<p>Pete is probably the most important member of the team and has a job list as long as Orans hair. Pete keeps an eye on the workshop, keeps away intruders and makes sure everything is in order, all the while flashing his signature toothy grin.</p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-15 11:52:23','2018-07-15 12:42:27','816a90ee-d570-417f-bf38-2a363d8960f6'),
+	(172,352,'en',NULL,NULL,'<div class=\"large-9 small-centered columns text-center\">\n			<h2>Nothing taking your fancy? If you have something custom in mind please\n				<a href=\"\"></a><a href=\"{entry:257:url}\">get in touch.</a> We can craft any pickup to your exact spec. </h2>\n		</div>\n',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]','<div class=\"large-8 small-centered columns text-center\">\n		<h1>Custom pickups, recording studio &amp; Guitar work shop. We do it all at Apex.</h1>\n	</div>','2018-07-16 22:04:20','2018-07-16 22:10:19','4af7c8d0-c2e1-4e44-8279-5a089654aa7d'),
+	(173,355,'en','TELE STYLE','','',NULL,NULL,'<p>A successful marketing plan relies heavily on the pulling-power of advertising copy. Writing result-oriented ad copy is difficult, as it must appeal to, entice, and convince consumers to take action. There is no magic formula to write.</p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-16 22:33:39','2018-07-16 22:33:39','c0416325-c091-4268-b9a3-a7216d8023f2'),
+	(174,356,'en','HUMBUCKERS','','',NULL,NULL,'<p>A successful marketing plan relies heavily on the pulling-power of advertising copy. Writing result-oriented ad copy is difficult, as it must appeal to, entice, and convince consumers to take action. There is no magic formula to write.</p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-16 22:34:12','2018-07-16 22:34:12','2244d404-8e36-49ec-aaae-7afcfa7f283b');
 
 /*!40000 ALTER TABLE `craft_content` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -560,8 +566,8 @@ VALUES
 	(258,'Entry',1,0,'2018-06-24 18:35:36','2018-07-14 13:56:36','5462201f-e4c1-4117-830d-8441d7c2fa23'),
 	(259,'Entry',1,0,'2018-06-24 18:36:23','2018-07-15 10:55:54','0f540059-3b80-465c-873f-d303d412e01a'),
 	(260,'GlobalSet',1,0,'2018-06-24 18:39:24','2018-07-15 13:25:00','25e169bb-f41f-436b-b410-3a9b0251f2e8'),
-	(261,'Category',1,0,'2018-07-05 19:58:37','2018-07-05 19:58:37','6338fb26-9e01-4699-bea3-a7716ab2cae4'),
-	(262,'Entry',1,0,'2018-07-05 20:00:18','2018-07-05 20:06:13','c142b5e1-cde3-44a3-b39d-e1aa4a554fd5'),
+	(261,'Category',1,0,'2018-07-05 19:58:37','2018-07-16 23:10:51','6338fb26-9e01-4699-bea3-a7716ab2cae4'),
+	(262,'Entry',1,0,'2018-07-05 20:00:18','2018-07-16 23:08:46','c142b5e1-cde3-44a3-b39d-e1aa4a554fd5'),
 	(263,'MatrixBlock',1,0,'2018-07-05 20:06:13','2018-07-05 20:06:13','717be0f7-1bcb-48a1-a09e-b79384cd6928'),
 	(264,'Menus_Node',1,0,'2018-07-05 22:10:16','2018-07-05 22:10:16','056a9339-1852-4b3f-bb5a-88ef3502956a'),
 	(265,'Menus_Node',1,0,'2018-07-05 22:10:46','2018-07-05 22:10:46','fcbf394a-2efc-40c0-a7b7-51ef7d3dbd42'),
@@ -648,7 +654,12 @@ VALUES
 	(347,'MatrixBlock',1,0,'2018-07-15 10:31:57','2018-07-15 10:55:55','e76f0845-102d-4356-91cd-9cfd9a3c8766'),
 	(348,'MatrixBlock',1,0,'2018-07-15 10:31:57','2018-07-15 10:55:55','f9fca4f7-bb27-4af0-a88b-595dec62c1f9'),
 	(350,'Entry',1,0,'2018-07-15 11:52:23','2018-07-15 12:42:27','355cb396-f850-4f2b-977d-a84afcc9fc65'),
-	(351,'MatrixBlock',1,0,'2018-07-15 12:40:25','2018-07-15 12:42:27','e51844d3-9db6-4222-bef6-b3370af50fe7');
+	(351,'MatrixBlock',1,0,'2018-07-15 12:40:25','2018-07-15 12:42:27','e51844d3-9db6-4222-bef6-b3370af50fe7'),
+	(352,'GlobalSet',1,0,'2018-07-16 22:04:20','2018-07-16 22:10:19','233fbb00-8300-4e8a-9797-baaaa7b2d029'),
+	(353,'MatrixBlock',1,0,'2018-07-16 22:10:19','2018-07-16 22:10:19','6c60a458-646e-4858-a284-d2edc90fcab9'),
+	(354,'MatrixBlock',1,0,'2018-07-16 22:10:19','2018-07-16 22:10:19','ab8999b7-cdb9-4541-84de-8b69a4b4f293'),
+	(355,'Category',1,0,'2018-07-16 22:33:39','2018-07-16 22:33:39','7a825c54-d2e3-4bff-b375-0ba5a84a2cba'),
+	(356,'Category',1,0,'2018-07-16 22:34:12','2018-07-16 22:34:12','9bdbeb05-5ef2-439f-9321-8e9965d6827b');
 
 /*!40000 ALTER TABLE `craft_elements` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -694,8 +705,8 @@ VALUES
 	(247,258,'en','apex-studio','apex-studio',1,'2018-06-24 18:35:36','2018-07-14 13:56:36','759b0724-7416-4de7-aebc-a761eecf7203'),
 	(248,259,'en','instrument-repairs','instrument-repairs',1,'2018-06-24 18:36:23','2018-07-15 10:55:54','5c09d927-ed0f-4941-874d-9afd771dae3e'),
 	(249,260,'en','',NULL,1,'2018-06-24 18:39:24','2018-07-15 13:25:00','8dd44dbe-3b8d-4776-af62-ea569bac1d7d'),
-	(250,261,'en','strat-style','pickups/strat-style',1,'2018-07-05 19:58:38','2018-07-05 19:58:38','e0fa86f2-cf8e-4c19-b280-5c4114a7d2fe'),
-	(251,262,'en','apex-50s','pickups/apex-50s',1,'2018-07-05 20:00:18','2018-07-05 20:06:13','02c41839-8f01-49f9-8900-4029f9cf1efb'),
+	(250,261,'en','strat-style','pickups/strat-style',1,'2018-07-05 19:58:38','2018-07-16 23:10:51','e0fa86f2-cf8e-4c19-b280-5c4114a7d2fe'),
+	(251,262,'en','apex-50s','pickups/apex-50s',1,'2018-07-05 20:00:18','2018-07-16 23:08:46','02c41839-8f01-49f9-8900-4029f9cf1efb'),
 	(252,263,'en','',NULL,1,'2018-07-05 20:06:13','2018-07-05 20:06:13','eb352164-4519-478a-972d-206f0a7255d1'),
 	(253,264,'en','about',NULL,1,'2018-07-05 22:10:16','2018-07-05 22:10:16','12f63afc-30c3-444c-a73f-082241932d95'),
 	(254,265,'en','apex-studio',NULL,1,'2018-07-05 22:10:46','2018-07-05 22:10:46','fb441222-8589-4703-b9e4-636ccd84f5d5'),
@@ -782,7 +793,12 @@ VALUES
 	(336,347,'en','',NULL,1,'2018-07-15 10:31:57','2018-07-15 10:55:55','7455a015-273b-4df1-bfb1-6cf3ebe24d8d'),
 	(337,348,'en','',NULL,1,'2018-07-15 10:31:57','2018-07-15 10:55:55','af7d17eb-77f0-4c95-84b5-09586232a608'),
 	(339,350,'en','introducing-the-team-pete','blog/introducing-the-team-pete',1,'2018-07-15 11:52:23','2018-07-15 12:42:27','bdbf74d9-3d83-4d1b-b178-cb7eb7f780f8'),
-	(340,351,'en','',NULL,1,'2018-07-15 12:40:25','2018-07-15 12:42:27','1322859d-c569-4f86-9a7e-08f168e30185');
+	(340,351,'en','',NULL,1,'2018-07-15 12:40:25','2018-07-15 12:42:27','1322859d-c569-4f86-9a7e-08f168e30185'),
+	(341,352,'en','',NULL,1,'2018-07-16 22:04:20','2018-07-16 22:10:19','06615d3c-a378-4c6e-a2ab-bb67583a919e'),
+	(342,353,'en','',NULL,1,'2018-07-16 22:10:19','2018-07-16 22:10:19','63be729b-c5e7-4afd-a9bb-f21adb0cc119'),
+	(343,354,'en','',NULL,1,'2018-07-16 22:10:19','2018-07-16 22:10:19','34f251cd-fd65-407c-bae2-690e38254391'),
+	(344,355,'en','tele-style','pickups/tele-style',1,'2018-07-16 22:33:39','2018-07-16 22:33:40','a23779f0-fc39-4401-97b0-a87a01bae602'),
+	(345,356,'en','humbuckers','pickups/humbuckers',1,'2018-07-16 22:34:12','2018-07-16 22:34:14','b381aea2-fff6-4036-a4cc-1774a5ea5857');
 
 /*!40000 ALTER TABLE `craft_elements_i18n` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -847,7 +863,7 @@ VALUES
 	(257,9,NULL,NULL,'2018-06-24 18:35:19',NULL,'2018-06-24 18:35:19','2018-07-15 13:16:42','bd2069bf-6c3b-4922-b657-f914a6c43a54'),
 	(258,10,NULL,NULL,'2018-06-24 18:35:36',NULL,'2018-06-24 18:35:36','2018-07-14 13:56:37','6756de37-75b3-4218-84b1-b234b20ca04a'),
 	(259,11,NULL,NULL,'2018-06-24 18:36:23',NULL,'2018-06-24 18:36:23','2018-07-15 10:55:55','344e43f8-036c-45a4-850d-4e070fd84d92'),
-	(262,12,14,1,'2018-07-05 20:00:00',NULL,'2018-07-05 20:00:18','2018-07-05 20:06:13','bc3d46e0-2ef2-401c-b4ed-1370c37ca0b1'),
+	(262,12,14,1,'2018-07-05 20:00:00',NULL,'2018-07-05 20:00:18','2018-07-16 23:08:46','bc3d46e0-2ef2-401c-b4ed-1370c37ca0b1'),
 	(350,2,2,1,'2018-07-15 11:52:00',NULL,'2018-07-15 11:52:23','2018-07-15 12:42:27','1ad65f25-a9e5-4a6c-bcb9-52a0d076900a');
 
 /*!40000 ALTER TABLE `craft_entries` ENABLE KEYS */;
@@ -922,7 +938,7 @@ VALUES
 	(11,9,271,'Contact','contact',1,'',NULL,1,'2018-06-24 18:35:19','2018-07-15 13:16:16','7edd4a7b-9cf4-4286-b351-9df85c7f390b'),
 	(12,10,259,'Apex Studio','apexStudio',1,'',NULL,1,'2018-06-24 18:35:36','2018-07-14 13:51:06','cbd4ca64-780d-40f0-8cd7-2d938d0ca2fb'),
 	(13,11,265,'Instrument Repairs','instrumentRepairs',0,NULL,'{section.name|raw}',1,'2018-06-24 18:36:23','2018-07-14 14:32:07','eda96e9a-cade-465f-9d43-60d3cbfc02fc'),
-	(14,12,263,'Pickups','pickups',1,'Title',NULL,1,'2018-07-05 19:59:50','2018-07-14 14:14:05','e34ecaa9-7579-4b2d-bc6b-3218910066e8');
+	(14,12,276,'Pickups','pickups',1,'Title',NULL,1,'2018-07-05 19:59:50','2018-07-16 23:08:31','e34ecaa9-7579-4b2d-bc6b-3218910066e8');
 
 /*!40000 ALTER TABLE `craft_entrytypes` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1036,7 +1052,8 @@ VALUES
 	(267,350,2,1,'en',1,'','{\"typeId\":\"2\",\"authorId\":\"1\",\"title\":\"INTRODUCING THE TEAM: PETE\",\"slug\":\"introducing-the-team-pete\",\"postDate\":1531655543,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"4\":[],\"15\":[\"292\"],\"1\":\"\",\"47\":\"<p>Pete is probably the most important member of the team and has a job list as long as Orans hair. Pete keeps an eye on the workshop, keeps away intruders and makes sure everything is in order, all the while flashing his signature toothy grin.<\\/p>\"}}','2018-07-15 11:52:23','2018-07-15 11:52:23','c491440f-de09-4273-acbc-685d2d30395f'),
 	(268,350,2,1,'en',2,'','{\"typeId\":\"2\",\"authorId\":\"1\",\"title\":\"INTRODUCING THE TEAM: PETE\",\"slug\":\"introducing-the-team-pete\",\"postDate\":1531655520,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"4\":{\"351\":{\"type\":\"text\",\"enabled\":\"1\",\"fields\":{\"text\":\"<p>Pete is probably the most important member of the team and has a job list as long as Orans hair. Pete keeps an eye on the workshop, keeps away intruders and makes sure everything is in order, all the while flashing his signature toothy grin.<\\/p>\"}}},\"15\":[\"292\"],\"1\":\"\",\"47\":\"<p>Pete is probably the most important member of the team and has a job list as long as Orans hair. Pete keeps an eye on the workshop, keeps away intruders and makes sure everything is in order, all the while flashing his signature toothy grin.<\\/p>\"}}','2018-07-15 12:40:26','2018-07-15 12:40:26','96fa6e55-0fdc-4c05-a3f8-b20ba6773c19'),
 	(269,350,2,1,'en',3,'','{\"typeId\":\"2\",\"authorId\":\"1\",\"title\":\"INTRODUCING THE TEAM: PETE\",\"slug\":\"introducing-the-team-pete\",\"postDate\":1531655520,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"4\":{\"351\":{\"type\":\"text\",\"enabled\":\"1\",\"fields\":{\"text\":\"<p>\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\\r\\n<\\/p>\\r\\n<p>Section 1.10.32 of \\\"de Finibus Bonorum et Malorum\\\", written by Cicero in 45 BC \\\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\\\"\\r\\n<\\/p>\"}}},\"15\":[\"292\"],\"47\":\"<p>Pete is probably the most important member of the team and has a job list as long as Orans hair. Pete keeps an eye on the workshop, keeps away intruders and makes sure everything is in order, all the while flashing his signature toothy grin.<\\/p>\"}}','2018-07-15 12:42:27','2018-07-15 12:42:27','4fad954d-6674-4c81-848f-126b428a250d'),
-	(270,257,9,1,'en',2,'','{\"typeId\":null,\"authorId\":null,\"title\":\"Contact\",\"slug\":\"contact\",\"postDate\":1529865319,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"1\":\"Get in touch if you\'d like to use any of our services.\"}}','2018-07-15 13:16:42','2018-07-15 13:16:42','368bac49-54fa-43fc-817a-83cfa8e8f649');
+	(270,257,9,1,'en',2,'','{\"typeId\":null,\"authorId\":null,\"title\":\"Contact\",\"slug\":\"contact\",\"postDate\":1529865319,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"1\":\"Get in touch if you\'d like to use any of our services.\"}}','2018-07-15 13:16:42','2018-07-15 13:16:42','368bac49-54fa-43fc-817a-83cfa8e8f649'),
+	(271,262,12,1,'en',3,'','{\"typeId\":\"14\",\"authorId\":\"1\",\"title\":\"Apex 50s\",\"slug\":\"apex-50s\",\"postDate\":1530820800,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"80\":[\"261\"],\"90\":\"<div class=\\\"large-12 small-centered columns text-center\\\">\\r\\n\\t\\t\\t<h1>Our single coil pickups give your guitar the truest most open sound it will ever have, bringing out tones you never thought you could hear from your guitar.<\\/h1>\\r\\n\\t\\t<\\/div>\"}}','2018-07-16 23:08:46','2018-07-16 23:08:46','cc6f43f3-8427-4109-bb59-f1dd4e2ce4ce');
 
 /*!40000 ALTER TABLE `craft_entryversions` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1102,8 +1119,6 @@ LOCK TABLES `craft_fieldlayoutfields` WRITE;
 
 INSERT INTO `craft_fieldlayoutfields` (`id`, `layoutId`, `tabId`, `fieldId`, `required`, `sortOrder`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(562,211,132,1,0,1,'2018-07-05 21:23:46','2018-07-05 21:23:46','77feeb00-1d2b-42d5-ac0a-cb0a3d6d8dd4'),
-	(563,211,132,2,0,2,'2018-07-05 21:23:46','2018-07-05 21:23:46','2edfda87-a506-41bc-9c77-9ad9c01dd1ad'),
 	(564,212,133,41,0,1,'2018-07-05 23:07:08','2018-07-05 23:07:08','7152a5f8-feb7-4394-818f-5e53409e2593'),
 	(565,212,133,76,0,2,'2018-07-05 23:07:08','2018-07-05 23:07:08','d80f5e8d-6ad8-4136-8a93-e8cdfc9c65fe'),
 	(566,212,133,37,0,3,'2018-07-05 23:07:08','2018-07-05 23:07:08','cb8e90f9-2a02-4423-a0cd-7c7f39bbef82'),
@@ -1146,7 +1161,6 @@ VALUES
 	(705,260,183,110,0,3,'2018-07-14 13:53:28','2018-07-14 13:53:28','72065e41-43ae-49bf-82c9-bfa3f5ea17c8'),
 	(706,261,184,113,0,1,'2018-07-14 13:56:50','2018-07-14 13:56:50','aeabbfbc-8ac5-4102-9807-db1898093ed2'),
 	(707,261,184,114,0,2,'2018-07-14 13:56:50','2018-07-14 13:56:50','2b469ebb-ed61-49d6-8bef-16cf5c20deab'),
-	(711,263,186,80,0,1,'2018-07-14 14:14:05','2018-07-14 14:14:05','ff394d15-bf97-4a04-92ac-932ee4339162'),
 	(712,265,187,91,0,1,'2018-07-14 14:32:07','2018-07-14 14:32:07','3452e71e-cf6b-4a65-bc8d-251733bfa99f'),
 	(713,265,187,2,0,2,'2018-07-14 14:32:07','2018-07-14 14:32:07','a7c15c4b-7840-40d7-9e2b-785263a7467f'),
 	(714,265,187,96,0,3,'2018-07-14 14:32:07','2018-07-14 14:32:07','49676a8e-9aad-4353-be18-0d3934ea0c02'),
@@ -1155,7 +1169,17 @@ VALUES
 	(718,269,191,15,0,1,'2018-07-15 12:40:47','2018-07-15 12:40:47','ea036fbd-3ef3-4a72-a63c-161f607abc22'),
 	(719,269,191,47,0,2,'2018-07-15 12:40:47','2018-07-15 12:40:47','c5eea362-13c1-4a48-8046-987d76b2a8ca'),
 	(720,269,191,4,0,3,'2018-07-15 12:40:47','2018-07-15 12:40:47','d8eea8c7-8563-43bb-8382-262841c90844'),
-	(722,271,193,1,0,1,'2018-07-15 13:16:16','2018-07-15 13:16:16','43e411b5-3766-4b76-be43-cc3da5bc2479');
+	(722,271,193,1,0,1,'2018-07-15 13:16:16','2018-07-15 13:16:16','43e411b5-3766-4b76-be43-cc3da5bc2479'),
+	(727,273,195,91,0,1,'2018-07-16 22:04:45','2018-07-16 22:04:45','24efc327-73a2-4d69-895f-7e63e0146814'),
+	(728,273,195,90,0,2,'2018-07-16 22:04:45','2018-07-16 22:04:45','046a2f75-25ed-4701-9c76-f2df054e1cf5'),
+	(729,273,195,82,0,3,'2018-07-16 22:04:45','2018-07-16 22:04:45','32677bed-a407-4eb4-9ad9-0330d1ad9e0c'),
+	(730,273,195,2,0,4,'2018-07-16 22:04:45','2018-07-16 22:04:45','74d83bbb-4397-49d6-9a66-3c412cb3f586'),
+	(735,275,197,1,0,1,'2018-07-16 22:30:07','2018-07-16 22:30:07','af1e7173-1545-4877-a48a-759793fd026f'),
+	(736,275,197,47,0,2,'2018-07-16 22:30:07','2018-07-16 22:30:07','e18266c4-4c24-4b29-96dd-03d34e59cd92'),
+	(737,275,197,15,0,3,'2018-07-16 22:30:07','2018-07-16 22:30:07','739c7b62-7020-4584-b4be-10aac5438ae2'),
+	(738,275,197,2,0,4,'2018-07-16 22:30:07','2018-07-16 22:30:07','78f0c718-db6d-4513-89da-01670fa30260'),
+	(739,276,198,80,0,1,'2018-07-16 23:08:31','2018-07-16 23:08:31','722b360d-2761-46f4-8b14-0217a47dea78'),
+	(740,276,198,90,0,2,'2018-07-16 23:08:31','2018-07-16 23:08:31','497af56c-a331-4f81-9d38-cf229fec0593');
 
 /*!40000 ALTER TABLE `craft_fieldlayoutfields` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1183,7 +1207,6 @@ INSERT INTO `craft_fieldlayouts` (`id`, `type`, `dateCreated`, `dateUpdated`, `u
 VALUES
 	(195,'Asset','2015-02-10 23:15:35','2015-02-10 23:15:35','da21546b-da53-49c7-8821-2685c67df6b4'),
 	(196,'Asset','2015-02-10 23:15:38','2015-02-10 23:15:38','57038148-5c46-43e2-9c5b-9760e04375f2'),
-	(211,'Category','2018-07-05 21:23:46','2018-07-05 21:23:46','fd97a50e-c5b2-4ec9-a401-2b1a1ec7cb8c'),
 	(212,'GlobalSet','2018-07-05 23:07:08','2018-07-05 23:07:08','f6c98bd1-2536-4baa-a526-3cb841c246c0'),
 	(216,'MatrixBlock','2018-07-07 16:01:07','2018-07-07 16:01:07','9b778402-eb3a-4917-af62-bf4ae1b01546'),
 	(223,'MatrixBlock','2018-07-08 13:56:10','2018-07-08 13:56:10','99ee404a-fc7e-4404-a7a4-ffe150df6de9'),
@@ -1196,11 +1219,13 @@ VALUES
 	(259,'Entry','2018-07-14 13:51:06','2018-07-14 13:51:06','acef2203-1416-49be-b0a9-021db8c27d22'),
 	(260,'MatrixBlock','2018-07-14 13:53:28','2018-07-14 13:53:28','d1dd43f5-a274-42d5-bdc3-afd509c99dd8'),
 	(261,'MatrixBlock','2018-07-14 13:56:50','2018-07-14 13:56:50','2603a6fd-965c-4c22-9fb6-ea40719dd7eb'),
-	(263,'Entry','2018-07-14 14:14:05','2018-07-14 14:14:05','4dfe4dbe-19f7-4668-9922-e698739b5aea'),
 	(265,'Entry','2018-07-14 14:32:07','2018-07-14 14:32:07','ffdd9bf0-e32e-4308-9bbe-cff489cfa219'),
 	(268,'MatrixBlock','2018-07-15 11:53:54','2018-07-15 11:53:54','9a35c4f4-4d32-434b-8430-22e917072f48'),
 	(269,'Entry','2018-07-15 12:40:47','2018-07-15 12:40:47','88dfe254-3685-4019-8a0f-9f7a3664cc9c'),
-	(271,'Entry','2018-07-15 13:16:16','2018-07-15 13:16:16','c2648aa6-b86d-453e-a652-2a5af4955819');
+	(271,'Entry','2018-07-15 13:16:16','2018-07-15 13:16:16','c2648aa6-b86d-453e-a652-2a5af4955819'),
+	(273,'GlobalSet','2018-07-16 22:04:45','2018-07-16 22:04:45','dc6b4d1b-a682-4b2f-95ea-d9a774277d7d'),
+	(275,'Category','2018-07-16 22:30:07','2018-07-16 22:30:07','67109432-f82a-4c32-8e7f-bb388dbf5feb'),
+	(276,'Entry','2018-07-16 23:08:30','2018-07-16 23:08:30','3ecf38a9-1df9-48d2-a0e9-9fe7381c1668');
 
 /*!40000 ALTER TABLE `craft_fieldlayouts` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1230,7 +1255,6 @@ LOCK TABLES `craft_fieldlayouttabs` WRITE;
 
 INSERT INTO `craft_fieldlayouttabs` (`id`, `layoutId`, `name`, `sortOrder`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(132,211,'Tab 1',1,'2018-07-05 21:23:46','2018-07-05 21:23:46','46e52f79-2cb2-40fb-a4d1-b8901bc64fcf'),
 	(133,212,'Content',1,'2018-07-05 23:07:08','2018-07-05 23:07:08','6eb72fc2-7a51-4091-82c4-f5419bede2d3'),
 	(137,216,'Content',1,'2018-07-07 16:01:07','2018-07-07 16:01:07','9ba87024-743f-4e58-9f6b-3c6c748bdf3b'),
 	(144,223,'Content',1,'2018-07-08 13:56:10','2018-07-08 13:56:10','b5d2ac64-df2a-4a1b-9e7b-d7f3b4818f54'),
@@ -1244,12 +1268,14 @@ VALUES
 	(182,259,'Price List',2,'2018-07-14 13:51:06','2018-07-14 13:51:06','11f1d2ed-7b9d-48f5-abf5-3aec2d5bc7c9'),
 	(183,260,'Content',1,'2018-07-14 13:53:28','2018-07-14 13:53:28','b62d39be-c15b-4b96-bd33-dcec77f6eba5'),
 	(184,261,'Content',1,'2018-07-14 13:56:50','2018-07-14 13:56:50','4a7f9cce-25bc-4fdd-a320-791864220fb1'),
-	(186,263,'Tab 1',1,'2018-07-14 14:14:05','2018-07-14 14:14:05','4cdc4de3-7cc1-4913-af09-83f23abd05a3'),
 	(187,265,'Tab 1',1,'2018-07-14 14:32:07','2018-07-14 14:32:07','95595141-7f9f-4e44-8f86-20ccc819eb20'),
 	(188,265,'Price List',2,'2018-07-14 14:32:07','2018-07-14 14:32:07','bfeda562-1587-45cd-9971-13ae62d0b399'),
 	(190,268,'Content',1,'2018-07-15 11:53:54','2018-07-15 11:53:54','671f142f-d677-4a0d-86f9-ddab7cfa48c1'),
 	(191,269,'Content',1,'2018-07-15 12:40:47','2018-07-15 12:40:47','fdfdba9e-77f0-471d-8631-3445d36a053a'),
-	(193,271,'Tab 1',1,'2018-07-15 13:16:16','2018-07-15 13:16:16','3efc2091-3b16-4c7f-bf75-a158c0c1964b');
+	(193,271,'Tab 1',1,'2018-07-15 13:16:16','2018-07-15 13:16:16','3efc2091-3b16-4c7f-bf75-a158c0c1964b'),
+	(195,273,'Content',1,'2018-07-16 22:04:45','2018-07-16 22:04:45','2674fabc-f5a9-47cc-bad3-4f04134e7f91'),
+	(197,275,'Tab 1',1,'2018-07-16 22:30:07','2018-07-16 22:30:07','c697b3dc-66dd-451c-90db-b7a5df8d0577'),
+	(198,276,'Tab 1',1,'2018-07-16 23:08:30','2018-07-16 23:08:30','dbf82855-dff0-4077-b6c3-7147030bf806');
 
 /*!40000 ALTER TABLE `craft_fieldlayouttabs` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1310,7 +1336,7 @@ VALUES
 	(87,NULL,'Slide Link Text','slideLinkText','matrixBlockType:11','',0,'PlainText','{\"placeholder\":\"\",\"maxLength\":\"\",\"multiline\":\"\",\"initialRows\":\"4\"}','2018-07-07 15:35:41','2018-07-09 20:33:50','c1aee379-8d7b-4b83-b9e8-2fc40783dee2'),
 	(88,1,'Instagram Feed','instagramFeed','global','',0,'Checkboxes','{\"options\":[{\"label\":\"Include Feed\",\"value\":\"includeFeed\",\"default\":\"1\"}]}','2018-07-07 15:42:51','2018-07-07 15:58:38','1a07e0ba-0f94-4539-82e7-06c5418020a0'),
 	(89,1,'Mailing List','mailingList','global','',0,'Checkboxes','{\"options\":[{\"label\":\"Include\",\"value\":\"include\",\"default\":\"1\"}]}','2018-07-07 15:49:26','2018-07-07 15:58:30','f3784f91-7fcd-41e5-b734-54db35109df4'),
-	(90,1,'Display Title ','displayTitle','global','',0,'RichText','{\"configFile\":\"\",\"availableAssetSources\":\"*\",\"availableTransforms\":\"*\",\"cleanupHtml\":\"1\",\"purifyHtml\":\"1\",\"purifierConfig\":\"\",\"columnType\":\"text\"}','2018-07-07 15:57:14','2018-07-07 15:58:45','3eb35035-5091-4f2a-8348-28f9f99e585f'),
+	(90,1,'Display Title ','displayTitle','global','',0,'RichText','{\"configFile\":\"Standard.json\",\"availableAssetSources\":\"*\",\"availableTransforms\":\"*\",\"cleanupHtml\":\"1\",\"purifyHtml\":\"1\",\"purifierConfig\":\"\",\"columnType\":\"text\"}','2018-07-07 15:57:14','2018-07-16 22:07:13','3eb35035-5091-4f2a-8348-28f9f99e585f'),
 	(91,1,'Full Width Banner','fullWidthBanner','global','',0,'Assets','{\"useSingleFolder\":\"\",\"sources\":\"*\",\"defaultUploadLocationSource\":\"1\",\"defaultUploadLocationSubpath\":\"\",\"singleUploadLocationSource\":\"1\",\"singleUploadLocationSubpath\":\"\",\"restrictFiles\":\"\",\"limit\":\"1\",\"viewMode\":\"large\",\"selectionLabel\":\"\"}','2018-07-07 15:58:05','2018-07-07 15:58:05','66ab3002-df52-4619-8f1e-cbc96cda0dfd'),
 	(92,1,'Pricing List','pricingList','global','',0,'Matrix','{\"maxBlocks\":null}','2018-07-07 16:01:07','2018-07-07 16:01:07','94a3847c-8f45-49bc-be66-b0cc39c844d1'),
 	(93,NULL,'Product Name','productName','matrixBlockType:12','',0,'PlainText','{\"placeholder\":\"\",\"maxLength\":\"\",\"multiline\":\"\",\"initialRows\":\"4\"}','2018-07-07 16:01:07','2018-07-07 16:01:07','c29e426d-ba3e-41c6-889f-3622e9fe8e76'),
@@ -1365,7 +1391,8 @@ LOCK TABLES `craft_globalsets` WRITE;
 
 INSERT INTO `craft_globalsets` (`id`, `name`, `handle`, `fieldLayoutId`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(260,'Contact Meta','contactMeta',212,'2018-06-24 18:39:25','2018-07-05 23:07:08','8d5c9777-081a-4035-876d-57f11fee2ab3');
+	(260,'Contact Meta','contactMeta',212,'2018-06-24 18:39:25','2018-07-05 23:07:08','8d5c9777-081a-4035-876d-57f11fee2ab3'),
+	(352,'Pickups Home','pickupsHome',273,'2018-07-16 22:04:20','2018-07-16 22:04:45','9748edd1-4ac5-4b2a-b177-232dec81e5eb');
 
 /*!40000 ALTER TABLE `craft_globalsets` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1500,7 +1527,9 @@ VALUES
 	(346,259,92,12,NULL,2,'2018-07-15 10:31:57','2018-07-15 10:55:55','783307b5-17fc-44db-a4c7-1c8d43d51cc2'),
 	(347,259,92,12,NULL,3,'2018-07-15 10:31:57','2018-07-15 10:55:55','78d34d84-0023-482a-8f37-a29122bdafe8'),
 	(348,259,92,12,NULL,4,'2018-07-15 10:31:57','2018-07-15 10:55:55','55d7f2d8-d633-493b-96e4-91e486857b65'),
-	(351,350,4,1,NULL,1,'2018-07-15 12:40:25','2018-07-15 12:42:27','ed07ab67-a7bb-4b59-a1d5-2c18b3f7f9fb');
+	(351,350,4,1,NULL,1,'2018-07-15 12:40:25','2018-07-15 12:42:27','ed07ab67-a7bb-4b59-a1d5-2c18b3f7f9fb'),
+	(353,352,82,11,NULL,1,'2018-07-16 22:10:19','2018-07-16 22:10:19','acfd3816-013f-4f21-99f0-9bdd995a743a'),
+	(354,352,82,11,NULL,2,'2018-07-16 22:10:19','2018-07-16 22:10:19','ae6058e6-29a5-4b37-8371-97c08182a839');
 
 /*!40000 ALTER TABLE `craft_matrixblocks` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1721,7 +1750,9 @@ VALUES
 	(2,323,'en','Test Title','Test Subtitle','View','','2018-07-08 18:53:16','2018-07-14 12:31:45','3f279c3a-a721-4961-b5a0-94934d85d215'),
 	(3,329,'en','SPACE, THE FINAL FRONTIER.','','','','2018-07-10 22:20:53','2018-07-14 13:56:36','289d2c6f-3c8a-47c5-b79c-45b1a8a76215'),
 	(4,330,'en','','','','','2018-07-10 22:20:53','2018-07-14 13:56:37','ff5d45ff-a44e-4e4f-a3c7-dfdcfa08b7b5'),
-	(5,331,'en','','','','','2018-07-10 22:20:53','2018-07-14 13:56:37','df0988f1-dec5-4e30-bb06-bf54f5834c6f');
+	(5,331,'en','','','','','2018-07-10 22:20:53','2018-07-14 13:56:37','df0988f1-dec5-4e30-bb06-bf54f5834c6f'),
+	(6,353,'en','PAT MCMANUS','Pickups: Apex 50\'s','View Pickups ','/pickups/apex-50s','2018-07-16 22:10:19','2018-07-16 22:10:19','829b8cf4-c83c-41b2-bd1c-5247ac088be9'),
+	(7,354,'en','','','','','2018-07-16 22:10:19','2018-07-16 22:10:19','7f6e84b6-bdf9-4a4d-add5-7c0fd45f874a');
 
 /*!40000 ALTER TABLE `craft_matrixcontent_pageslider` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -2051,7 +2082,7 @@ LOCK TABLES `craft_plugins` WRITE;
 
 INSERT INTO `craft_plugins` (`id`, `class`, `version`, `schemaVersion`, `licenseKey`, `licenseKeyStatus`, `enabled`, `settings`, `installDate`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(1,'Menus','0.9',NULL,NULL,'unknown',1,'[]','2018-07-05 21:54:01','2018-07-05 21:54:01','2018-07-15 12:39:09','674d3e8d-8597-46ac-a5df-6852619f6bd2');
+	(1,'Menus','0.9',NULL,NULL,'unknown',1,'[]','2018-07-05 21:54:01','2018-07-05 21:54:01','2018-07-16 21:59:57','674d3e8d-8597-46ac-a5df-6852619f6bd2');
 
 /*!40000 ALTER TABLE `craft_plugins` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -2108,7 +2139,6 @@ LOCK TABLES `craft_relations` WRITE;
 
 INSERT INTO `craft_relations` (`id`, `fieldId`, `sourceId`, `sourceLocale`, `targetId`, `sortOrder`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(760,80,262,NULL,261,1,'2018-07-05 20:06:13','2018-07-05 20:06:13','13b53ba1-dd78-49c0-94a5-c0d03f620309'),
 	(817,86,322,NULL,262,1,'2018-07-08 18:53:16','2018-07-08 18:53:16','66246d29-0f23-4788-a81a-d1967ac8f00f'),
 	(819,86,323,NULL,258,1,'2018-07-08 18:53:17','2018-07-08 18:53:17','a6440d9b-5838-4286-b031-d44fa43e6c21'),
 	(855,100,314,NULL,279,1,'2018-07-14 12:31:45','2018-07-14 12:31:45','cb33457c-f185-4b43-9cf8-d7670aa7ddbb'),
@@ -2135,7 +2165,14 @@ VALUES
 	(908,98,342,NULL,288,1,'2018-07-15 10:55:54','2018-07-15 10:55:54','a728f980-9d06-49da-a610-2658e3223749'),
 	(909,98,343,NULL,279,1,'2018-07-15 10:55:54','2018-07-15 10:55:54','591cedf5-c67c-43cf-841b-cb6d5bab7a2f'),
 	(910,98,344,NULL,279,1,'2018-07-15 10:55:54','2018-07-15 10:55:54','daff7781-1de8-4935-919c-03889bd95c5e'),
-	(913,15,350,NULL,292,1,'2018-07-15 12:42:27','2018-07-15 12:42:27','7915acb4-1396-45e1-8435-5b917be0c41c');
+	(913,15,350,NULL,292,1,'2018-07-15 12:42:27','2018-07-15 12:42:27','7915acb4-1396-45e1-8435-5b917be0c41c'),
+	(914,91,352,NULL,303,1,'2018-07-16 22:10:19','2018-07-16 22:10:19','52c2f1a6-4d92-4ad3-aa96-a0211856023c'),
+	(915,83,353,NULL,301,1,'2018-07-16 22:10:19','2018-07-16 22:10:19','3c02a40e-4178-4785-bb6d-c1a9085ccbc8'),
+	(916,83,354,NULL,283,1,'2018-07-16 22:10:19','2018-07-16 22:10:19','01ce682f-2521-4353-94cd-95d6e4556cd9'),
+	(918,15,355,NULL,304,1,'2018-07-16 22:33:39','2018-07-16 22:33:39','454a3309-9d68-427d-942b-9068cda3ecde'),
+	(919,15,356,NULL,304,1,'2018-07-16 22:34:12','2018-07-16 22:34:12','8daced2a-cc45-40a5-bf64-f2fead66b98e'),
+	(920,80,262,NULL,261,1,'2018-07-16 23:08:46','2018-07-16 23:08:46','2ef2f8ab-7f1e-46ed-8f1e-d9da79d45493'),
+	(921,15,261,NULL,304,1,'2018-07-16 23:10:51','2018-07-16 23:10:51','c42c2725-f899-498b-bd6e-e4372ee45763');
 
 /*!40000 ALTER TABLE `craft_relations` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -2255,6 +2292,37 @@ VALUES
 	(258,'field',112,'en',' https www youtube com embed btqvqk7fsmy we have a range of packages to suit all needs and budgets please get in touch if you would like avail of our video and photography services lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum '),
 	(339,'slug',0,'en',''),
 	(339,'field',95,'en',' 1199 '),
+	(352,'field',90,'en',' custom pickups recording studio guitar work shop we do it all at apex '),
+	(352,'field',82,'en',' pat pickups apex 50s view pickups pickups apex 50 s pat mcmanus apex studio 5 '),
+	(352,'field',2,'en',' nothing taking your fancy if you have something custom in mind please get in touch we can craft any pickup to your exact spec '),
+	(352,'slug',0,'en',''),
+	(353,'field',83,'en',' pat '),
+	(353,'field',84,'en',' pat mcmanus '),
+	(353,'field',85,'en',' pickups apex 50 s '),
+	(353,'field',86,'en',' pickups apex 50s '),
+	(353,'field',87,'en',' view pickups '),
+	(353,'slug',0,'en',''),
+	(354,'field',83,'en',' apex studio 5 '),
+	(354,'field',84,'en',''),
+	(354,'field',85,'en',''),
+	(354,'field',86,'en',''),
+	(354,'field',87,'en',''),
+	(354,'slug',0,'en',''),
+	(261,'field',47,'en',' our single coil pickups give your guitar the truest most open sound it will ever have bringing out tones you never thought you could hear from your guitar '),
+	(261,'field',15,'en',' single coil cream '),
+	(355,'field',1,'en',''),
+	(355,'field',47,'en',' a successful marketing plan relies heavily on the pulling power of advertising copy writing result oriented ad copy is difficult as it must appeal to entice and convince consumers to take action there is no magic formula to write '),
+	(355,'field',15,'en',' single coil cream '),
+	(355,'field',2,'en',''),
+	(355,'slug',0,'en',' tele style '),
+	(355,'title',0,'en',' tele style '),
+	(356,'field',1,'en',''),
+	(356,'field',47,'en',' a successful marketing plan relies heavily on the pulling power of advertising copy writing result oriented ad copy is difficult as it must appeal to entice and convince consumers to take action there is no magic formula to write '),
+	(356,'field',15,'en',' single coil cream '),
+	(356,'field',2,'en',''),
+	(356,'slug',0,'en',' humbuckers '),
+	(356,'title',0,'en',' humbuckers '),
+	(262,'field',90,'en',' our single coil pickups give your guitar the truest most open sound it will ever have bringing out tones you never thought you could hear from your guitar '),
 	(339,'field',94,'en',' 8 hour live session shoot with full crew 4k '),
 	(339,'field',93,'en',' package 6 '),
 	(74,'extension',0,'en',' png '),
@@ -2369,6 +2437,7 @@ VALUES
 	(328,'field',107,'en',' team willy '),
 	(327,'slug',0,'en',''),
 	(257,'field',1,'en',' get in touch if you d like to use any of our services '),
+	(352,'field',91,'en',' pickups bg '),
 	(327,'field',109,'en',' social media marketing management '),
 	(327,'field',108,'en',' graham mckinstry '),
 	(327,'field',107,'en',' team graham '),
@@ -2442,7 +2511,7 @@ VALUES
 	(260,'field',78,'en',' apex music '),
 	(260,'field',79,'en',' apex music '),
 	(261,'field',1,'en',''),
-	(261,'field',2,'en',''),
+	(261,'field',2,'en',' our single coil pickups give your guitar the truest most open sound it will ever have bringing out tones you never thought you could hear from your guitar '),
 	(261,'slug',0,'en',' strat style '),
 	(261,'title',0,'en',' strat style '),
 	(262,'slug',0,'en',' apex 50s '),
@@ -2957,7 +3026,8 @@ VALUES
 	(9,1,'2450b6d96c39d544ad532f513da382ab790bce85czozMjoiTmkzb09ydndyY0k0U1dLS0dQb0dvZjZjZEkyck1OcU4iOw==','2018-07-10 20:19:54','2018-07-10 20:19:54','cb467a18-1349-4bc9-a800-1b49edb01938'),
 	(10,1,'507e434e305da51d340d2621a656301cbb8d9223czozMjoiaHNqSUNvU3V5Q3RVSmpwYnE2T0xWcXNrNVk5dFZnZTIiOw==','2018-07-11 07:20:55','2018-07-11 07:20:55','c35e1154-022f-41fb-bb80-d5ea66f6d848'),
 	(11,1,'a8e1e897fc6ef28033d8549b1b5f932b8b88944fczozMjoiZTBpNkZTOFR1aEx+OTVOUG5SblVMeDFSVmg4clE2SkoiOw==','2018-07-14 12:30:46','2018-07-14 12:30:46','185e0101-ee82-4455-85a4-2b1aab615da3'),
-	(12,1,'53dab880ede7f405e1224da8a5f84bf2d7ab08e3czozMjoiOXZiT0xOb2pXak5Nam91STZYc2FBeG1UNDdVaTJiRksiOw==','2018-07-15 10:28:48','2018-07-15 10:28:48','faa83d54-4140-4a8c-88ed-cd545980f2e6');
+	(12,1,'53dab880ede7f405e1224da8a5f84bf2d7ab08e3czozMjoiOXZiT0xOb2pXak5Nam91STZYc2FBeG1UNDdVaTJiRksiOw==','2018-07-15 10:28:48','2018-07-15 10:28:48','faa83d54-4140-4a8c-88ed-cd545980f2e6'),
+	(13,1,'aad841586c17fac7b832ff1ac3d98b3bb5f44d58czozMjoiTk9+blhRUFEzTjA5dlg5TFJiVV94Nm1vQjJma3NaenoiOw==','2018-07-16 21:59:54','2018-07-16 21:59:54','4f80466a-4d16-4caf-aa8d-75f1aa2a98b7');
 
 /*!40000 ALTER TABLE `craft_sessions` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -3015,7 +3085,7 @@ LOCK TABLES `craft_structureelements` WRITE;
 
 INSERT INTO `craft_structureelements` (`id`, `structureId`, `elementId`, `root`, `lft`, `rgt`, `level`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(1,1,NULL,1,1,4,0,'2018-07-05 19:58:38','2018-07-05 19:58:38','96807b85-7693-435c-8667-c7cc6bd0cada'),
+	(1,1,NULL,1,1,8,0,'2018-07-05 19:58:38','2018-07-05 19:58:38','96807b85-7693-435c-8667-c7cc6bd0cada'),
 	(2,1,261,1,2,3,1,'2018-07-05 19:58:38','2018-07-05 19:58:38','2f7897b7-81c3-43ba-af81-a23f33432a50'),
 	(3,2,NULL,3,1,18,0,'2018-07-05 22:10:16','2018-07-05 22:10:16','166586bc-57a4-4105-b076-a97b4cc9f567'),
 	(4,2,264,3,2,3,1,'2018-07-05 22:10:16','2018-07-05 22:10:16','34e9ca2e-c038-41c1-b159-9f6e7018ab32'),
@@ -3030,7 +3100,9 @@ VALUES
 	(13,3,272,12,2,3,1,'2018-07-07 14:40:30','2018-07-07 14:40:30','269e15af-bc11-4094-b515-e88387820af6'),
 	(14,3,273,12,4,5,1,'2018-07-07 14:40:51','2018-07-07 14:40:51','3042d468-720f-41fb-8921-d01f57fccc70'),
 	(15,3,274,12,6,7,1,'2018-07-07 14:42:12','2018-07-07 14:42:12','55dae733-c142-4f9c-9df3-6b40adbe7cde'),
-	(16,3,275,12,8,9,1,'2018-07-07 14:42:38','2018-07-07 14:42:38','955b4137-2a5d-4346-8393-fa0ac2d380ee');
+	(16,3,275,12,8,9,1,'2018-07-07 14:42:38','2018-07-07 14:42:38','955b4137-2a5d-4346-8393-fa0ac2d380ee'),
+	(17,1,355,1,4,5,1,'2018-07-16 22:33:39','2018-07-16 22:33:39','7d150f60-fcda-4d64-ae12-3d76a328eecf'),
+	(18,1,356,1,6,7,1,'2018-07-16 22:34:13','2018-07-16 22:34:13','922e2bff-2616-48b9-b497-a7875d1add5d');
 
 /*!40000 ALTER TABLE `craft_structureelements` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -3055,7 +3127,7 @@ LOCK TABLES `craft_structures` WRITE;
 
 INSERT INTO `craft_structures` (`id`, `maxLevels`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(1,NULL,'2018-07-05 19:57:52','2018-07-05 21:23:46','bd410574-9388-4757-b16b-822f7caab227'),
+	(1,NULL,'2018-07-05 19:57:52','2018-07-16 22:30:07','bd410574-9388-4757-b16b-822f7caab227'),
 	(2,3,'2018-07-05 21:54:47','2018-07-05 21:55:09','5299f0df-ca0b-4226-a4d4-d3696b022f31'),
 	(3,1,'2018-07-07 14:38:25','2018-07-07 14:38:25','52dd4871-8a0b-4ea8-97ba-f89ac166322d'),
 	(4,1,'2018-07-07 14:39:19','2018-07-07 14:39:19','48020b14-718c-468d-99e4-df215a981f01');
@@ -3408,7 +3480,7 @@ LOCK TABLES `craft_users` WRITE;
 
 INSERT INTO `craft_users` (`id`, `username`, `photo`, `firstName`, `lastName`, `email`, `password`, `preferredLocale`, `weekStartDay`, `admin`, `client`, `locked`, `suspended`, `pending`, `archived`, `lastLoginDate`, `lastLoginAttemptIPAddress`, `invalidLoginWindowStart`, `invalidLoginCount`, `lastInvalidLoginDate`, `lockoutDate`, `verificationCode`, `verificationCodeIssuedDate`, `unverifiedEmail`, `passwordResetRequired`, `lastPasswordChangeDate`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(1,'admin',NULL,'','','info@refresh-digital.com','$2a$13$5j8bSRoKQZipjtIg6FXWR.kGRR3UfCL.QeMIt2yTRH1.hCNHLQKtq',NULL,0,1,0,0,0,0,0,'2018-07-15 10:28:48','::1',NULL,NULL,'2018-07-15 10:28:27',NULL,NULL,NULL,NULL,0,NULL,'2016-08-22 18:42:37','2018-07-15 10:28:48','953aedcd-73c8-4677-b0c5-4241e8fbb14c');
+	(1,'admin',NULL,'','','info@refresh-digital.com','$2a$13$5j8bSRoKQZipjtIg6FXWR.kGRR3UfCL.QeMIt2yTRH1.hCNHLQKtq',NULL,0,1,0,0,0,0,0,'2018-07-16 21:59:54','::1',NULL,NULL,'2018-07-16 21:59:39',NULL,NULL,NULL,NULL,0,NULL,'2016-08-22 18:42:37','2018-07-16 21:59:54','953aedcd-73c8-4677-b0c5-4241e8fbb14c');
 
 /*!40000 ALTER TABLE `craft_users` ENABLE KEYS */;
 UNLOCK TABLES;
