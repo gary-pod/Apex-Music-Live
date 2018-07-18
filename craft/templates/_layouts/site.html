@@ -89,42 +89,30 @@
 			</ul>
 		</div>
 		<div class="large-2 columns">
-			<dl>
-				<dt>
-					<a href="">Tele Pickups</a>
-				</dt>
-				<dd>
-					<a href="">About</a>
-				</dd>
-				<dd>
-					<a href="">Apex Studio</a>
-				</dd>
-				<dd>
-					<a href="">Work Shop</a>
-				</dd>
-				<dd>
-					<a href="">Blog</a>
-				</dd>
-			</dl>
+			<ul>
+				<li>
+					<a><strong>Tele Pickups</strong></a>
+				</li>
+				{% set entries = craft.entries.relatedTo(355) %}
+				{% for entry in entries %}
+					<li>
+						<a href="{{ entry.url }}">{{ entry.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
 		</div>
 		<div class="large-2 columns">
-			<dl>
-				<dt>
-					<a href="">Humbuckers</a>
-				</dt>
-				<dd>
-					<a href="">About</a>
-				</dd>
-				<dd>
-					<a href="">Apex Studio</a>
-				</dd>
-				<dd>
-					<a href="">Work Shop</a>
-				</dd>
-				<dd>
-					<a href="">Blog</a>
-				</dd>
-			</dl>
+			<ul>
+				<li>
+					<a><strong>Hambuckers</strong></a>
+				</li>
+				{% set entries = craft.entries.relatedTo(356) %}
+				{% for entry in entries %}
+					<li>
+						<a href="{{ entry.url }}">{{ entry.title }}</a>
+					</li>
+				{% endfor %}
+			</ul>
 		</div>
 		<div class="large-3 columns">
 			<dl>
@@ -132,10 +120,10 @@
 					<a href="">Contact</a>
 				</dt>
 				<dd>
-					<a href="">E: hello@apexmusic.co</a>
+					<a href="email:{{ contactMeta.email }}">E: {{ contactMeta.email }}</a>
 				</dd>
 				<dd>
-					<a href="">T: 0759 1132 008</a>
+					<a href="tel:{{ contactMeta.telephone }}">T: {{ contactMeta.telephone }}</a>
 				</dd>
 			</dl>
 			<ul class="social-footer">

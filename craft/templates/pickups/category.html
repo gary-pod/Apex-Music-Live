@@ -6,22 +6,28 @@
 	</div>
 </div>
 
-<div class="row">
-	<div class="large-10 large-centered columns">
-		<div class="row pt-s pb-s">
-			<div class="large-5 columns">
-				<img class="red-border" src="{{siteUrl}}assets/img/single-coil-cream.jpg" alt="pickup image">
-			</div>
-			<div class="large-7 columns">
-				<h1>Apex 50s Single Coil</h1>
-				<p>Apex 50's The Apex 50's the perfect aged tone your rig needs, with a beautiful mid-range these pickups really
-					sing with your valve driven tones or even your transistor jazz cleans.</p>
-				<button class="button ">details &amp; demo
-					<i class="fas fa-long-arrow-alt-right"></i>
-				</button>
-			</div>
-		</div>
+<div class="full ptb concrete-bg">
+	<div class="row">
+		<div class="large-10 large-centered columns">
+			{# Fetch all of the entries related to this category #}
+			{% set entries = craft.entries.relatedTo(category) %}
+			{% for entry in entries %}
+				{% set image = entry.featuredImage.first() %}
+				<div class="row pt-s pb-s">
+					<div class="large-5 columns">
+						<img class="red-border" src="{{ image.getUrl() }}" class="thumbnail" alt="{{ image.title }}">
+					</div>
+					<div class="large-7 columns">
+						<h1>{{ entry.title }}</h1>
+						<p>{{ entry.body|hacksaw(words='40', append='...') }}</p>
+						<a href="{{ entry.url }}" class="button ">details &amp; demo
+							<i class="fas fa-long-arrow-alt-right"></i>
+						</a>
+					</div>
+				</div>
+			{% endfor %}
 		<hr>
+		</div>
 	</div>
 </div>
 

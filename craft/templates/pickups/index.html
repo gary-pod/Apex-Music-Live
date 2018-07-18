@@ -14,11 +14,12 @@
 	<div class="row pickup-selection">
 		{% set categories = craft.categories.group('pickups') %}
 		{% for category in categories %}
+		{% set image = category.featuredImage.first() %}
 			<div class="large-4 columns">
 				<h3 class="styled text-center">
 					<strong>{{ category.title }}</strong>
 				</h3>
-				<img src="{{ siteUrl }}assets/images/single-coil-cream.jpg" class="thumbnail" alt="">
+				<img src="{{ image.getUrl() }}" class="thumbnail" alt="{{ image.title }}">
 				<p>{{ category.shortDescription }}</p>
 				<a href="{{ category.url }}" class="button expanded">View {{ category.title }}
 					<i class="fas fa-long-arrow-alt-right"></i>

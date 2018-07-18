@@ -1,6 +1,8 @@
 {% extends "_layouts/site" %}
 
 {% set title = entry.title %}
+{% set image = entry.featuredImage.first() %}
+{% set currentCategories = craft.categories.first() %}
 
 {% block main %}
 
@@ -9,52 +11,37 @@
 		<nav aria-label="You are here:" role="navigation">
 			<ul class="breadcrumbs">
 				<li>
-					<a href="#">Home</a>
+					<a href="{{ siteUrl }}">Home</a>
 				</li>
 				<li>
-					<a href="#">Features</a>
+					<a href="{{ siteUrl }}pickups">Pickups</a>
 				</li>
-				<li class="disabled">Gene Splicing</li>
 				<li>
-					<span class="show-for-sr">Current: </span> Cloning</li>
+					<a href="{{ currentCategories.url }}">{{ currentCategories }}</a>
+				</li>
+				<li class="disabled">{{ entry.title }}</li>
 			</ul>
-		</nav>
+		</nav>	
 	</div>
 </div>
+
 <div class="row pickup-selection ptb pb-s">
 	<div class="large-5 columns">
-		<img src="{{ siteUrl }}assets/images/single-coil-cream.jpg" class="thumbnail" alt="">
+		<img src="{{ image.getUrl() }}" class="thumbnail" alt="{{ image.title }}">
 	</div>
 	<div class="large-7 columns">
-		<h1>Apex 50s Single Coil</h1>
-		<p>Apex 50's The Apex 50's the perfect aged tone your rig needs, with a beautiful mid-range these pickups really sing with
-			your valve driven tones or even your transistor jazz cleans.</p>
-		<p>The Apex 50's are modelled to fit your raw blues tones with a lower mellower vibe so you can either stand out in your backline
-			or hang back in your mix providing a solidrhythm tone. </p>
-		<p>The Apex 50's also show off how versatile they are due to their thickness in sound with a fat crunchy mid tones and balanced
-			highs and lows the 50's can do virtually anything.</p>
+		<h1>{{ entry.title }}</h1>
+		{{ entry.body }}
 		<hr>
 		<div class="row">
+			{% for block in entry.productFeatures %}
 			<div class="large-4 columns">
-				<h3>Magent Type</h3>
-				<p>
-					<b>Alnico 5</b>
-				</p>
+				{{ block.featureOne }}
 			</div>
 			<div class="large-8 columns">
-				<h3>Approximate Resistance</h3>
-				<ul class="resistance">
-					<li>Bridge
-						<b>5.7K</b>
-					</li>
-					<li>Middle
-						<b>5.3k</b>
-					</li>
-					<li>Neck
-						<b>5.3K</b>
-					</li>
-				</ul>
+				{{ block.featureTwo }}
 			</div>
+			{% endfor %}
 		</div>
 		<hr>
 		<!-- buy button -->
@@ -63,19 +50,19 @@
 				<div class="paypal-form">
 					<form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 						<input type="hidden" name="cmd" value="_xclick">
-						<input type="hidden" name="business" value="gary_1990@live.co.uk">
+						<input type="hidden" name="business" value="{{ contactMeta.paypalEmail }}">
 						<input type="hidden" name="lc" value="GB">
 						<input type="hidden" name="item_name" value="test">
-						<input type="hidden" name="amount" value="500.00">
+						<input type="hidden" name="amount" value="{{ entry.price }}">
 						<input type="hidden" name="currency_code" value="GBP">
 						<input type="hidden" name="button_subtype" value="services">
 						<input type="hidden" name="no_note" value="0">
-						<input type="hidden" name="shipping" value="500.00">
+						<input type="hidden" name="shipping" value="0.00">
 						<input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
 						<button type="submit" class="button">buy now</button>
 					</form>
 				</div>
-				<span class="price hollow">for the set £135</span>
+				<span class="price hollow">for the set £{{ entry.price }}</span>
 			</div>
 		</div>
 	</div>
@@ -83,23 +70,26 @@
 <!-- SOUND AND VIDEO CLIPS-->
 <div class="full light-bg pt-s pb">
 	<div class="row">
-		<div class="large-6 columns">
-			<h3>Sound clips</h3>
-			<audio id="pickup-sound" controls>
-				<source src="/path/to/audio.mp3" type="audio/mp3">
-				<source src="/path/to/audio.ogg" type="audio/ogg">
-			</audio>
-
-		</div>
-		<div class="large-6 columns">
-			<h3>Video clips</h3>
-			<div class="plyr__video-embed" id="player">
-				<iframe src="https://www.youtube.com/embed/bTqVqk7FSmY?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-				    allowfullscreen allowtransparency allow="autoplay"></iframe>
+		{% for block in entry.soundBlock %}
+		{% set sound = block.soundFile.first() %}
+			<div class="large-6 columns">
+				<h3>Sound clips</h3>
+				<audio id="pickup-sound" controls>
+					<source src="{{ sound.getUrl() }}" type="audio/mp3">
+				</audio>
+				<p><strong>{{ block.soundFileTitle }}</strong></p>
 			</div>
-		</div>
+			<div class="large-6 columns">
+				<h3>Video clips</h3>
+				<div class="plyr__video-embed" id="player">
+					<iframe src="{{ block.iframeLink }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+						allowfullscreen allowtransparency allow="autoplay"></iframe>
+				</div>
+			</div>
+		{% endfor %}
 	</div>
 </div>
+
 <div class="full dark-bg ptb">
 	<div class="row">
 		<div class="large-12 columns text-center">
@@ -107,63 +97,45 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="large-3 columns">
-			<img src="{{ siteUrl }}assets/images/single-coil-cream.jpg" class="thumbnail" alt="">
-			<h4>Pickup name</h4>
-			<button class="button expanded">details
-				<i class="fas fa-long-arrow-alt-right"></i>
-			</button>
-		</div>
-		<div class="large-3 columns">
-			<img src="{{ siteUrl }}assets/images/single-coil-cream.jpg" class="thumbnail" alt="">
-			<h4>Pickup name</h4>
-			<button class="button expanded">details
-				<i class="fas fa-long-arrow-alt-right"></i>
-			</button>
-		</div>
-		<div class="large-3 columns">
-			<img src="{{ siteUrl }}assets/images/single-coil-cream.jpg" class="thumbnail" alt="">
-			<h4>Pickup name</h4>
-			<button class="button expanded">details
-				<i class="fas fa-long-arrow-alt-right"></i>
-			</button>
-		</div>
-		<div class="large-3 columns">
-			<img src="{{ siteUrl }}assets/images/single-coil-cream.jpg" class="thumbnail" alt="">
-			<h4>Pickup name</h4>
-			<button class="button expanded">details
-				<i class="fas fa-long-arrow-alt-right"></i>
-			</button>
-		</div>
+		{% set category = entry.category.id %}
+		{% set relatedEntries = craft.entries.section('pickups').relatedTo(category).id('not ' ~ entry.id) %}
+		{% for relatedEntry in relatedEntries %}
+			<div class="large-3 columns">
+				<img src="{{ siteUrl }}assets/images/single-coil-cream.jpg" class="thumbnail" alt="">
+				<h4>{{ relatedEntry.title }}</h4>
+				<a href="{{ relatedEntry.url }}" class="button expanded">details
+					<i class="fas fa-long-arrow-alt-right"></i>
+				</a>
+			</div>
+		{% endfor %}
 	</div>
 </div>
 <div class="full">
 	<div class="row pickup-selection ptb" data-equalizer data-equalize-on="medium" id="test-eq">
-		<div class="large-5 columns" data-equalizer-watch>
-			<h3 class="center-text">Tele style</h3>
-			<p>Tele pickups with the signature tele twang and thick sound that everyone loves teles for.
-			</p>
-			<button class="button hollow expanded">view tele pickups
-				<i class="fas fa-long-arrow-alt-right"></i>
-			</button>
-		</div>
-		<div class="large-1 columns divider" data-equalizer-watch></div>
-		<div class="large-5 columns" data-equalizer-watch>
-			<h3 class="center-text">Humbuckers</h3>
-			<p>A range of humbucking pickups for all style of music from our vintage Apex '34 to our burning hot S.F.B.
-			</p>
-			<button class="button hollow expanded">view humbuckers
-				<i class="fas fa-long-arrow-alt-right"></i>
-			</button>
-		</div>
+		{% set counter = 0 %}	
+		{% for category in craft.categories.group('pickups') %}
+				{% if currentCategories.id == category.id %}
+
+				{% else %}
+					{% if counter == 1 %}
+						<div class="large-1 columns divider" data-equalizer-watch></div>
+					{% endif %}
+						<div class="large-5 columns" data-equalizer-watch>
+							<h3 class="center-text">{{ category.title }}</h3>
+							<p>{{ category.shortDescription }}</p>
+							<a href="{{ category.url }}" class="button hollow expanded">view {{ category.title }}
+								<i class="fas fa-long-arrow-alt-right"></i>
+							</a>
+						</div>
+					{% set counter = counter + 1 %}
+				{% endif %}
+		{% endfor %}
 	</div>
 </div>
+
 <div class="full light-gradient-bg">
 	<div class="row ptb">
-		<div class=" large-9 small-centered columns text-center">
-			<h2>Nothing taking your fancy? If you have something custom in mind please
-				<a href="">get in touch.</a> We can craft any pickup to your exact spec. </h2>
-		</div>
+		{{ pickupsHome.body }}
 	</div>
 </div>
 <!-- MAILING LIST -->
@@ -179,46 +151,45 @@
 		</div>
 		<!-- Begin MailChimp Signup Form -->
 		<div class="large-9 small-centered columns">
-			<div id="mc_embed_signup">
-				<form action="https://apexmusicco.us17.list-manage.com/subscribe/post?u=bfc5d8a2a72bc6611d7df0494&amp;id=3b47856daf" method="post"
-				    id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-					<div class="row">
-						<!-- name -->
-						<div class="large-4 columns">
-							<div class="mc-field-group">
-								<label for="mce-FNAME">NAME </label>
-								<input type="text" value="" name="FNAME" class="" placeholder="Name" id="mce-FNAME">
-							</div>
-						</div>
-						<!-- emailaddress -->
-						<div class="large-4 columns">
-							<div id="mc_embed_signup_scroll">
+				<div id="mc_embed_signup">
+					<form action="https://apexmusicco.us17.list-manage.com/subscribe/post?u=bfc5d8a2a72bc6611d7df0494&amp;id=3b47856daf" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+						<div class="row">
+							<!-- name -->
+							<div class="large-4 columns">
 								<div class="mc-field-group">
-									<label for="mce-EMAIL">EMAIL ADDRESS
-										<span class="asterisk">*</span>
-									</label>
-									<input type="email" value="" name="EMAIL" class="required email" placeholder="Email Address" id="mce-EMAIL">
+									<label for="mce-FNAME">NAME </label>
+									<input type="text" value="" name="FNAME" class="" placeholder="Name" id="mce-FNAME">
 								</div>
 							</div>
-						</div>
-						<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-						<div id="mce-responses" class="clear">
-							<div class="response" id="mce-error-response" style="display:none"></div>
-							<div class="response" id="mce-success-response" style="display:none"></div>
-						</div>
-						<div style="position: absolute; left: -5000px;" aria-hidden="true">
-							<input type="text" name="b_bfc5d8a2a72bc6611d7df0494_3b47856daf" tabindex="-1" value="">
-						</div>
-						<!-- submit button -->
-						<div class="large-4 columns">
-							<div class="clear">
-								<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button expanded">
+							<!-- emailaddress -->
+							<div class="large-4 columns">
+								<div id="mc_embed_signup_scroll">
+									<div class="mc-field-group">
+											<label for="mce-EMAIL">Email Address </label>
+											<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+									</div>
+								</div>
 							</div>
+							<div style="position: absolute; left: -5000px;" aria-hidden="true">
+								<input type="text" name="b_bfc5d8a2a72bc6611d7df0494_3b47856daf" tabindex="-1" value="">
+							</div>
+							<div class="large-4 columns">
+								<div class="clear">
+									<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button expanded">
+								</div>
+							</div>
+							<div class="large-12 columns">
+								<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+								<div id="mce-responses" class="clear">
+									<div class="response" id="mce-error-response" style="display:none"></div>
+									<div class="response" id="mce-success-response" style="display:none"></div>
+								</div>
+							</div>
+							<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='BIRTHDAY';ftypes[3]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
-		</div>
 	</div>
 </div>
 

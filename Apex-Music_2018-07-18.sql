@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.6.38)
 # Database: Apex-Music
-# Generation Time: 2018-07-16 23:17:39 +0000
+# Generation Time: 2018-07-18 22:03:43 +0000
 # ************************************************************
 
 
@@ -89,7 +89,8 @@ VALUES
 	(310,1,1,'team-oran.jpg','image',500,500,276319,'2018-06-18 17:13:22','2018-07-08 13:52:20','2018-07-10 22:27:31','38cd09bb-97ee-400b-8339-4d22370f362e'),
 	(311,1,1,'team-willy.jpg','image',500,500,286826,'2018-06-18 17:13:22','2018-07-08 13:52:20','2018-07-10 22:27:32','1a8ec8fc-124c-4be2-948e-46ef95176442'),
 	(312,1,1,'team-willy.png','image',602,451,433072,'2018-06-18 17:13:22','2018-07-08 13:52:21','2018-07-10 22:27:32','a99bf8e4-3922-4c5b-b58e-a7532d43e6cc'),
-	(313,1,1,'workshop-bg.png','image',1120,632,1458788,'2018-04-14 14:16:30','2018-07-08 13:52:21','2018-07-10 22:27:32','bac8a40f-a40f-4761-8853-53e5155fbbc8');
+	(313,1,1,'workshop-bg.png','image',1120,632,1458788,'2018-04-14 14:16:30','2018-07-08 13:52:21','2018-07-10 22:27:32','bac8a40f-a40f-4761-8853-53e5155fbbc8'),
+	(358,1,1,'4-2-10003.mp3','audio',NULL,NULL,680300,'2018-07-17 20:26:59','2018-07-17 20:27:00','2018-07-17 20:27:00','c67b87bf-2c26-43c7-9946-4b2707a6d949');
 
 /*!40000 ALTER TABLE `craft_assetfiles` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -393,6 +394,8 @@ CREATE TABLE `craft_content` (
   `field_instagramFeed` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `field_mailingList` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `field_displayTitle` text COLLATE utf8_unicode_ci,
+  `field_paypalEmail` text COLLATE utf8_unicode_ci,
+  `field_price` text COLLATE utf8_unicode_ci,
   `dateCreated` datetime NOT NULL,
   `dateUpdated` datetime NOT NULL,
   `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
@@ -407,71 +410,73 @@ CREATE TABLE `craft_content` (
 LOCK TABLES `craft_content` WRITE;
 /*!40000 ALTER TABLE `craft_content` DISABLE KEYS */;
 
-INSERT INTO `craft_content` (`id`, `elementId`, `locale`, `title`, `field_heading`, `field_body`, `field_addressOne`, `field_email`, `field_shortDescription`, `field_copyrightNotice`, `field_contactUsLabel`, `field_telephone`, `field_facebooklink`, `field_twitterLink`, `field_instagramLink`, `field_addressTwo`, `field_instagramFeed`, `field_mailingList`, `field_displayTitle`, `dateCreated`, `dateUpdated`, `uid`)
+INSERT INTO `craft_content` (`id`, `elementId`, `locale`, `title`, `field_heading`, `field_body`, `field_addressOne`, `field_email`, `field_shortDescription`, `field_copyrightNotice`, `field_contactUsLabel`, `field_telephone`, `field_facebooklink`, `field_twitterLink`, `field_instagramLink`, `field_addressTwo`, `field_instagramFeed`, `field_mailingList`, `field_displayTitle`, `field_paypalEmail`, `field_price`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(1,1,'en',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2014-07-29 18:21:32','2018-06-24 18:19:50','59077408-b18f-4041-8894-37cc7c7adff4'),
-	(2,2,'en','Homepage','Welcome to Happylager.dev!','<h1>CUSTOM PICKUPS, RECORDING STUDIO &amp; GUITAR WORK SHOP. WE DO IT ALL AT APEX.</h1>\n<p>Apex Music Co is your one stop for all your needs as a musician. We offer a wide range of services such as professional instrument repairs, music videos, live performance videos, hand wound electric pickup manufacturing, music photography, high quality audio recording and rehearsal facility rental.</p>\n<p><a class=\"button\" href=\"{entry:74:url}\">Discover more about apex <em class=\"fas fa-long-arrow-alt-right\"></em></a></p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]',NULL,NULL,'2014-07-29 18:21:35','2018-07-14 12:31:44','73fccf4e-5208-46d9-8f88-99e78ecf855e'),
-	(29,74,'en','About','We set out with a simple goal: create the design and products that we would like to see.','<p>We are a group of highly effective, passionate people ready to take your product to the next level. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae taque earum hic tenetur a sapiente delectus ut aut reiciendis.</p>','2701 West Thomas St Chicago, Il 60622','info@company.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2014-09-17 01:15:21','2018-07-14 15:11:42','91f0829c-6749-498c-9dd1-96680a3f0799'),
-	(113,257,'en','Contact','Get in touch if you\'d like to use any of our services.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-24 18:35:19','2018-07-15 13:16:42','9c9ead30-120f-4249-aa40-39c8431c80ec'),
-	(114,258,'en','Apex Studio',NULL,'<h2 class=\"styled center-text\"><strong>Apex Studio</strong></h2>\n<h1 class=\"center-text pt-s\">Fully loaded recording Studio, rehersal facilities with video and photogrpahy packages available. </h1>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]',NULL,NULL,'2018-06-24 18:35:36','2018-07-14 13:56:36','428a67f4-02dd-4ae2-ae3f-45316aabea1d'),
-	(115,259,'en','Instrument Repairs',NULL,'<h2 class=\"styled center-text\"><strong>instrument repairs</strong></h2>\n<h1 class=\"center-text pt-s\">All the latest carry on form the Apex team - all killer no filler </h1>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-24 18:36:23','2018-07-15 10:55:54','71c6bdbc-e80d-4530-a9a6-0a97448bf178'),
-	(116,260,'en',NULL,NULL,NULL,'\n<ul><li>Unit 3, Derrycrin road</li><li>BT80 0HJ</li><li>Cookstown</li></ul>','hello@apexmusic.co',NULL,NULL,NULL,'0759 1132 008','https://www.facebook.com/ApexMusicCo/','#apex-music','#apex-music','\n<ul><li>14 Sullenboy park</li><li>BT80 8HP</li><li>Cookstown</li></ul>',NULL,NULL,NULL,'2018-06-24 18:39:24','2018-07-15 13:25:00','27f31143-a4e2-4cd9-b788-9886e0765af6'),
-	(117,261,'en','Strat Style','','<div class=\"large-12 small-centered columns text-center\">\n			<h1>Our single coil pickups give your guitar the truest most open sound it will ever have, bringing out tones you never thought you could hear from your guitar.</h1>\n		</div>',NULL,NULL,'<p>Our single coil pickups give your guitar the truest most open sound it will ever have, bringing out tones you never thought you could hear from your guitar.</p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 19:58:37','2018-07-16 23:10:51','b37a1868-41fa-4fb0-9e16-d75c169f8737'),
-	(118,262,'en','Apex 50s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'<div class=\"large-12 small-centered columns text-center\">\n			<h1>Our single coil pickups give your guitar the truest most open sound it will ever have, bringing out tones you never thought you could hear from your guitar.</h1>\n		</div>','2018-07-05 20:00:18','2018-07-16 23:08:46','ea03d57f-e0c2-48a2-9ec2-8f4bda041ede'),
-	(119,264,'en','About',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:10:16','2018-07-05 22:10:16','3fe52680-28b5-4654-9a4b-517c7d3ba9e8'),
-	(120,265,'en','Apex Studio',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:10:46','2018-07-05 22:10:46','4fef3364-7176-49b1-a36f-f44d8b855970'),
-	(121,266,'en','Instrument Repairs',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:11:12','2018-07-05 22:11:12','0f539fe6-389e-41ea-b78b-d0f396c3bdf0'),
-	(122,267,'en','Blog',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:11:58','2018-07-05 22:11:58','00e63ef9-7eb9-44a7-bebe-8283a500de07'),
-	(123,268,'en','Contact',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:12:49','2018-07-05 22:12:49','82e61ec6-9cb4-41c5-9aef-163d934f8408'),
-	(124,269,'en','Pickups',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:13:45','2018-07-05 22:13:45','ba52780e-b977-4237-a497-df279dec0417'),
-	(125,270,'en','Strat Style',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:29:47','2018-07-08 15:43:52','e671d47c-4c3e-4153-8a71-15c0bdec73a4'),
-	(126,271,'en','Apex 50s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:30:24','2018-07-05 22:30:24','cb6bd3cf-9fc4-43ca-a108-82703419e38b'),
-	(127,272,'en','About',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-07 14:40:30','2018-07-07 14:40:30','2f9ac333-5160-4314-a8da-6478f829f6c2'),
-	(128,273,'en','Apex Studio',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-07 14:40:51','2018-07-07 14:40:51','73e51575-8a99-49a9-9cc8-9228c3c3b8fb'),
-	(129,274,'en','Work Shop',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-07 14:42:12','2018-07-07 14:42:12','48ffb0f8-de0a-403b-92d0-2fc04defcd07'),
-	(130,275,'en','Blog',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-07 14:42:38','2018-07-07 14:42:38','72739562-0abb-4605-aace-bc156ff50796'),
-	(131,276,'en','About Images 1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:10','2018-07-10 22:27:19','3e02414a-895c-40b4-96e8-dfbb37478f9f'),
-	(132,277,'en','Apex Home Bg 1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:11','2018-07-10 22:27:21','e36630e1-f97a-4174-9166-df26f6312c82'),
-	(133,278,'en','Apex Mountain',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:12','2018-07-10 22:27:20','9b96988c-d5e5-440f-b835-64bfbf02b7cd'),
-	(134,279,'en','Apex Studio 1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:12','2018-07-10 22:27:20','ee480415-aaf8-4aee-86b6-49888ea6caf9'),
-	(135,280,'en','Apex Studio 2',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:12','2018-07-10 22:27:22','23d1a392-ea34-47da-9546-d0079be4e2b5'),
-	(136,281,'en','Apex Studio 3',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:13','2018-07-10 22:27:22','c33ea99f-6958-4ce1-b59f-51ac20a5c53a'),
-	(137,282,'en','Apex Studio 4',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:13','2018-07-10 22:27:22','aa992c4a-bd6d-4eda-b6bb-5d906d346200'),
-	(138,283,'en','Apex Studio 5',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:13','2018-07-10 22:27:23','3bbbcb5d-056b-49fc-824c-828c335e0dbe'),
-	(139,284,'en','Apex Studio 6',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:14','2018-07-10 22:27:23','f736d5a2-c831-4235-93ad-514ea5e8c8ac'),
-	(140,285,'en','Apex Studio 6',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:14','2018-07-10 22:27:23','8d659cd6-d72f-467a-b1a7-ab7374a976a3'),
-	(141,286,'en','Apex Studio 7',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:14','2018-07-10 22:27:24','e22d950d-531e-4d01-b5c0-03265c7fe893'),
-	(142,287,'en','Apex Studio 8',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:15','2018-07-10 22:27:24','92d60fe2-5359-4cb8-8d50-a4c604cfc105'),
-	(143,288,'en','Apex Studio 9',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:15','2018-07-10 22:27:25','06ef3f32-54e2-482f-aec1-c8d80179989e'),
-	(144,289,'en','Bg Texture A',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:15','2018-07-10 22:27:25','2f1d4b53-3cef-48a4-9063-f23b4925c11d'),
-	(145,290,'en','Bg Texture B',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:15','2018-07-10 22:27:25','1de156e6-c100-4c35-a671-6eba97eb2759'),
-	(146,291,'en','Bg Texture C',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:15','2018-07-10 22:27:25','0e36d889-a6c3-429b-89ff-110f25669a1b'),
-	(147,292,'en','Blog Post 1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:16','2018-07-10 22:27:26','7cb43fe3-ab04-4ce0-a51f-0131ee8d54be'),
-	(148,293,'en','Concrete Texture',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:16','2018-07-10 22:27:26','6c7a3e72-b361-482e-abeb-bda9fcc282b7'),
-	(149,294,'en','Hero Logo',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:16','2018-07-10 22:27:26','267f3114-f408-4565-9210-0c2b6804ca00'),
-	(150,295,'en','Hero Logo',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:16','2018-07-10 22:27:26','a0cd2159-08b4-4118-8601-f4a90a0b4453'),
-	(151,296,'en','Menu Logo',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:17','2018-07-10 22:27:27','086c2d6d-2c87-4089-9644-1c9c1f3ee902'),
-	(152,297,'en','Menu Logo',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:17','2018-07-10 22:27:27','9c316709-5769-400e-b8f3-d70d591fbb19'),
-	(153,298,'en','Mountain Bg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:17','2018-07-10 22:27:27','ac5de9cc-15d2-42c3-85b8-3113e3e6941a'),
-	(154,299,'en','Mountian Light',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:17','2018-07-10 22:27:27','8677ddd5-4887-4b9e-bd25-6de0103a2d50'),
-	(155,300,'en','Mountian Light',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:17','2018-07-10 22:27:27','e02ee403-503f-41f9-ba2f-53d54be783cc'),
-	(156,301,'en','Pat',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:17','2018-07-10 22:27:28','83fc2fe7-690c-4963-8b05-a56a86f0a9f5'),
-	(157,302,'en','Pickup Index Bg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:18','2018-07-10 22:27:28','7236f8ea-90a1-46ee-88f6-d56c53f24cda'),
-	(158,303,'en','Pickups Bg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:18','2018-07-10 22:27:29','b1f2f93e-43ae-4a1d-8cbe-7aa3a50d6eed'),
-	(159,304,'en','Single Coil Cream',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:18','2018-07-10 22:27:29','ccfd046c-afa9-4fb2-a89f-70999c1a9dae'),
-	(160,305,'en','Slider Holder',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:19','2018-07-10 22:27:30','9891c453-12df-4ad2-bb3b-cbd52aaf0d66'),
-	(161,306,'en','Studio Bg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:19','2018-07-10 22:27:30','1dbd24bc-19d9-45b4-8155-b3977d8df7c8'),
-	(162,307,'en','Team Dani',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:20','2018-07-10 22:27:30','e29a161f-fba4-4521-95cb-228441c7209f'),
-	(163,308,'en','Team Dani',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:20','2018-07-10 22:27:31','539a08fe-1d8e-40c3-9948-ac501521f747'),
-	(164,309,'en','Team Graham',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:20','2018-07-10 22:27:31','50f45232-fd06-43f4-ba7f-e0e87746c396'),
-	(165,310,'en','Team Oran',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:20','2018-07-10 22:27:31','c15780d2-fa5a-4514-9ac9-23b0d71f92a8'),
-	(166,311,'en','Team Willy',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:20','2018-07-10 22:27:32','64091b5d-d547-4997-a70b-ad35c13fb873'),
-	(167,312,'en','Team Willy',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:21','2018-07-10 22:27:32','601bc8e8-9b2b-4ce4-9902-46fccd445182'),
-	(168,313,'en','Workshop Bg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-08 13:52:21','2018-07-10 22:27:32','d2d65879-21ec-40f8-b797-11bbc0f81d9c'),
-	(171,350,'en','INTRODUCING THE TEAM: PETE','',NULL,NULL,NULL,'<p>Pete is probably the most important member of the team and has a job list as long as Orans hair. Pete keeps an eye on the workshop, keeps away intruders and makes sure everything is in order, all the while flashing his signature toothy grin.</p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-15 11:52:23','2018-07-15 12:42:27','816a90ee-d570-417f-bf38-2a363d8960f6'),
-	(172,352,'en',NULL,NULL,'<div class=\"large-9 small-centered columns text-center\">\n			<h2>Nothing taking your fancy? If you have something custom in mind please\n				<a href=\"\"></a><a href=\"{entry:257:url}\">get in touch.</a> We can craft any pickup to your exact spec. </h2>\n		</div>\n',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]','<div class=\"large-8 small-centered columns text-center\">\n		<h1>Custom pickups, recording studio &amp; Guitar work shop. We do it all at Apex.</h1>\n	</div>','2018-07-16 22:04:20','2018-07-16 22:10:19','4af7c8d0-c2e1-4e44-8279-5a089654aa7d'),
-	(173,355,'en','TELE STYLE','','',NULL,NULL,'<p>A successful marketing plan relies heavily on the pulling-power of advertising copy. Writing result-oriented ad copy is difficult, as it must appeal to, entice, and convince consumers to take action. There is no magic formula to write.</p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-16 22:33:39','2018-07-16 22:33:39','c0416325-c091-4268-b9a3-a7216d8023f2'),
-	(174,356,'en','HUMBUCKERS','','',NULL,NULL,'<p>A successful marketing plan relies heavily on the pulling-power of advertising copy. Writing result-oriented ad copy is difficult, as it must appeal to, entice, and convince consumers to take action. There is no magic formula to write.</p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,'2018-07-16 22:34:12','2018-07-16 22:34:12','2244d404-8e36-49ec-aaae-7afcfa7f283b');
+	(1,1,'en',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2014-07-29 18:21:32','2018-06-24 18:19:50','59077408-b18f-4041-8894-37cc7c7adff4'),
+	(2,2,'en','Homepage','Welcome to Happylager.dev!','<h1>CUSTOM PICKUPS, RECORDING STUDIO &amp; GUITAR WORK SHOP. WE DO IT ALL AT APEX.</h1>\n<p>Apex Music Co is your one stop for all your needs as a musician. We offer a wide range of services such as professional instrument repairs, music videos, live performance videos, hand wound electric pickup manufacturing, music photography, high quality audio recording and rehearsal facility rental.</p>\n<p><a class=\"button\" href=\"{entry:74:url}\">Discover more about apex <em class=\"fas fa-long-arrow-alt-right\"></em></a></p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]',NULL,NULL,NULL,NULL,'2014-07-29 18:21:35','2018-07-14 12:31:44','73fccf4e-5208-46d9-8f88-99e78ecf855e'),
+	(29,74,'en','About','We set out with a simple goal: create the design and products that we would like to see.','<p>We are a group of highly effective, passionate people ready to take your product to the next level. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae taque earum hic tenetur a sapiente delectus ut aut reiciendis.</p>','2701 West Thomas St Chicago, Il 60622','info@company.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2014-09-17 01:15:21','2018-07-14 15:11:42','91f0829c-6749-498c-9dd1-96680a3f0799'),
+	(113,257,'en','Contact','Get in touch if you\'d like to use any of our services.',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-24 18:35:19','2018-07-15 13:16:42','9c9ead30-120f-4249-aa40-39c8431c80ec'),
+	(114,258,'en','Apex Studio',NULL,'<h2 class=\"styled center-text\"><strong>Apex Studio</strong></h2>\n<h1 class=\"center-text pt-s\">Fully loaded recording Studio, rehersal facilities with video and photogrpahy packages available. </h1>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]',NULL,NULL,NULL,NULL,'2018-06-24 18:35:36','2018-07-14 13:56:36','428a67f4-02dd-4ae2-ae3f-45316aabea1d'),
+	(115,259,'en','Instrument Repairs',NULL,'<h2 class=\"styled center-text\"><strong>instrument repairs</strong></h2>\n<h1 class=\"center-text pt-s\">All the latest carry on form the Apex team - all killer no filler </h1>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-06-24 18:36:23','2018-07-15 10:55:54','71c6bdbc-e80d-4530-a9a6-0a97448bf178'),
+	(116,260,'en',NULL,NULL,NULL,'<ul><li>Unit 3, Derrycrin road</li><li>BT80 0HJ</li><li>Cookstown</li></ul>','hello@apexmusic.co',NULL,NULL,NULL,'0759 1132 008','https://www.facebook.com/ApexMusicCo/','#apex-music','#apex-music','<ul><li>14 Sullenboy park</li><li>BT80 8HP</li><li>Cookstown</li></ul>',NULL,NULL,NULL,'gary_1990@live.co.uk',NULL,'2018-06-24 18:39:24','2018-07-17 20:10:52','27f31143-a4e2-4cd9-b788-9886e0765af6'),
+	(117,261,'en','Strat Style','','<div class=\"large-12 small-centered columns text-center\">\n			<h1>Our single coil pickups give your guitar the truest most open sound it will ever have, bringing out tones you never thought you could hear from your guitar.</h1>\n		</div>',NULL,NULL,'<p>Our single coil pickups give your guitar the truest most open sound it will ever have, bringing out tones you never thought you could hear from your guitar.</p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 19:58:37','2018-07-16 23:10:51','b37a1868-41fa-4fb0-9e16-d75c169f8737'),
+	(118,262,'en','Apex 50s',NULL,'<p>Apex 50\'s The Apex 50\'s the perfect aged tone your rig needs, with a beautiful mid-range these pickups really sing with your valve driven tones or even your transistor jazz cleans.\n</p>\n<p>The Apex 50\'s are modelled to fit your raw blues tones with a lower mellower vibe so you can either stand out in your backline or hang back in your mix providing a solidrhythm tone.\n</p>\n<p>The Apex 50\'s also show off how versatile they are due to their thickness in sound with a fat crunchy mid tones and balanced highs and lows the 50\'s can do virtually anything.\n</p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'<div class=\"large-12 small-centered columns text-center\">\n			<h1>Our single coil pickups give your guitar the truest most open sound it will ever have, bringing out tones you never thought you could hear from your guitar.</h1>\n		</div>',NULL,'135','2018-07-05 20:00:18','2018-07-17 20:57:40','ea03d57f-e0c2-48a2-9ec2-8f4bda041ede'),
+	(119,264,'en','About',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:10:16','2018-07-05 22:10:16','3fe52680-28b5-4654-9a4b-517c7d3ba9e8'),
+	(120,265,'en','Apex Studio',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:10:46','2018-07-05 22:10:46','4fef3364-7176-49b1-a36f-f44d8b855970'),
+	(121,266,'en','Instrument Repairs',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:11:12','2018-07-05 22:11:12','0f539fe6-389e-41ea-b78b-d0f396c3bdf0'),
+	(122,267,'en','Blog',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:11:58','2018-07-05 22:11:58','00e63ef9-7eb9-44a7-bebe-8283a500de07'),
+	(123,268,'en','Contact',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:12:49','2018-07-05 22:12:49','82e61ec6-9cb4-41c5-9aef-163d934f8408'),
+	(124,269,'en','Pickups',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:13:45','2018-07-05 22:13:45','ba52780e-b977-4237-a497-df279dec0417'),
+	(125,270,'en','Strat Style',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:29:47','2018-07-08 15:43:52','e671d47c-4c3e-4153-8a71-15c0bdec73a4'),
+	(126,271,'en','Apex 50s',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-05 22:30:24','2018-07-05 22:30:24','cb6bd3cf-9fc4-43ca-a108-82703419e38b'),
+	(127,272,'en','About',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-07 14:40:30','2018-07-07 14:40:30','2f9ac333-5160-4314-a8da-6478f829f6c2'),
+	(128,273,'en','Apex Studio',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-07 14:40:51','2018-07-07 14:40:51','73e51575-8a99-49a9-9cc8-9228c3c3b8fb'),
+	(129,274,'en','Work Shop',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-07 14:42:12','2018-07-07 14:42:12','48ffb0f8-de0a-403b-92d0-2fc04defcd07'),
+	(130,275,'en','Blog',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2018-07-07 14:42:38','2018-07-07 14:42:38','72739562-0abb-4605-aace-bc156ff50796'),
+	(131,276,'en','About Images 1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:10','2018-07-10 22:27:19','3e02414a-895c-40b4-96e8-dfbb37478f9f'),
+	(132,277,'en','Apex Home Bg 1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:11','2018-07-10 22:27:21','e36630e1-f97a-4174-9166-df26f6312c82'),
+	(133,278,'en','Apex Mountain',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:12','2018-07-10 22:27:20','9b96988c-d5e5-440f-b835-64bfbf02b7cd'),
+	(134,279,'en','Apex Studio 1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:12','2018-07-10 22:27:20','ee480415-aaf8-4aee-86b6-49888ea6caf9'),
+	(135,280,'en','Apex Studio 2',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:12','2018-07-10 22:27:22','23d1a392-ea34-47da-9546-d0079be4e2b5'),
+	(136,281,'en','Apex Studio 3',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:13','2018-07-10 22:27:22','c33ea99f-6958-4ce1-b59f-51ac20a5c53a'),
+	(137,282,'en','Apex Studio 4',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:13','2018-07-10 22:27:22','aa992c4a-bd6d-4eda-b6bb-5d906d346200'),
+	(138,283,'en','Apex Studio 5',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:13','2018-07-10 22:27:23','3bbbcb5d-056b-49fc-824c-828c335e0dbe'),
+	(139,284,'en','Apex Studio 6',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:14','2018-07-10 22:27:23','f736d5a2-c831-4235-93ad-514ea5e8c8ac'),
+	(140,285,'en','Apex Studio 6',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:14','2018-07-10 22:27:23','8d659cd6-d72f-467a-b1a7-ab7374a976a3'),
+	(141,286,'en','Apex Studio 7',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:14','2018-07-10 22:27:24','e22d950d-531e-4d01-b5c0-03265c7fe893'),
+	(142,287,'en','Apex Studio 8',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:15','2018-07-10 22:27:24','92d60fe2-5359-4cb8-8d50-a4c604cfc105'),
+	(143,288,'en','Apex Studio 9',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:15','2018-07-10 22:27:25','06ef3f32-54e2-482f-aec1-c8d80179989e'),
+	(144,289,'en','Bg Texture A',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:15','2018-07-10 22:27:25','2f1d4b53-3cef-48a4-9063-f23b4925c11d'),
+	(145,290,'en','Bg Texture B',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:15','2018-07-10 22:27:25','1de156e6-c100-4c35-a671-6eba97eb2759'),
+	(146,291,'en','Bg Texture C',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:15','2018-07-10 22:27:25','0e36d889-a6c3-429b-89ff-110f25669a1b'),
+	(147,292,'en','Blog Post 1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:16','2018-07-10 22:27:26','7cb43fe3-ab04-4ce0-a51f-0131ee8d54be'),
+	(148,293,'en','Concrete Texture',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:16','2018-07-10 22:27:26','6c7a3e72-b361-482e-abeb-bda9fcc282b7'),
+	(149,294,'en','Hero Logo',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:16','2018-07-10 22:27:26','267f3114-f408-4565-9210-0c2b6804ca00'),
+	(150,295,'en','Hero Logo',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:16','2018-07-10 22:27:26','a0cd2159-08b4-4118-8601-f4a90a0b4453'),
+	(151,296,'en','Menu Logo',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:17','2018-07-10 22:27:27','086c2d6d-2c87-4089-9644-1c9c1f3ee902'),
+	(152,297,'en','Menu Logo',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:17','2018-07-10 22:27:27','9c316709-5769-400e-b8f3-d70d591fbb19'),
+	(153,298,'en','Mountain Bg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:17','2018-07-10 22:27:27','ac5de9cc-15d2-42c3-85b8-3113e3e6941a'),
+	(154,299,'en','Mountian Light',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:17','2018-07-10 22:27:27','8677ddd5-4887-4b9e-bd25-6de0103a2d50'),
+	(155,300,'en','Mountian Light',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:17','2018-07-10 22:27:27','e02ee403-503f-41f9-ba2f-53d54be783cc'),
+	(156,301,'en','Pat',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:17','2018-07-10 22:27:28','83fc2fe7-690c-4963-8b05-a56a86f0a9f5'),
+	(157,302,'en','Pickup Index Bg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:18','2018-07-10 22:27:28','7236f8ea-90a1-46ee-88f6-d56c53f24cda'),
+	(158,303,'en','Pickups Bg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:18','2018-07-10 22:27:29','b1f2f93e-43ae-4a1d-8cbe-7aa3a50d6eed'),
+	(159,304,'en','Single Coil Cream',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:18','2018-07-10 22:27:29','ccfd046c-afa9-4fb2-a89f-70999c1a9dae'),
+	(160,305,'en','Slider Holder',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:19','2018-07-10 22:27:30','9891c453-12df-4ad2-bb3b-cbd52aaf0d66'),
+	(161,306,'en','Studio Bg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:19','2018-07-10 22:27:30','1dbd24bc-19d9-45b4-8155-b3977d8df7c8'),
+	(162,307,'en','Team Dani',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:20','2018-07-10 22:27:30','e29a161f-fba4-4521-95cb-228441c7209f'),
+	(163,308,'en','Team Dani',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:20','2018-07-10 22:27:31','539a08fe-1d8e-40c3-9948-ac501521f747'),
+	(164,309,'en','Team Graham',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:20','2018-07-10 22:27:31','50f45232-fd06-43f4-ba7f-e0e87746c396'),
+	(165,310,'en','Team Oran',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:20','2018-07-10 22:27:31','c15780d2-fa5a-4514-9ac9-23b0d71f92a8'),
+	(166,311,'en','Team Willy',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:20','2018-07-10 22:27:32','64091b5d-d547-4997-a70b-ad35c13fb873'),
+	(167,312,'en','Team Willy',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:21','2018-07-10 22:27:32','601bc8e8-9b2b-4ce4-9902-46fccd445182'),
+	(168,313,'en','Workshop Bg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-08 13:52:21','2018-07-10 22:27:32','d2d65879-21ec-40f8-b797-11bbc0f81d9c'),
+	(171,350,'en','INTRODUCING THE TEAM: PETE','',NULL,NULL,NULL,'<p>Pete is probably the most important member of the team and has a job list as long as Orans hair. Pete keeps an eye on the workshop, keeps away intruders and makes sure everything is in order, all the while flashing his signature toothy grin.</p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-15 11:52:23','2018-07-15 12:42:27','816a90ee-d570-417f-bf38-2a363d8960f6'),
+	(172,352,'en',NULL,NULL,'<div class=\"large-9 small-centered columns text-center\">\n			<h2>Nothing taking your fancy? If you have something custom in mind please\n				<a href=\"\"></a><a href=\"{entry:257:url}\">get in touch.</a> We can craft any pickup to your exact spec. </h2>\n		</div>\n',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]','<div class=\"large-8 small-centered columns text-center\">\n		<h1>Custom pickups, recording studio &amp; Guitar work shop. We do it all at Apex.</h1>\n	</div>',NULL,NULL,'2018-07-16 22:04:20','2018-07-16 22:10:19','4af7c8d0-c2e1-4e44-8279-5a089654aa7d'),
+	(173,355,'en','TELE STYLE','','',NULL,NULL,'<p>A successful marketing plan relies heavily on the pulling-power of advertising copy. Writing result-oriented ad copy is difficult, as it must appeal to, entice, and convince consumers to take action. There is no magic formula to write.</p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-16 22:33:39','2018-07-16 22:33:39','c0416325-c091-4268-b9a3-a7216d8023f2'),
+	(174,356,'en','HUMBUCKERS','','',NULL,NULL,'<p>A successful marketing plan relies heavily on the pulling-power of advertising copy. Writing result-oriented ad copy is difficult, as it must appeal to, entice, and convince consumers to take action. There is no magic formula to write.</p>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-16 22:34:12','2018-07-16 22:34:12','2244d404-8e36-49ec-aaae-7afcfa7f283b'),
+	(175,358,'en','4 2 10003',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,NULL,'2018-07-17 20:27:00','2018-07-17 20:27:00','8242e73b-3976-46ec-84cb-62ff507f9891'),
+	(176,360,'en','Test',NULL,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'[\"includeFeed\"]','[\"include\"]',NULL,NULL,'120','2018-07-17 22:16:32','2018-07-17 22:16:32','b83418a7-dbed-4daf-bc21-3fa3d6f50791');
 
 /*!40000 ALTER TABLE `craft_content` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -565,9 +570,9 @@ VALUES
 	(257,'Entry',1,0,'2018-06-24 18:35:19','2018-07-15 13:16:42','f9ea18c4-5739-43e2-aa77-0d444ffa586b'),
 	(258,'Entry',1,0,'2018-06-24 18:35:36','2018-07-14 13:56:36','5462201f-e4c1-4117-830d-8441d7c2fa23'),
 	(259,'Entry',1,0,'2018-06-24 18:36:23','2018-07-15 10:55:54','0f540059-3b80-465c-873f-d303d412e01a'),
-	(260,'GlobalSet',1,0,'2018-06-24 18:39:24','2018-07-15 13:25:00','25e169bb-f41f-436b-b410-3a9b0251f2e8'),
+	(260,'GlobalSet',1,0,'2018-06-24 18:39:24','2018-07-17 20:10:51','25e169bb-f41f-436b-b410-3a9b0251f2e8'),
 	(261,'Category',1,0,'2018-07-05 19:58:37','2018-07-16 23:10:51','6338fb26-9e01-4699-bea3-a7716ab2cae4'),
-	(262,'Entry',1,0,'2018-07-05 20:00:18','2018-07-16 23:08:46','c142b5e1-cde3-44a3-b39d-e1aa4a554fd5'),
+	(262,'Entry',1,0,'2018-07-05 20:00:18','2018-07-17 20:57:40','c142b5e1-cde3-44a3-b39d-e1aa4a554fd5'),
 	(263,'MatrixBlock',1,0,'2018-07-05 20:06:13','2018-07-05 20:06:13','717be0f7-1bcb-48a1-a09e-b79384cd6928'),
 	(264,'Menus_Node',1,0,'2018-07-05 22:10:16','2018-07-05 22:10:16','056a9339-1852-4b3f-bb5a-88ef3502956a'),
 	(265,'Menus_Node',1,0,'2018-07-05 22:10:46','2018-07-05 22:10:46','fcbf394a-2efc-40c0-a7b7-51ef7d3dbd42'),
@@ -659,7 +664,11 @@ VALUES
 	(353,'MatrixBlock',1,0,'2018-07-16 22:10:19','2018-07-16 22:10:19','6c60a458-646e-4858-a284-d2edc90fcab9'),
 	(354,'MatrixBlock',1,0,'2018-07-16 22:10:19','2018-07-16 22:10:19','ab8999b7-cdb9-4541-84de-8b69a4b4f293'),
 	(355,'Category',1,0,'2018-07-16 22:33:39','2018-07-16 22:33:39','7a825c54-d2e3-4bff-b375-0ba5a84a2cba'),
-	(356,'Category',1,0,'2018-07-16 22:34:12','2018-07-16 22:34:12','9bdbeb05-5ef2-439f-9321-8e9965d6827b');
+	(356,'Category',1,0,'2018-07-16 22:34:12','2018-07-16 22:34:12','9bdbeb05-5ef2-439f-9321-8e9965d6827b'),
+	(357,'MatrixBlock',1,0,'2018-07-17 20:18:27','2018-07-17 20:57:40','5f2c8f15-ebc0-4339-a711-f20df0157147'),
+	(358,'Asset',1,0,'2018-07-17 20:27:00','2018-07-17 20:27:00','5be0cca8-82c3-4511-89d3-73c5d8bbf52d'),
+	(359,'MatrixBlock',1,0,'2018-07-17 20:27:40','2018-07-17 20:57:40','6dcd8a09-c25a-4a57-a22d-e3cb148288ae'),
+	(360,'Entry',1,0,'2018-07-17 22:16:32','2018-07-17 22:16:32','427bd31f-bbc7-4884-8831-fdc5fd0e2e8c');
 
 /*!40000 ALTER TABLE `craft_elements` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -704,9 +713,9 @@ VALUES
 	(246,257,'en','contact','contact',1,'2018-06-24 18:35:19','2018-07-15 13:16:42','9479984b-e621-4d9b-850b-098009f51d94'),
 	(247,258,'en','apex-studio','apex-studio',1,'2018-06-24 18:35:36','2018-07-14 13:56:36','759b0724-7416-4de7-aebc-a761eecf7203'),
 	(248,259,'en','instrument-repairs','instrument-repairs',1,'2018-06-24 18:36:23','2018-07-15 10:55:54','5c09d927-ed0f-4941-874d-9afd771dae3e'),
-	(249,260,'en','',NULL,1,'2018-06-24 18:39:24','2018-07-15 13:25:00','8dd44dbe-3b8d-4776-af62-ea569bac1d7d'),
+	(249,260,'en','',NULL,1,'2018-06-24 18:39:24','2018-07-17 20:10:52','8dd44dbe-3b8d-4776-af62-ea569bac1d7d'),
 	(250,261,'en','strat-style','pickups/strat-style',1,'2018-07-05 19:58:38','2018-07-16 23:10:51','e0fa86f2-cf8e-4c19-b280-5c4114a7d2fe'),
-	(251,262,'en','apex-50s','pickups/apex-50s',1,'2018-07-05 20:00:18','2018-07-16 23:08:46','02c41839-8f01-49f9-8900-4029f9cf1efb'),
+	(251,262,'en','apex-50s','pickups/apex-50s',1,'2018-07-05 20:00:18','2018-07-17 20:57:40','02c41839-8f01-49f9-8900-4029f9cf1efb'),
 	(252,263,'en','',NULL,1,'2018-07-05 20:06:13','2018-07-05 20:06:13','eb352164-4519-478a-972d-206f0a7255d1'),
 	(253,264,'en','about',NULL,1,'2018-07-05 22:10:16','2018-07-05 22:10:16','12f63afc-30c3-444c-a73f-082241932d95'),
 	(254,265,'en','apex-studio',NULL,1,'2018-07-05 22:10:46','2018-07-05 22:10:46','fb441222-8589-4703-b9e4-636ccd84f5d5'),
@@ -798,7 +807,11 @@ VALUES
 	(342,353,'en','',NULL,1,'2018-07-16 22:10:19','2018-07-16 22:10:19','63be729b-c5e7-4afd-a9bb-f21adb0cc119'),
 	(343,354,'en','',NULL,1,'2018-07-16 22:10:19','2018-07-16 22:10:19','34f251cd-fd65-407c-bae2-690e38254391'),
 	(344,355,'en','tele-style','pickups/tele-style',1,'2018-07-16 22:33:39','2018-07-16 22:33:40','a23779f0-fc39-4401-97b0-a87a01bae602'),
-	(345,356,'en','humbuckers','pickups/humbuckers',1,'2018-07-16 22:34:12','2018-07-16 22:34:14','b381aea2-fff6-4036-a4cc-1774a5ea5857');
+	(345,356,'en','humbuckers','pickups/humbuckers',1,'2018-07-16 22:34:12','2018-07-16 22:34:14','b381aea2-fff6-4036-a4cc-1774a5ea5857'),
+	(346,357,'en','',NULL,1,'2018-07-17 20:18:27','2018-07-17 20:57:40','4086dac4-6494-42f3-8303-da96da960b4f'),
+	(347,358,'en','4-2-10003',NULL,1,'2018-07-17 20:27:00','2018-07-17 20:27:00','ffdc5cd7-b5f0-48a6-b02d-1e50be8647cd'),
+	(348,359,'en','',NULL,1,'2018-07-17 20:27:40','2018-07-17 20:57:40','461d46ca-fd4a-416a-8acc-28bbe7b551a5'),
+	(349,360,'en','test','pickups/test',1,'2018-07-17 22:16:32','2018-07-17 22:16:32','d09f9f9f-2ead-43b3-a612-bff25c68ec7b');
 
 /*!40000 ALTER TABLE `craft_elements_i18n` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -863,8 +876,9 @@ VALUES
 	(257,9,NULL,NULL,'2018-06-24 18:35:19',NULL,'2018-06-24 18:35:19','2018-07-15 13:16:42','bd2069bf-6c3b-4922-b657-f914a6c43a54'),
 	(258,10,NULL,NULL,'2018-06-24 18:35:36',NULL,'2018-06-24 18:35:36','2018-07-14 13:56:37','6756de37-75b3-4218-84b1-b234b20ca04a'),
 	(259,11,NULL,NULL,'2018-06-24 18:36:23',NULL,'2018-06-24 18:36:23','2018-07-15 10:55:55','344e43f8-036c-45a4-850d-4e070fd84d92'),
-	(262,12,14,1,'2018-07-05 20:00:00',NULL,'2018-07-05 20:00:18','2018-07-16 23:08:46','bc3d46e0-2ef2-401c-b4ed-1370c37ca0b1'),
-	(350,2,2,1,'2018-07-15 11:52:00',NULL,'2018-07-15 11:52:23','2018-07-15 12:42:27','1ad65f25-a9e5-4a6c-bcb9-52a0d076900a');
+	(262,12,14,1,'2018-07-05 20:00:00',NULL,'2018-07-05 20:00:18','2018-07-17 20:57:40','bc3d46e0-2ef2-401c-b4ed-1370c37ca0b1'),
+	(350,2,2,1,'2018-07-15 11:52:00',NULL,'2018-07-15 11:52:23','2018-07-15 12:42:27','1ad65f25-a9e5-4a6c-bcb9-52a0d076900a'),
+	(360,12,14,1,'2018-07-17 22:16:32',NULL,'2018-07-17 22:16:33','2018-07-17 22:16:33','3fd1d2e9-5f75-4e5c-bba5-3285762850e9');
 
 /*!40000 ALTER TABLE `craft_entries` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -938,7 +952,7 @@ VALUES
 	(11,9,271,'Contact','contact',1,'',NULL,1,'2018-06-24 18:35:19','2018-07-15 13:16:16','7edd4a7b-9cf4-4286-b351-9df85c7f390b'),
 	(12,10,259,'Apex Studio','apexStudio',1,'',NULL,1,'2018-06-24 18:35:36','2018-07-14 13:51:06','cbd4ca64-780d-40f0-8cd7-2d938d0ca2fb'),
 	(13,11,265,'Instrument Repairs','instrumentRepairs',0,NULL,'{section.name|raw}',1,'2018-06-24 18:36:23','2018-07-14 14:32:07','eda96e9a-cade-465f-9d43-60d3cbfc02fc'),
-	(14,12,276,'Pickups','pickups',1,'Title',NULL,1,'2018-07-05 19:59:50','2018-07-16 23:08:31','e34ecaa9-7579-4b2d-bc6b-3218910066e8');
+	(14,12,286,'Pickups','pickups',1,'Title',NULL,1,'2018-07-05 19:59:50','2018-07-17 20:16:37','e34ecaa9-7579-4b2d-bc6b-3218910066e8');
 
 /*!40000 ALTER TABLE `craft_entrytypes` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1053,7 +1067,14 @@ VALUES
 	(268,350,2,1,'en',2,'','{\"typeId\":\"2\",\"authorId\":\"1\",\"title\":\"INTRODUCING THE TEAM: PETE\",\"slug\":\"introducing-the-team-pete\",\"postDate\":1531655520,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"4\":{\"351\":{\"type\":\"text\",\"enabled\":\"1\",\"fields\":{\"text\":\"<p>Pete is probably the most important member of the team and has a job list as long as Orans hair. Pete keeps an eye on the workshop, keeps away intruders and makes sure everything is in order, all the while flashing his signature toothy grin.<\\/p>\"}}},\"15\":[\"292\"],\"1\":\"\",\"47\":\"<p>Pete is probably the most important member of the team and has a job list as long as Orans hair. Pete keeps an eye on the workshop, keeps away intruders and makes sure everything is in order, all the while flashing his signature toothy grin.<\\/p>\"}}','2018-07-15 12:40:26','2018-07-15 12:40:26','96fa6e55-0fdc-4c05-a3f8-b20ba6773c19'),
 	(269,350,2,1,'en',3,'','{\"typeId\":\"2\",\"authorId\":\"1\",\"title\":\"INTRODUCING THE TEAM: PETE\",\"slug\":\"introducing-the-team-pete\",\"postDate\":1531655520,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"4\":{\"351\":{\"type\":\"text\",\"enabled\":\"1\",\"fields\":{\"text\":\"<p>\\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\\r\\n<\\/p>\\r\\n<p>Section 1.10.32 of \\\"de Finibus Bonorum et Malorum\\\", written by Cicero in 45 BC \\\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\\\"\\r\\n<\\/p>\"}}},\"15\":[\"292\"],\"47\":\"<p>Pete is probably the most important member of the team and has a job list as long as Orans hair. Pete keeps an eye on the workshop, keeps away intruders and makes sure everything is in order, all the while flashing his signature toothy grin.<\\/p>\"}}','2018-07-15 12:42:27','2018-07-15 12:42:27','4fad954d-6674-4c81-848f-126b428a250d'),
 	(270,257,9,1,'en',2,'','{\"typeId\":null,\"authorId\":null,\"title\":\"Contact\",\"slug\":\"contact\",\"postDate\":1529865319,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"1\":\"Get in touch if you\'d like to use any of our services.\"}}','2018-07-15 13:16:42','2018-07-15 13:16:42','368bac49-54fa-43fc-817a-83cfa8e8f649'),
-	(271,262,12,1,'en',3,'','{\"typeId\":\"14\",\"authorId\":\"1\",\"title\":\"Apex 50s\",\"slug\":\"apex-50s\",\"postDate\":1530820800,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"80\":[\"261\"],\"90\":\"<div class=\\\"large-12 small-centered columns text-center\\\">\\r\\n\\t\\t\\t<h1>Our single coil pickups give your guitar the truest most open sound it will ever have, bringing out tones you never thought you could hear from your guitar.<\\/h1>\\r\\n\\t\\t<\\/div>\"}}','2018-07-16 23:08:46','2018-07-16 23:08:46','cc6f43f3-8427-4109-bb59-f1dd4e2ce4ce');
+	(271,262,12,1,'en',3,'','{\"typeId\":\"14\",\"authorId\":\"1\",\"title\":\"Apex 50s\",\"slug\":\"apex-50s\",\"postDate\":1530820800,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"80\":[\"261\"],\"90\":\"<div class=\\\"large-12 small-centered columns text-center\\\">\\r\\n\\t\\t\\t<h1>Our single coil pickups give your guitar the truest most open sound it will ever have, bringing out tones you never thought you could hear from your guitar.<\\/h1>\\r\\n\\t\\t<\\/div>\"}}','2018-07-16 23:08:46','2018-07-16 23:08:46','cc6f43f3-8427-4109-bb59-f1dd4e2ce4ce'),
+	(272,262,12,1,'en',4,'','{\"typeId\":\"14\",\"authorId\":\"1\",\"title\":\"Apex 50s\",\"slug\":\"apex-50s\",\"postDate\":1530820800,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"2\":\"<p>Apex 50\'s The Apex 50\'s the perfect aged tone your rig needs, with a beautiful mid-range these pickups really sing with your valve driven tones or even your transistor jazz cleans.\\r\\n<\\/p>\\r\\n<p>The Apex 50\'s are modelled to fit your raw blues tones with a lower mellower vibe so you can either stand out in your backline or hang back in your mix providing a solidrhythm tone.\\r\\n<\\/p>\\r\\n<p>The Apex 50\'s also show off how versatile they are due to their thickness in sound with a fat crunchy mid tones and balanced highs and lows the 50\'s can do virtually anything.\\r\\n<\\/p><p><\\/p>\",\"80\":[\"261\"],\"15\":[\"304\"]}}','2018-07-17 19:01:15','2018-07-17 19:01:15','98e1b263-6dc7-49a5-af1a-48a970dd5620'),
+	(273,262,12,1,'en',5,'','{\"typeId\":\"14\",\"authorId\":\"1\",\"title\":\"Apex 50s\",\"slug\":\"apex-50s\",\"postDate\":1530820800,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"2\":\"<p>Apex 50\'s The Apex 50\'s the perfect aged tone your rig needs, with a beautiful mid-range these pickups really sing with your valve driven tones or even your transistor jazz cleans.\\r\\n<\\/p>\\r\\n<p>The Apex 50\'s are modelled to fit your raw blues tones with a lower mellower vibe so you can either stand out in your backline or hang back in your mix providing a solidrhythm tone.\\r\\n<\\/p>\\r\\n<p>The Apex 50\'s also show off how versatile they are due to their thickness in sound with a fat crunchy mid tones and balanced highs and lows the 50\'s can do virtually anything.\\r\\n<\\/p>\",\"80\":[\"261\"],\"15\":[\"304\"]}}','2018-07-17 19:42:32','2018-07-17 19:42:32','22c5bd32-5ace-463c-82da-5d9538158cca'),
+	(274,262,12,1,'en',6,'','{\"typeId\":\"14\",\"authorId\":\"1\",\"title\":\"Apex 50s\",\"slug\":\"apex-50s\",\"postDate\":1530820800,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"2\":\"<p>Apex 50\'s The Apex 50\'s the perfect aged tone your rig needs, with a beautiful mid-range these pickups really sing with your valve driven tones or even your transistor jazz cleans.\\r\\n<\\/p>\\r\\n<p>The Apex 50\'s are modelled to fit your raw blues tones with a lower mellower vibe so you can either stand out in your backline or hang back in your mix providing a solidrhythm tone.\\r\\n<\\/p>\\r\\n<p>The Apex 50\'s also show off how versatile they are due to their thickness in sound with a fat crunchy mid tones and balanced highs and lows the 50\'s can do virtually anything.\\r\\n<\\/p>\",\"80\":[\"261\"],\"15\":[\"304\"],\"121\":\"135\",\"117\":{\"357\":{\"type\":\"feature\",\"enabled\":\"1\",\"fields\":{\"featureOne\":\"<h3>Magent Type<\\/h3>\\r\\n<p>\\r\\n\\t\\t\\t\\t\\t<strong>Alnico 5<\\/strong>\\r\\n\\t\\t\\t\\t<\\/p>\\r\\n\",\"featureTwo\":\"<h3>Approximate Resistance<\\/h3>\\r\\n\\t\\t\\t\\t<ul class=\\\"resistance\\\">\\r\\n\\t\\t\\t\\t\\t<li>Bridge\\r\\n\\t\\t\\t\\t\\t\\t<b>5.7K<\\/b>\\r\\n\\t\\t\\t\\t\\t<\\/li>\\r\\n\\t\\t\\t\\t\\t<li>Middle\\r\\n\\t\\t\\t\\t\\t\\t<b>5.3k<\\/b>\\r\\n\\t\\t\\t\\t\\t<\\/li>\\r\\n\\t\\t\\t\\t\\t<li>Neck\\r\\n\\t\\t\\t\\t\\t\\t<b>5.3K<\\/b>\\r\\n\\t\\t\\t\\t\\t<\\/li>\\r\\n\\t\\t\\t\\t<\\/ul>\"}}},\"122\":[]}}','2018-07-17 20:18:27','2018-07-17 20:18:27','5a80a370-0d33-450a-98f7-0555b600eaca'),
+	(275,262,12,1,'en',7,'','{\"typeId\":\"14\",\"authorId\":\"1\",\"title\":\"Apex 50s\",\"slug\":\"apex-50s\",\"postDate\":1530820800,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"2\":\"<p>Apex 50\'s The Apex 50\'s the perfect aged tone your rig needs, with a beautiful mid-range these pickups really sing with your valve driven tones or even your transistor jazz cleans.\\r\\n<\\/p>\\r\\n<p>The Apex 50\'s are modelled to fit your raw blues tones with a lower mellower vibe so you can either stand out in your backline or hang back in your mix providing a solidrhythm tone.\\r\\n<\\/p>\\r\\n<p>The Apex 50\'s also show off how versatile they are due to their thickness in sound with a fat crunchy mid tones and balanced highs and lows the 50\'s can do virtually anything.\\r\\n<\\/p>\",\"80\":[\"261\"],\"15\":[\"304\"],\"121\":\"135\",\"117\":{\"357\":{\"type\":\"feature\",\"enabled\":\"1\",\"fields\":{\"featureOne\":\"<h3>Magent Type<\\/h3>\\r\\n<p>\\r\\n\\t\\t\\t\\t\\t<strong>Alnico 5<\\/strong>\\r\\n\\t\\t\\t\\t<\\/p>\",\"featureTwo\":\"<h3>Approximate Resistance<\\/h3>\\r\\n<ul class=\\\"resistance\\\"><li>Bridge\\r\\n\\t\\t\\t\\t\\t\\t<strong>5.7K<\\/strong>\\r\\n\\t\\t\\t\\t\\t<\\/li>\\r\\n\\t\\t\\t\\t\\t<li>Middle\\r\\n\\t\\t\\t\\t\\t\\t<strong>5.3k<\\/strong>\\r\\n\\t\\t\\t\\t\\t<\\/li>\\r\\n\\t\\t\\t\\t\\t<li>Neck\\r\\n\\t\\t\\t\\t\\t\\t<strong>5.3K<\\/strong>\\r\\n\\t\\t\\t\\t\\t<\\/li>\\r\\n\\t\\t\\t\\t<\\/ul>\"}}},\"122\":{\"359\":{\"type\":\"block\",\"enabled\":\"1\",\"fields\":{\"iframeLink\":\"https:\\/\\/www.youtube.com\\/embed\\/bTqVqk7FSmY\",\"soundFile\":[\"358\"],\"soundFileTitle\":\"Sound Sample\"}}}}}','2018-07-17 20:27:40','2018-07-17 20:27:40','f53d647d-ebfe-4515-afdc-ade5beae1907'),
+	(276,262,12,1,'en',8,'','{\"typeId\":\"14\",\"authorId\":\"1\",\"title\":\"Apex 50s\",\"slug\":\"apex-50s\",\"postDate\":1530820800,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"2\":\"<p>Apex 50\'s The Apex 50\'s the perfect aged tone your rig needs, with a beautiful mid-range these pickups really sing with your valve driven tones or even your transistor jazz cleans.\\r\\n<\\/p>\\r\\n<p>The Apex 50\'s are modelled to fit your raw blues tones with a lower mellower vibe so you can either stand out in your backline or hang back in your mix providing a solidrhythm tone.\\r\\n<\\/p>\\r\\n<p>The Apex 50\'s also show off how versatile they are due to their thickness in sound with a fat crunchy mid tones and balanced highs and lows the 50\'s can do virtually anything.\\r\\n<\\/p>\",\"80\":[\"261\"],\"15\":[\"304\"],\"121\":\"135\",\"117\":{\"357\":{\"type\":\"feature\",\"enabled\":\"1\",\"fields\":{\"featureOne\":\"<h3>Magent Type<\\/h3>\\r\\n<p>\\r\\n\\t\\t\\t\\t\\t<strong>Alnico 5<\\/strong>\\r\\n\\t\\t\\t\\t<\\/p>\",\"featureTwo\":\"<h3>Approximate Resistance<\\/h3>\\r\\n<ul class=\\\"resistance\\\"><li>Bridge\\r\\n\\t\\t\\t\\t\\t\\t<strong>5.7K<\\/strong>\\r\\n\\t\\t\\t\\t\\t<\\/li>\\r\\n\\t\\t\\t\\t\\t<li>Middle\\r\\n\\t\\t\\t\\t\\t\\t<strong>5.3k<\\/strong>\\r\\n\\t\\t\\t\\t\\t<\\/li>\\r\\n\\t\\t\\t\\t\\t<li>Neck\\r\\n\\t\\t\\t\\t\\t\\t<strong>5.3K<\\/strong>\\r\\n\\t\\t\\t\\t\\t<\\/li>\\r\\n\\t\\t\\t\\t<\\/ul>\"}}},\"122\":{\"359\":{\"type\":\"block\",\"enabled\":\"1\",\"fields\":{\"iframeLink\":\"https:\\/\\/www.youtube.com\\/embed\\/bTqVqk7FSmY\",\"soundFile\":[\"358\"],\"soundFileTitle\":\"Sound Sample\"}}}}}','2018-07-17 20:28:08','2018-07-17 20:28:08','9fa47245-4348-499c-8c38-13684700fb45'),
+	(277,262,12,1,'en',9,'','{\"typeId\":\"14\",\"authorId\":\"1\",\"title\":\"Apex 50s\",\"slug\":\"apex-50s\",\"postDate\":1530820800,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"2\":\"<p>Apex 50\'s The Apex 50\'s the perfect aged tone your rig needs, with a beautiful mid-range these pickups really sing with your valve driven tones or even your transistor jazz cleans.\\r\\n<\\/p>\\r\\n<p>The Apex 50\'s are modelled to fit your raw blues tones with a lower mellower vibe so you can either stand out in your backline or hang back in your mix providing a solidrhythm tone.\\r\\n<\\/p>\\r\\n<p>The Apex 50\'s also show off how versatile they are due to their thickness in sound with a fat crunchy mid tones and balanced highs and lows the 50\'s can do virtually anything.\\r\\n<\\/p>\",\"80\":[\"261\"],\"15\":[\"304\"],\"121\":\"135\",\"117\":{\"357\":{\"type\":\"feature\",\"enabled\":\"1\",\"fields\":{\"featureOne\":\"<h3>Magent Type<\\/h3>\\r\\n<p>\\r\\n\\t\\t\\t\\t\\t<strong>Alnico 5<\\/strong>\\r\\n\\t\\t\\t\\t<\\/p>\",\"featureTwo\":\"<h3>Approximate Resistance<\\/h3>\\r\\n<ul class=\\\"resistance\\\"><li>Bridge\\r\\n\\t\\t\\t\\t\\t\\t<strong>5.7K<\\/strong>\\r\\n\\t\\t\\t\\t\\t<\\/li>\\r\\n\\t\\t\\t\\t\\t<li>Middle\\r\\n\\t\\t\\t\\t\\t\\t<strong>5.3k<\\/strong>\\r\\n\\t\\t\\t\\t\\t<\\/li>\\r\\n\\t\\t\\t\\t\\t<li>Neck\\r\\n\\t\\t\\t\\t\\t\\t<strong>5.3K<\\/strong>\\r\\n\\t\\t\\t\\t\\t<\\/li>\\r\\n\\t\\t\\t\\t<\\/ul>\"}}},\"122\":{\"359\":{\"type\":\"block\",\"enabled\":\"1\",\"fields\":{\"iframeLink\":\"https:\\/\\/www.youtube.com\\/embed\\/bTqVqk7FSmY\",\"soundFile\":[\"358\"],\"soundFileTitle\":\"Sound Sample\"}}}}}','2018-07-17 20:57:40','2018-07-17 20:57:40','951bbaf5-a308-4e55-ab11-e305eb52ed9d'),
+	(278,360,12,1,'en',1,'','{\"typeId\":null,\"authorId\":\"1\",\"title\":\"Test\",\"slug\":\"test\",\"postDate\":1531865792,\"expiryDate\":null,\"enabled\":1,\"parentId\":null,\"fields\":{\"2\":\"\",\"80\":[\"261\"],\"15\":[\"304\"],\"121\":\"120\",\"117\":[],\"122\":[]}}','2018-07-17 22:16:33','2018-07-17 22:16:33','a39667c8-91e6-4ecb-b6c5-342eba72915a');
 
 /*!40000 ALTER TABLE `craft_entryversions` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1083,7 +1104,9 @@ VALUES
 	(4,'Homepage','2014-10-06 01:47:19','2014-10-06 01:47:19','d58a1faa-0bf6-46b2-b880-b0c14bebca75'),
 	(6,'Footer','2015-02-04 15:20:41','2015-02-04 15:20:41','f7189ca2-4b93-4661-830a-a71aff8aa3cd'),
 	(7,'Contact Info','2015-02-10 19:02:27','2015-02-10 19:33:07','0815347a-8e73-45fd-93c9-2244ac562559'),
-	(8,'About','2018-07-10 20:20:27','2018-07-10 20:20:27','3443253a-9f10-4418-9665-9c578ee80772');
+	(8,'About','2018-07-10 20:20:27','2018-07-10 20:20:27','3443253a-9f10-4418-9665-9c578ee80772'),
+	(9,'Products','2018-07-17 20:01:01','2018-07-17 20:01:01','198b3bff-695a-46ce-84c1-f7f202a969c4'),
+	(10,'Globals','2018-07-17 20:07:48','2018-07-17 20:07:48','38250327-1dd9-4a96-9e86-0628130d2f79');
 
 /*!40000 ALTER TABLE `craft_fieldgroups` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1119,13 +1142,6 @@ LOCK TABLES `craft_fieldlayoutfields` WRITE;
 
 INSERT INTO `craft_fieldlayoutfields` (`id`, `layoutId`, `tabId`, `fieldId`, `required`, `sortOrder`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(564,212,133,41,0,1,'2018-07-05 23:07:08','2018-07-05 23:07:08','7152a5f8-feb7-4394-818f-5e53409e2593'),
-	(565,212,133,76,0,2,'2018-07-05 23:07:08','2018-07-05 23:07:08','d80f5e8d-6ad8-4136-8a93-e8cdfc9c65fe'),
-	(566,212,133,37,0,3,'2018-07-05 23:07:08','2018-07-05 23:07:08','cb8e90f9-2a02-4423-a0cd-7c7f39bbef82'),
-	(567,212,133,81,0,4,'2018-07-05 23:07:08','2018-07-05 23:07:08','354c8257-2b79-4b83-a049-0015bc69aaeb'),
-	(568,212,133,77,0,5,'2018-07-05 23:07:08','2018-07-05 23:07:08','d3d02b92-f7a8-492e-ada4-d4999ebc7f0b'),
-	(569,212,133,78,0,6,'2018-07-05 23:07:08','2018-07-05 23:07:08','798f32a4-2b78-4195-8adc-a3ed617f04ef'),
-	(570,212,133,79,0,7,'2018-07-05 23:07:08','2018-07-05 23:07:08','d7f01d73-2f13-4560-ae5e-c1facff72ccd'),
 	(586,216,137,93,0,1,'2018-07-07 16:01:07','2018-07-07 16:01:07','1e9934d3-ddfc-4a31-8f36-5a324b4be752'),
 	(587,216,137,94,0,2,'2018-07-07 16:01:07','2018-07-07 16:01:07','d817d65b-25cd-40c8-aa4e-a265380ff9f5'),
 	(588,216,137,95,0,3,'2018-07-07 16:01:07','2018-07-07 16:01:07','5e15a75a-814c-4c8f-a96f-8d865c2d05d4'),
@@ -1159,8 +1175,6 @@ VALUES
 	(703,260,183,97,0,1,'2018-07-14 13:53:28','2018-07-14 13:53:28','48de21ee-1b65-4ff7-a463-c1a7653dff29'),
 	(704,260,183,98,0,2,'2018-07-14 13:53:28','2018-07-14 13:53:28','96d40295-dba5-4ce8-965e-ec895569b310'),
 	(705,260,183,110,0,3,'2018-07-14 13:53:28','2018-07-14 13:53:28','72065e41-43ae-49bf-82c9-bfa3f5ea17c8'),
-	(706,261,184,113,0,1,'2018-07-14 13:56:50','2018-07-14 13:56:50','aeabbfbc-8ac5-4102-9807-db1898093ed2'),
-	(707,261,184,114,0,2,'2018-07-14 13:56:50','2018-07-14 13:56:50','2b469ebb-ed61-49d6-8bef-16cf5c20deab'),
 	(712,265,187,91,0,1,'2018-07-14 14:32:07','2018-07-14 14:32:07','3452e71e-cf6b-4a65-bc8d-251733bfa99f'),
 	(713,265,187,2,0,2,'2018-07-14 14:32:07','2018-07-14 14:32:07','a7c15c4b-7840-40d7-9e2b-785263a7467f'),
 	(714,265,187,96,0,3,'2018-07-14 14:32:07','2018-07-14 14:32:07','49676a8e-9aad-4353-be18-0d3934ea0c02'),
@@ -1178,8 +1192,27 @@ VALUES
 	(736,275,197,47,0,2,'2018-07-16 22:30:07','2018-07-16 22:30:07','e18266c4-4c24-4b29-96dd-03d34e59cd92'),
 	(737,275,197,15,0,3,'2018-07-16 22:30:07','2018-07-16 22:30:07','739c7b62-7020-4584-b4be-10aac5438ae2'),
 	(738,275,197,2,0,4,'2018-07-16 22:30:07','2018-07-16 22:30:07','78f0c718-db6d-4513-89da-01670fa30260'),
-	(739,276,198,80,0,1,'2018-07-16 23:08:31','2018-07-16 23:08:31','722b360d-2761-46f4-8b14-0217a47dea78'),
-	(740,276,198,90,0,2,'2018-07-16 23:08:31','2018-07-16 23:08:31','497af56c-a331-4f81-9d38-cf229fec0593');
+	(750,280,202,118,0,1,'2018-07-17 20:01:49','2018-07-17 20:01:49','edf1f9b3-0a79-4315-a80a-78f27afa6349'),
+	(751,280,202,119,0,2,'2018-07-17 20:01:49','2018-07-17 20:01:49','bde6e43d-e359-4d04-a8b2-6d27f3823fdb'),
+	(756,282,204,41,0,1,'2018-07-17 20:10:26','2018-07-17 20:10:26','954ad9a0-431b-4ee8-835d-ba8b9baab6b0'),
+	(757,282,204,76,0,2,'2018-07-17 20:10:26','2018-07-17 20:10:26','f09e0c73-88ac-4e1e-8ba2-ec7fc4f872de'),
+	(758,282,204,37,0,3,'2018-07-17 20:10:26','2018-07-17 20:10:26','d8b401fa-cff2-4b99-9e99-d1de16cc2c62'),
+	(759,282,204,81,0,4,'2018-07-17 20:10:26','2018-07-17 20:10:26','3e7c6c8a-e748-44d6-96a5-9dff1e97ea14'),
+	(760,282,204,77,0,5,'2018-07-17 20:10:26','2018-07-17 20:10:26','628ccece-599a-4682-be87-d9f25f476d64'),
+	(761,282,204,78,0,6,'2018-07-17 20:10:26','2018-07-17 20:10:26','f7a0315d-2b13-4aa7-9441-106bd24ff843'),
+	(762,282,204,79,0,7,'2018-07-17 20:10:26','2018-07-17 20:10:26','d9c4e675-0b6d-448d-9755-e23d7caed1e3'),
+	(763,282,204,120,0,8,'2018-07-17 20:10:26','2018-07-17 20:10:26','271661ab-21b7-4a2e-b4e3-23821438367a'),
+	(770,284,206,113,0,1,'2018-07-17 20:14:13','2018-07-17 20:14:13','f439b202-526f-426f-80d0-f6c60af7f08f'),
+	(771,284,206,114,0,2,'2018-07-17 20:14:13','2018-07-17 20:14:13','740db015-277a-4a3c-b275-7e15e69e5911'),
+	(775,286,208,80,0,1,'2018-07-17 20:16:37','2018-07-17 20:16:37','983b1871-11d2-4602-b03b-c4d26ac9ddc4'),
+	(776,286,208,15,0,2,'2018-07-17 20:16:37','2018-07-17 20:16:37','aefad2d6-2d4f-4156-a873-3b1b38a16379'),
+	(777,286,208,2,0,3,'2018-07-17 20:16:37','2018-07-17 20:16:37','b40fb4ff-abb1-42a6-aaed-1f9f6560a16f'),
+	(778,286,208,117,0,4,'2018-07-17 20:16:37','2018-07-17 20:16:37','0192f399-b23a-4c00-8ed5-605e06413167'),
+	(779,286,208,121,0,5,'2018-07-17 20:16:37','2018-07-17 20:16:37','833ae7aa-5dd9-4ca5-8846-bd9ab70e351c'),
+	(780,286,208,122,0,6,'2018-07-17 20:16:37','2018-07-17 20:16:37','7d95f9b7-5919-4a07-8716-06f637fffdbf'),
+	(781,287,209,123,0,1,'2018-07-17 20:27:54','2018-07-17 20:27:54','e9b40622-abc8-4125-8d81-24bba277d66e'),
+	(782,287,209,124,0,2,'2018-07-17 20:27:54','2018-07-17 20:27:54','44561292-c54e-45a4-aa8b-bab794309f28'),
+	(783,287,209,125,0,3,'2018-07-17 20:27:54','2018-07-17 20:27:54','3cfdcf76-6c12-4dd4-9415-42b651f873b5');
 
 /*!40000 ALTER TABLE `craft_fieldlayoutfields` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1207,7 +1240,6 @@ INSERT INTO `craft_fieldlayouts` (`id`, `type`, `dateCreated`, `dateUpdated`, `u
 VALUES
 	(195,'Asset','2015-02-10 23:15:35','2015-02-10 23:15:35','da21546b-da53-49c7-8821-2685c67df6b4'),
 	(196,'Asset','2015-02-10 23:15:38','2015-02-10 23:15:38','57038148-5c46-43e2-9c5b-9760e04375f2'),
-	(212,'GlobalSet','2018-07-05 23:07:08','2018-07-05 23:07:08','f6c98bd1-2536-4baa-a526-3cb841c246c0'),
 	(216,'MatrixBlock','2018-07-07 16:01:07','2018-07-07 16:01:07','9b778402-eb3a-4917-af62-bf4ae1b01546'),
 	(223,'MatrixBlock','2018-07-08 13:56:10','2018-07-08 13:56:10','99ee404a-fc7e-4404-a7a4-ffe150df6de9'),
 	(230,'Asset','2018-07-08 14:23:27','2018-07-08 14:23:27','f0690817-574f-4f48-8562-5863247e1765'),
@@ -1218,14 +1250,17 @@ VALUES
 	(253,'Entry','2018-07-14 12:31:28','2018-07-14 12:31:28','c156acc0-b4d0-4718-b994-7e7d3b6755f1'),
 	(259,'Entry','2018-07-14 13:51:06','2018-07-14 13:51:06','acef2203-1416-49be-b0a9-021db8c27d22'),
 	(260,'MatrixBlock','2018-07-14 13:53:28','2018-07-14 13:53:28','d1dd43f5-a274-42d5-bdc3-afd509c99dd8'),
-	(261,'MatrixBlock','2018-07-14 13:56:50','2018-07-14 13:56:50','2603a6fd-965c-4c22-9fb6-ea40719dd7eb'),
 	(265,'Entry','2018-07-14 14:32:07','2018-07-14 14:32:07','ffdd9bf0-e32e-4308-9bbe-cff489cfa219'),
 	(268,'MatrixBlock','2018-07-15 11:53:54','2018-07-15 11:53:54','9a35c4f4-4d32-434b-8430-22e917072f48'),
 	(269,'Entry','2018-07-15 12:40:47','2018-07-15 12:40:47','88dfe254-3685-4019-8a0f-9f7a3664cc9c'),
 	(271,'Entry','2018-07-15 13:16:16','2018-07-15 13:16:16','c2648aa6-b86d-453e-a652-2a5af4955819'),
 	(273,'GlobalSet','2018-07-16 22:04:45','2018-07-16 22:04:45','dc6b4d1b-a682-4b2f-95ea-d9a774277d7d'),
 	(275,'Category','2018-07-16 22:30:07','2018-07-16 22:30:07','67109432-f82a-4c32-8e7f-bb388dbf5feb'),
-	(276,'Entry','2018-07-16 23:08:30','2018-07-16 23:08:30','3ecf38a9-1df9-48d2-a0e9-9fe7381c1668');
+	(280,'MatrixBlock','2018-07-17 20:01:49','2018-07-17 20:01:49','449f2e89-68e3-4d21-9aff-ac3edc203c5e'),
+	(282,'GlobalSet','2018-07-17 20:10:26','2018-07-17 20:10:26','68fefef6-3bc6-4a54-9d11-5aa7621c9d10'),
+	(284,'MatrixBlock','2018-07-17 20:14:13','2018-07-17 20:14:13','be12a829-dcf0-41a1-a7c6-bc3856521eb8'),
+	(286,'Entry','2018-07-17 20:16:37','2018-07-17 20:16:37','819fedc4-0bc2-49dd-bf60-368b12b1265f'),
+	(287,'MatrixBlock','2018-07-17 20:27:54','2018-07-17 20:27:54','0a43ca03-4056-43c7-ab1a-5b01e22d18f3');
 
 /*!40000 ALTER TABLE `craft_fieldlayouts` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1255,7 +1290,6 @@ LOCK TABLES `craft_fieldlayouttabs` WRITE;
 
 INSERT INTO `craft_fieldlayouttabs` (`id`, `layoutId`, `name`, `sortOrder`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(133,212,'Content',1,'2018-07-05 23:07:08','2018-07-05 23:07:08','6eb72fc2-7a51-4091-82c4-f5419bede2d3'),
 	(137,216,'Content',1,'2018-07-07 16:01:07','2018-07-07 16:01:07','9ba87024-743f-4e58-9f6b-3c6c748bdf3b'),
 	(144,223,'Content',1,'2018-07-08 13:56:10','2018-07-08 13:56:10','b5d2ac64-df2a-4a1b-9e7b-d7f3b4818f54'),
 	(151,230,'Content',1,'2018-07-08 14:23:27','2018-07-08 14:23:27','dff54c35-059b-425e-86c2-9df748986afa'),
@@ -1267,7 +1301,6 @@ VALUES
 	(181,259,'Tab 1',1,'2018-07-14 13:51:06','2018-07-14 13:51:06','3217c4c4-777b-46e1-b6df-f8a28cb56d67'),
 	(182,259,'Price List',2,'2018-07-14 13:51:06','2018-07-14 13:51:06','11f1d2ed-7b9d-48f5-abf5-3aec2d5bc7c9'),
 	(183,260,'Content',1,'2018-07-14 13:53:28','2018-07-14 13:53:28','b62d39be-c15b-4b96-bd33-dcec77f6eba5'),
-	(184,261,'Content',1,'2018-07-14 13:56:50','2018-07-14 13:56:50','4a7f9cce-25bc-4fdd-a320-791864220fb1'),
 	(187,265,'Tab 1',1,'2018-07-14 14:32:07','2018-07-14 14:32:07','95595141-7f9f-4e44-8f86-20ccc819eb20'),
 	(188,265,'Price List',2,'2018-07-14 14:32:07','2018-07-14 14:32:07','bfeda562-1587-45cd-9971-13ae62d0b399'),
 	(190,268,'Content',1,'2018-07-15 11:53:54','2018-07-15 11:53:54','671f142f-d677-4a0d-86f9-ddab7cfa48c1'),
@@ -1275,7 +1308,11 @@ VALUES
 	(193,271,'Tab 1',1,'2018-07-15 13:16:16','2018-07-15 13:16:16','3efc2091-3b16-4c7f-bf75-a158c0c1964b'),
 	(195,273,'Content',1,'2018-07-16 22:04:45','2018-07-16 22:04:45','2674fabc-f5a9-47cc-bad3-4f04134e7f91'),
 	(197,275,'Tab 1',1,'2018-07-16 22:30:07','2018-07-16 22:30:07','c697b3dc-66dd-451c-90db-b7a5df8d0577'),
-	(198,276,'Tab 1',1,'2018-07-16 23:08:30','2018-07-16 23:08:30','dbf82855-dff0-4077-b6c3-7147030bf806');
+	(202,280,'Content',1,'2018-07-17 20:01:49','2018-07-17 20:01:49','086f9a52-f5d0-4882-94b3-99afb06130bb'),
+	(204,282,'Content',1,'2018-07-17 20:10:26','2018-07-17 20:10:26','4276efb0-2533-40ae-a687-60fa3e3c7e94'),
+	(206,284,'Content',1,'2018-07-17 20:14:13','2018-07-17 20:14:13','919758bc-a3e7-454b-8576-d02bcde147e4'),
+	(208,286,'Tab 1',1,'2018-07-17 20:16:37','2018-07-17 20:16:37','299b990f-238a-4907-a866-2dcd896edee9'),
+	(209,287,'Content',1,'2018-07-17 20:27:54','2018-07-17 20:27:54','06d6dfe4-fe66-4142-b357-9b81629db1ab');
 
 /*!40000 ALTER TABLE `craft_fieldlayouttabs` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1315,7 +1352,7 @@ VALUES
 	(2,1,'Body','body','global',NULL,1,'RichText','{\"configFile\":\"Standard.json\"}','2014-07-29 18:21:34','2014-07-29 18:21:34','08f8ec90-f7ad-4d40-9880-3c96304f1e4e'),
 	(4,1,'Article Body','articleBody','global','',0,'Matrix','{\"maxBlocks\":null}','2014-07-30 20:59:37','2018-07-15 11:53:54','82ac4aa6-3b63-4cb9-a1f6-6cb6a5210a2e'),
 	(5,NULL,'Text','text','matrixBlockType:1','',0,'RichText','{\"configFile\":\"Standard.json\",\"availableAssetSources\":\"*\",\"availableTransforms\":\"*\",\"cleanupHtml\":\"1\",\"purifyHtml\":\"\",\"purifierConfig\":\"\",\"columnType\":\"text\"}','2014-07-30 20:59:37','2018-07-15 11:53:54','e03a8ea1-0b9b-4e8c-bbf5-f7197caad45c'),
-	(15,1,'Featured Image','featuredImage','global','',0,'Assets','{\"useSingleFolder\":\"\",\"sources\":[\"folder:1\"],\"defaultUploadLocationSource\":\"1\",\"defaultUploadLocationSubpath\":\"\",\"singleUploadLocationSource\":\"1\",\"singleUploadLocationSubpath\":\"\",\"restrictFiles\":\"1\",\"allowedKinds\":[\"image\"],\"limit\":\"2\"}','2014-07-30 22:47:26','2015-02-10 19:33:45','0cbb9736-a84b-4e83-803c-5077f56394a9'),
+	(15,1,'Featured Image','featuredImage','global','',0,'Assets','{\"useSingleFolder\":\"\",\"sources\":[\"folder:1\"],\"defaultUploadLocationSource\":\"1\",\"defaultUploadLocationSubpath\":\"\",\"singleUploadLocationSource\":\"1\",\"singleUploadLocationSubpath\":\"\",\"restrictFiles\":\"1\",\"allowedKinds\":[\"image\"],\"limit\":\"1\",\"viewMode\":\"list\",\"selectionLabel\":\"\"}','2014-07-30 22:47:26','2018-07-17 19:42:23','0cbb9736-a84b-4e83-803c-5077f56394a9'),
 	(37,7,'Address One','addressOne','global','',0,'RichText','{\"configFile\":\"Standard.json\",\"availableAssetSources\":\"*\",\"availableTransforms\":\"*\",\"cleanupHtml\":\"1\",\"purifyHtml\":\"1\",\"purifierConfig\":\"\",\"columnType\":\"text\"}','2014-09-17 02:24:38','2018-07-15 13:22:36','422c7da9-d3e4-4d0a-8225-bbbc8264f029'),
 	(41,7,'Email','email','global','',0,'PlainText','{\"placeholder\":\"\",\"maxLength\":\"255\",\"multiline\":\"\",\"initialRows\":\"4\"}','2014-09-17 02:25:59','2015-02-10 19:33:15','b75266c9-d8d2-42ae-9024-0fecb8bdc994'),
 	(47,1,'Short Description','shortDescription','global','Short description for use in index regions.',0,'RichText','{\"configFile\":\"Simple.json\",\"cleanupHtml\":\"1\",\"purifyHtml\":\"\",\"columnType\":\"text\"}','2014-10-03 02:15:14','2015-02-10 23:43:38','aef80333-1412-4130-bb84-ac3bdbbcbbe2'),
@@ -1357,9 +1394,18 @@ VALUES
 	(108,NULL,'Team Member Name','teamMemberName','matrixBlockType:16','',0,'PlainText','{\"placeholder\":\"\",\"maxLength\":\"\",\"multiline\":\"\",\"initialRows\":\"4\"}','2018-07-10 20:23:16','2018-07-10 20:23:16','44e1c234-08c0-4ff4-8c65-e8ed29134059'),
 	(109,NULL,'Team Member Position ','teamMemberPosition','matrixBlockType:16','',0,'PlainText','{\"placeholder\":\"\",\"maxLength\":\"\",\"multiline\":\"\",\"initialRows\":\"4\"}','2018-07-10 20:23:16','2018-07-10 20:23:16','6d800c7b-0357-4691-8efe-2a42b4036046'),
 	(110,NULL,'Image Block Position','imageBlockPosition','matrixBlockType:13','Checking this option floats the image block to the left.',0,'Lightswitch','{\"default\":\"\"}','2018-07-10 22:42:01','2018-07-14 13:53:28','49dbbde2-dc73-438f-a4b3-543e795ea549'),
-	(112,1,'Video Block','videoBlock','global','',0,'Matrix','{\"maxBlocks\":\"1\"}','2018-07-14 13:50:36','2018-07-14 13:56:50','e8f7abfb-c87f-4220-8af6-231ebd937f3b'),
-	(113,NULL,'Text Block','textBlock','matrixBlockType:17','',0,'RichText','{\"configFile\":\"Standard.json\",\"availableAssetSources\":\"*\",\"availableTransforms\":\"*\",\"cleanupHtml\":\"1\",\"purifyHtml\":\"1\",\"purifierConfig\":\"\",\"columnType\":\"text\"}','2018-07-14 13:50:36','2018-07-14 13:56:50','890ef80e-bd33-4d16-a74a-aa933a7f01c1'),
-	(114,NULL,'Iframe Link','iframeLink','matrixBlockType:17','',0,'PlainText','{\"placeholder\":\"\",\"maxLength\":\"\",\"multiline\":\"\",\"initialRows\":\"4\"}','2018-07-14 13:50:36','2018-07-14 13:56:50','859d04d5-a0d9-4b7f-abd7-3e03b6b5bfb3');
+	(112,1,'Video Block','videoBlock','global','',0,'Matrix','{\"maxBlocks\":\"1\"}','2018-07-14 13:50:36','2018-07-17 20:14:13','e8f7abfb-c87f-4220-8af6-231ebd937f3b'),
+	(113,NULL,'Text Block','textBlock','matrixBlockType:17','',0,'RichText','{\"configFile\":\"Standard.json\",\"availableAssetSources\":\"*\",\"availableTransforms\":\"*\",\"cleanupHtml\":\"1\",\"purifyHtml\":\"1\",\"purifierConfig\":\"\",\"columnType\":\"text\"}','2018-07-14 13:50:36','2018-07-17 20:14:13','890ef80e-bd33-4d16-a74a-aa933a7f01c1'),
+	(114,NULL,'Iframe Link','iframeLink','matrixBlockType:17','',0,'PlainText','{\"placeholder\":\"\",\"maxLength\":\"\",\"multiline\":\"\",\"initialRows\":\"4\"}','2018-07-14 13:50:36','2018-07-17 20:14:13','859d04d5-a0d9-4b7f-abd7-3e03b6b5bfb3'),
+	(117,9,'Product Features','productFeatures','global','',0,'Matrix','{\"maxBlocks\":\"1\"}','2018-07-17 20:00:53','2018-07-17 20:01:49','82225d47-d2f8-4c76-a7c8-1cd0240c7fc6'),
+	(118,NULL,'Feature One','featureOne','matrixBlockType:18','',0,'RichText','{\"configFile\":\"Standard.json\",\"availableAssetSources\":\"*\",\"availableTransforms\":\"*\",\"cleanupHtml\":\"1\",\"purifyHtml\":\"1\",\"purifierConfig\":\"\",\"columnType\":\"text\"}','2018-07-17 20:00:54','2018-07-17 20:01:49','39068273-c1ee-4686-b9f0-aa4c1cd41a85'),
+	(119,NULL,'Feature Two','featureTwo','matrixBlockType:18','',0,'RichText','{\"configFile\":\"Standard.json\",\"availableAssetSources\":\"*\",\"availableTransforms\":\"*\",\"cleanupHtml\":\"1\",\"purifyHtml\":\"1\",\"purifierConfig\":\"\",\"columnType\":\"text\"}','2018-07-17 20:00:54','2018-07-17 20:01:49','c776d4c0-ebce-472e-a438-d80a5fc7d564'),
+	(120,7,'Paypal Email','paypalEmail','global','',0,'PlainText','{\"placeholder\":\"\",\"maxLength\":\"\",\"multiline\":\"\",\"initialRows\":\"4\"}','2018-07-17 20:07:33','2018-07-17 20:09:12','58159583-20b2-4357-a082-f69337bb50a8'),
+	(121,9,'Price','price','global','',0,'PlainText','{\"placeholder\":\"\",\"maxLength\":\"\",\"multiline\":\"\",\"initialRows\":\"4\"}','2018-07-17 20:11:35','2018-07-17 20:11:35','bfe22d78-058a-4f88-b028-ea56a4dcc516'),
+	(122,9,'Sound Block','soundBlock','global','',0,'Matrix','{\"maxBlocks\":\"1\"}','2018-07-17 20:15:52','2018-07-17 20:27:54','3ae16e43-ccb3-42d5-9633-768e50cafe9a'),
+	(123,NULL,'Iframe Link','iframeLink','matrixBlockType:19','',0,'PlainText','{\"placeholder\":\"\",\"maxLength\":\"\",\"multiline\":\"\",\"initialRows\":\"4\"}','2018-07-17 20:15:52','2018-07-17 20:27:54','e5dae15e-f566-4d91-a654-0cefb2414337'),
+	(124,NULL,'Sound File','soundFile','matrixBlockType:19','',0,'Assets','{\"useSingleFolder\":\"\",\"sources\":\"*\",\"defaultUploadLocationSource\":\"1\",\"defaultUploadLocationSubpath\":\"\",\"singleUploadLocationSource\":\"1\",\"singleUploadLocationSubpath\":\"\",\"restrictFiles\":\"\",\"limit\":\"\",\"viewMode\":\"list\",\"selectionLabel\":\"\"}','2018-07-17 20:15:52','2018-07-17 20:27:54','ddfecac0-1ba3-44dc-ad0a-0a2140afc534'),
+	(125,NULL,'Sound File Title','soundFileTitle','matrixBlockType:19','',0,'PlainText','{\"placeholder\":\"\",\"maxLength\":\"\",\"multiline\":\"\",\"initialRows\":\"4\"}','2018-07-17 20:15:52','2018-07-17 20:27:54','764f2dd5-cb9e-47d7-8910-e877038e1c86');
 
 /*!40000 ALTER TABLE `craft_fields` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1391,7 +1437,7 @@ LOCK TABLES `craft_globalsets` WRITE;
 
 INSERT INTO `craft_globalsets` (`id`, `name`, `handle`, `fieldLayoutId`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(260,'Contact Meta','contactMeta',212,'2018-06-24 18:39:25','2018-07-05 23:07:08','8d5c9777-081a-4035-876d-57f11fee2ab3'),
+	(260,'Contact Meta','contactMeta',282,'2018-06-24 18:39:25','2018-07-17 20:10:26','8d5c9777-081a-4035-876d-57f11fee2ab3'),
 	(352,'Pickups Home','pickupsHome',273,'2018-07-16 22:04:20','2018-07-16 22:04:45','9748edd1-4ac5-4b2a-b177-232dec81e5eb');
 
 /*!40000 ALTER TABLE `craft_globalsets` ENABLE KEYS */;
@@ -1529,7 +1575,9 @@ VALUES
 	(348,259,92,12,NULL,4,'2018-07-15 10:31:57','2018-07-15 10:55:55','55d7f2d8-d633-493b-96e4-91e486857b65'),
 	(351,350,4,1,NULL,1,'2018-07-15 12:40:25','2018-07-15 12:42:27','ed07ab67-a7bb-4b59-a1d5-2c18b3f7f9fb'),
 	(353,352,82,11,NULL,1,'2018-07-16 22:10:19','2018-07-16 22:10:19','acfd3816-013f-4f21-99f0-9bdd995a743a'),
-	(354,352,82,11,NULL,2,'2018-07-16 22:10:19','2018-07-16 22:10:19','ae6058e6-29a5-4b37-8371-97c08182a839');
+	(354,352,82,11,NULL,2,'2018-07-16 22:10:19','2018-07-16 22:10:19','ae6058e6-29a5-4b37-8371-97c08182a839'),
+	(357,262,117,18,NULL,1,'2018-07-17 20:18:27','2018-07-17 20:57:40','088e07ef-eb16-4005-a78c-87ed2ecc0989'),
+	(359,262,122,19,NULL,1,'2018-07-17 20:27:40','2018-07-17 20:57:40','dd0860a8-1491-4f17-bfb0-4b0a31283942');
 
 /*!40000 ALTER TABLE `craft_matrixblocks` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1571,7 +1619,9 @@ VALUES
 	(14,99,223,'Slide','slide',1,'2018-07-08 13:45:31','2018-07-08 13:56:10','caa49bc6-8770-4e32-a4e1-5c25633fc445'),
 	(15,101,235,'Hotspot','hotspot',1,'2018-07-08 16:22:33','2018-07-08 16:42:37','035337c5-68d3-4896-bbbd-4c734dfcdd63'),
 	(16,106,245,'Team Member','teamMember',1,'2018-07-10 20:23:16','2018-07-10 20:23:16','8f09da3b-ad14-4949-9f12-2cebafa3d536'),
-	(17,112,261,'Block','block',1,'2018-07-14 13:50:36','2018-07-14 13:56:50','77b72a29-72a1-48f8-9d61-30568aa39d00');
+	(17,112,284,'Block','block',1,'2018-07-14 13:50:36','2018-07-17 20:14:13','77b72a29-72a1-48f8-9d61-30568aa39d00'),
+	(18,117,280,'Feature','feature',1,'2018-07-17 20:00:54','2018-07-17 20:01:49','26347d9a-b26b-47b6-9f5a-2862c1678b93'),
+	(19,122,287,'Block','block',1,'2018-07-17 20:15:52','2018-07-17 20:27:54','187e3799-a578-4a42-91ce-5ef097a24506');
 
 /*!40000 ALTER TABLE `craft_matrixblocktypes` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -1797,6 +1847,70 @@ VALUES
 	(10,348,'en','Package 1','8 hour live session shoot with full crew (4k)','£1199','2018-07-15 10:31:57','2018-07-15 10:55:55','89e1e50f-945f-45bf-aad3-ccd8da7007d0');
 
 /*!40000 ALTER TABLE `craft_matrixcontent_pricinglist` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table craft_matrixcontent_productfeatures
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `craft_matrixcontent_productfeatures`;
+
+CREATE TABLE `craft_matrixcontent_productfeatures` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `elementId` int(11) NOT NULL,
+  `locale` char(12) COLLATE utf8_unicode_ci NOT NULL,
+  `field_feature_featureOne` text COLLATE utf8_unicode_ci,
+  `field_feature_featureTwo` text COLLATE utf8_unicode_ci,
+  `dateCreated` datetime NOT NULL,
+  `dateUpdated` datetime NOT NULL,
+  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `craft_matrixcontent_productfeatures_elementId_locale_unq_idx` (`elementId`,`locale`),
+  KEY `craft_matrixcontent_productfeatures_locale_fk` (`locale`),
+  CONSTRAINT `craft_matrixcontent_productfeatures_elementId_fk` FOREIGN KEY (`elementId`) REFERENCES `craft_elements` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `craft_matrixcontent_productfeatures_locale_fk` FOREIGN KEY (`locale`) REFERENCES `craft_locales` (`locale`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+LOCK TABLES `craft_matrixcontent_productfeatures` WRITE;
+/*!40000 ALTER TABLE `craft_matrixcontent_productfeatures` DISABLE KEYS */;
+
+INSERT INTO `craft_matrixcontent_productfeatures` (`id`, `elementId`, `locale`, `field_feature_featureOne`, `field_feature_featureTwo`, `dateCreated`, `dateUpdated`, `uid`)
+VALUES
+	(1,357,'en','<h3>Magent Type</h3>\n<p>\n					<strong>Alnico 5</strong>\n				</p>','<h3>Approximate Resistance</h3>\n<ul class=\"resistance\"><li>Bridge\n						<strong>5.7K</strong>\n					</li>\n					<li>Middle\n						<strong>5.3k</strong>\n					</li>\n					<li>Neck\n						<strong>5.3K</strong>\n					</li>\n				</ul>','2018-07-17 20:18:27','2018-07-17 20:57:40','f5ba19c6-cec9-4353-a3b8-052df11aaeff');
+
+/*!40000 ALTER TABLE `craft_matrixcontent_productfeatures` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table craft_matrixcontent_soundblock
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `craft_matrixcontent_soundblock`;
+
+CREATE TABLE `craft_matrixcontent_soundblock` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `elementId` int(11) NOT NULL,
+  `locale` char(12) COLLATE utf8_unicode_ci NOT NULL,
+  `field_block_iframeLink` text COLLATE utf8_unicode_ci,
+  `field_block_soundFileTitle` text COLLATE utf8_unicode_ci,
+  `dateCreated` datetime NOT NULL,
+  `dateUpdated` datetime NOT NULL,
+  `uid` char(36) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `craft_matrixcontent_soundblock_elementId_locale_unq_idx` (`elementId`,`locale`),
+  KEY `craft_matrixcontent_soundblock_locale_fk` (`locale`),
+  CONSTRAINT `craft_matrixcontent_soundblock_elementId_fk` FOREIGN KEY (`elementId`) REFERENCES `craft_elements` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `craft_matrixcontent_soundblock_locale_fk` FOREIGN KEY (`locale`) REFERENCES `craft_locales` (`locale`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+LOCK TABLES `craft_matrixcontent_soundblock` WRITE;
+/*!40000 ALTER TABLE `craft_matrixcontent_soundblock` DISABLE KEYS */;
+
+INSERT INTO `craft_matrixcontent_soundblock` (`id`, `elementId`, `locale`, `field_block_iframeLink`, `field_block_soundFileTitle`, `dateCreated`, `dateUpdated`, `uid`)
+VALUES
+	(1,359,'en','https://www.youtube.com/embed/bTqVqk7FSmY','Sound Sample','2018-07-17 20:27:40','2018-07-17 20:57:40','9c23227a-f573-4978-ab9c-d322a2d9f74f');
+
+/*!40000 ALTER TABLE `craft_matrixcontent_soundblock` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
@@ -2082,7 +2196,8 @@ LOCK TABLES `craft_plugins` WRITE;
 
 INSERT INTO `craft_plugins` (`id`, `class`, `version`, `schemaVersion`, `licenseKey`, `licenseKeyStatus`, `enabled`, `settings`, `installDate`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(1,'Menus','0.9',NULL,NULL,'unknown',1,'[]','2018-07-05 21:54:01','2018-07-05 21:54:01','2018-07-16 21:59:57','674d3e8d-8597-46ac-a5df-6852619f6bd2');
+	(1,'Menus','0.9',NULL,NULL,'unknown',1,'[]','2018-07-05 21:54:01','2018-07-05 21:54:01','2018-07-17 22:15:53','674d3e8d-8597-46ac-a5df-6852619f6bd2'),
+	(2,'Hacksaw','1.1.2',NULL,NULL,'unknown',1,NULL,'2018-07-17 19:36:26','2018-07-17 19:36:26','2018-07-17 22:15:53','da14701c-f831-4bcf-8d94-6c69b81a3c91');
 
 /*!40000 ALTER TABLE `craft_plugins` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -2171,8 +2286,12 @@ VALUES
 	(916,83,354,NULL,283,1,'2018-07-16 22:10:19','2018-07-16 22:10:19','01ce682f-2521-4353-94cd-95d6e4556cd9'),
 	(918,15,355,NULL,304,1,'2018-07-16 22:33:39','2018-07-16 22:33:39','454a3309-9d68-427d-942b-9068cda3ecde'),
 	(919,15,356,NULL,304,1,'2018-07-16 22:34:12','2018-07-16 22:34:12','8daced2a-cc45-40a5-bf64-f2fead66b98e'),
-	(920,80,262,NULL,261,1,'2018-07-16 23:08:46','2018-07-16 23:08:46','2ef2f8ab-7f1e-46ed-8f1e-d9da79d45493'),
-	(921,15,261,NULL,304,1,'2018-07-16 23:10:51','2018-07-16 23:10:51','c42c2725-f899-498b-bd6e-e4372ee45763');
+	(921,15,261,NULL,304,1,'2018-07-16 23:10:51','2018-07-16 23:10:51','c42c2725-f899-498b-bd6e-e4372ee45763'),
+	(934,80,262,NULL,261,1,'2018-07-17 20:57:40','2018-07-17 20:57:40','3393132d-cb20-4f88-a5b9-3ba7953a5094'),
+	(935,15,262,NULL,304,1,'2018-07-17 20:57:40','2018-07-17 20:57:40','67c453b6-1a86-4e63-acb6-41a8ea0bb56d'),
+	(936,124,359,NULL,358,1,'2018-07-17 20:57:40','2018-07-17 20:57:40','97e1402c-779e-4281-8408-4e72216966e3'),
+	(937,80,360,NULL,261,1,'2018-07-17 22:16:32','2018-07-17 22:16:32','139de4fb-e5bc-43a2-ab34-63fffdf8a30d'),
+	(938,15,360,NULL,304,1,'2018-07-17 22:16:32','2018-07-17 22:16:32','4d5d2662-946c-4a57-a296-2f2fae69281e');
 
 /*!40000 ALTER TABLE `craft_relations` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -2323,6 +2442,33 @@ VALUES
 	(356,'slug',0,'en',' humbuckers '),
 	(356,'title',0,'en',' humbuckers '),
 	(262,'field',90,'en',' our single coil pickups give your guitar the truest most open sound it will ever have bringing out tones you never thought you could hear from your guitar '),
+	(262,'field',15,'en',' single coil cream '),
+	(262,'field',2,'en',' apex 50 s the apex 50 s the perfect aged tone your rig needs with a beautiful mid range these pickups really sing with your valve driven tones or even your transistor jazz cleans the apex 50 s are modelled to fit your raw blues tones with a lower mellower vibe so you can either stand out in your backline or hang back in your mix providing a solidrhythm tone the apex 50 s also show off how versatile they are due to their thickness in sound with a fat crunchy mid tones and balanced highs and lows the 50 s can do virtually anything '),
+	(260,'field',120,'en',' gary_1990 live co uk '),
+	(262,'field',117,'en',' magent type alnico 5 approximate resistance bridge 5 7k middle 5 3k neck 5 3k '),
+	(262,'field',121,'en',' 135 '),
+	(262,'field',122,'en',' https www youtube com embed btqvqk7fsmy 4 2 10003 sound sample '),
+	(357,'field',118,'en',' magent type alnico 5 '),
+	(357,'field',119,'en',' approximate resistance bridge 5 7k middle 5 3k neck 5 3k '),
+	(357,'slug',0,'en',''),
+	(358,'field',47,'en',''),
+	(358,'filename',0,'en',' 4 2 10003 mp3 '),
+	(358,'extension',0,'en',' mp3 '),
+	(358,'kind',0,'en',' audio '),
+	(358,'slug',0,'en',' 4 2 10003 '),
+	(358,'title',0,'en',' 4 2 10003 '),
+	(359,'field',123,'en',' https www youtube com embed btqvqk7fsmy '),
+	(359,'field',124,'en',' 4 2 10003 '),
+	(359,'field',125,'en',' sound sample '),
+	(359,'slug',0,'en',''),
+	(360,'field',80,'en',' strat style '),
+	(360,'field',15,'en',' single coil cream '),
+	(360,'field',2,'en',''),
+	(360,'field',117,'en',''),
+	(360,'field',121,'en',' 120 '),
+	(360,'field',122,'en',''),
+	(360,'slug',0,'en',' test '),
+	(360,'title',0,'en',' test '),
 	(339,'field',94,'en',' 8 hour live session shoot with full crew 4k '),
 	(339,'field',93,'en',' package 6 '),
 	(74,'extension',0,'en',' png '),
@@ -3027,7 +3173,9 @@ VALUES
 	(10,1,'507e434e305da51d340d2621a656301cbb8d9223czozMjoiaHNqSUNvU3V5Q3RVSmpwYnE2T0xWcXNrNVk5dFZnZTIiOw==','2018-07-11 07:20:55','2018-07-11 07:20:55','c35e1154-022f-41fb-bb80-d5ea66f6d848'),
 	(11,1,'a8e1e897fc6ef28033d8549b1b5f932b8b88944fczozMjoiZTBpNkZTOFR1aEx+OTVOUG5SblVMeDFSVmg4clE2SkoiOw==','2018-07-14 12:30:46','2018-07-14 12:30:46','185e0101-ee82-4455-85a4-2b1aab615da3'),
 	(12,1,'53dab880ede7f405e1224da8a5f84bf2d7ab08e3czozMjoiOXZiT0xOb2pXak5Nam91STZYc2FBeG1UNDdVaTJiRksiOw==','2018-07-15 10:28:48','2018-07-15 10:28:48','faa83d54-4140-4a8c-88ed-cd545980f2e6'),
-	(13,1,'aad841586c17fac7b832ff1ac3d98b3bb5f44d58czozMjoiTk9+blhRUFEzTjA5dlg5TFJiVV94Nm1vQjJma3NaenoiOw==','2018-07-16 21:59:54','2018-07-16 21:59:54','4f80466a-4d16-4caf-aa8d-75f1aa2a98b7');
+	(13,1,'aad841586c17fac7b832ff1ac3d98b3bb5f44d58czozMjoiTk9+blhRUFEzTjA5dlg5TFJiVV94Nm1vQjJma3NaenoiOw==','2018-07-16 21:59:54','2018-07-16 21:59:54','4f80466a-4d16-4caf-aa8d-75f1aa2a98b7'),
+	(14,1,'d06f80fd92f4e8ac703dbdc2cd22a86cb2436827czozMjoiYzNpflJGQWdQRWFEOHZuZzdXaVBNXzBhOFNuN2VMMk8iOw==','2018-07-17 18:52:44','2018-07-17 18:52:44','a3dbe65f-6c70-47fc-bf63-14432bc64490'),
+	(15,1,'11f7eecb576f498519129a91614bce81fe81612bczozMjoiS0FKMFVQN2I4MXNpUkxnaDlQMjJiYl9jS3RmVzRDdW8iOw==','2018-07-18 20:45:17','2018-07-18 20:45:17','ec0304b9-5e6b-4b9e-b784-f5cfd8fde2b0');
 
 /*!40000 ALTER TABLE `craft_sessions` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -3480,7 +3628,7 @@ LOCK TABLES `craft_users` WRITE;
 
 INSERT INTO `craft_users` (`id`, `username`, `photo`, `firstName`, `lastName`, `email`, `password`, `preferredLocale`, `weekStartDay`, `admin`, `client`, `locked`, `suspended`, `pending`, `archived`, `lastLoginDate`, `lastLoginAttemptIPAddress`, `invalidLoginWindowStart`, `invalidLoginCount`, `lastInvalidLoginDate`, `lockoutDate`, `verificationCode`, `verificationCodeIssuedDate`, `unverifiedEmail`, `passwordResetRequired`, `lastPasswordChangeDate`, `dateCreated`, `dateUpdated`, `uid`)
 VALUES
-	(1,'admin',NULL,'','','info@refresh-digital.com','$2a$13$5j8bSRoKQZipjtIg6FXWR.kGRR3UfCL.QeMIt2yTRH1.hCNHLQKtq',NULL,0,1,0,0,0,0,0,'2018-07-16 21:59:54','::1',NULL,NULL,'2018-07-16 21:59:39',NULL,NULL,NULL,NULL,0,NULL,'2016-08-22 18:42:37','2018-07-16 21:59:54','953aedcd-73c8-4677-b0c5-4241e8fbb14c');
+	(1,'admin',NULL,'','','info@refresh-digital.com','$2a$13$5j8bSRoKQZipjtIg6FXWR.kGRR3UfCL.QeMIt2yTRH1.hCNHLQKtq',NULL,0,1,0,0,0,0,0,'2018-07-18 20:45:17','::1',NULL,NULL,'2018-07-17 18:52:36',NULL,NULL,NULL,NULL,0,NULL,'2016-08-22 18:42:37','2018-07-18 20:45:17','953aedcd-73c8-4677-b0c5-4241e8fbb14c');
 
 /*!40000 ALTER TABLE `craft_users` ENABLE KEYS */;
 UNLOCK TABLES;

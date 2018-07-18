@@ -157,6 +157,28 @@ input[type=submit] {
 	cursor: pointer;
 }
 
+.response {
+    text-align: center;
+    padding: 20px;
+    display: block;
+	width: 100%;
+	color: #fff;
+	a {
+		color: #fff;
+		&:visited, &:hover {
+			color: #fff;
+		}
+	}
+}
+
+#mce-error-response {
+	background-color: #000;
+}
+
+#mce-success-response {
+	background-color: #3fa23e;
+}
+
 span.price {
 	color: white;
 	padding: 1em;
