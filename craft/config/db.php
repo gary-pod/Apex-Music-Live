@@ -9,19 +9,21 @@
 
 return array(
 
-	// The database server name or IP address. Usually this is 'localhost' or '127.0.0.1'.
-	'server' => 'localhost',
+	'*' => array(
+		'server' => 'localhost',
+		'tablePrefix' => 'craft',
+	),
+	
+	'apex.local' => array(
+		'database' => 'Apex-Music',
+		'user' => 'root',
+		'password' => 'root'
+	),
 
-	// The database username to connect with.
-	'user' => 'root',
-
-	// The database password to connect with.
-	'password' => 'root',
-
-	// The name of the database to select.
-	'database' => 'Apex-Music',
-
-	// The prefix to use when naming tables. This can be no more than 5 characters.
-	'tablePrefix' => 'craft',
+	'apex.refresh-digital.com' => array(
+		'database' => 'refreshd_apex',
+		'user' => 'refreshd_admin',
+		'password' => 'subway08'
+	)
 
 );
