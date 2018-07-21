@@ -23,7 +23,7 @@ return array(
 
 	// Give CodeKit a custom site URL
 	'apex.refresh-digital.com' => array(
-		'siteUrl' => "http://apex.refresh-digital.com/",
+		'siteUrl' => "http://apex.refresh-digital.com/public",
 	)
 
 );
