@@ -1,10 +1,9 @@
- {% extends "_layouts/base" %} {% block body %}
+{% extends "_layouts/base" %} {% block body %}
 <header id="header">
 	<div data-sticky-container>
 		<div class="sticky" data-sticky data-margin-top="0">
 			<div class="title-bar" data-responsive-toggle="responsive-menu" data-hide-for="medium">
-				<button class="menu-icon" type="button" data-toggle="responsive-menu"></button>
-				<!-- <div class="title-bar-title"></div> -->
+				<button class="menu-icon" type="button" data-toggle="responsive-menu" data-slide-speed="10"></button>
 			</div>
 			<!-- TOPBAR -->
 			<div class="top-bar" id="responsive-menu" data-animate="fade-in fade-out">
@@ -115,17 +114,17 @@
 			</ul>
 		</div>
 		<div class="large-3 columns">
-			<dl>
-				<dt>
-					<a href="">Contact</a>
-				</dt>
-				<dd>
+			<ul>
+				<li>
+					<a><strong>Contact</strong></a>
+				</li>
+				<li>
 					<a href="email:{{ contactMeta.email }}">E: {{ contactMeta.email }}</a>
-				</dd>
-				<dd>
+				</li>
+				<li>
 					<a href="tel:{{ contactMeta.telephone }}">T: {{ contactMeta.telephone }}</a>
-				</dd>
-			</dl>
+				</li>
+			</ul>
 			<ul class="social-footer">
 				<li>
 					<a href="{{ contactMeta.facebooklink }}" target="_blank">
