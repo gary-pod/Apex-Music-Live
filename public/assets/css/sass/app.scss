@@ -62,7 +62,7 @@ a {
 
 p.bigger {
 	font-size: 1.125rem;
-	line-height: 2rem;
+	line-height: 1.5;
 }
 
 .left {
@@ -103,15 +103,28 @@ h2.styled-reverse {
 	}
 }
 
+
 h3.styled {
 	color: #fff;
 	padding-bottom: 0.5em;
-	margin-top: 7px;
+	margin-top: 30px;
 	margin-bottom: 30px;
 	strong {
 		background: black;
 		padding: 0.3em;
 		font-weight: 400;
+	}
+}
+
+.row .column:first-child {
+	h3.styled{
+		margin-top: 0;
+	}
+}
+
+.hotspots {
+	h3.styled{
+		margin-top: 30px !important;
 	}
 }
 
@@ -495,6 +508,8 @@ div.contact-details {
 		}
 	}
 	ul {
+		margin-left: 0;
+		list-style: none;
 		li {
 			list-style: none;
 		}
@@ -538,6 +553,8 @@ ul.resistance {
 .square {
 	position: relative;
 	width: 100%;
+	background-size: cover;
+	max-height: 396px;
 }
 
 .square:after {
@@ -559,6 +576,10 @@ ul.resistance {
 		margin-bottom: 2em;
 		h4 {
 			color: #fff;
+			font-size: 16px; 
+			@media screen and (min-width: 1200px) {
+				font-size: 1.5625rem;
+			}
 		}
 	}
 }
@@ -595,6 +616,13 @@ ul.resistance {
 		span {
 			text-transform: uppercase;
 			color: $apex-body;
+			font-size: 12px;
+			margin-top: -11px;
+			margin-bottom: 16px;
+			display: block;
+			@media screen and #{breakpoint(medium)} {
+				font-size: 16px;
+			}
 		}
 		button {
 			margin-top: 1em;
@@ -650,6 +678,10 @@ ul.resistance {
 .orbit-next {
 	background: #000;
 	z-index: 1;
+	display: none;
+	@media screen and #{breakpoint(medium)} {
+		display: block;
+	}
 }
 
 .caption-box {
@@ -714,5 +746,14 @@ p.cta-links {
 	img {
 		padding-bottom: 1em;
 		width: 100%;
+	}
+}
+
+// Instagram Feed 
+
+#instafeed {
+	margin-bottom: 20px;
+	.column {
+		text-align: center;
 	}
 }

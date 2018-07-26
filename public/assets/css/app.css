@@ -5523,7 +5523,7 @@ a {
 
 p.bigger {
   font-size: 1.125rem;
-  line-height: 2rem; }
+  line-height: 1.5; }
 
 .left {
   float: left; }
@@ -5558,12 +5558,18 @@ h2.styled-reverse {
 h3.styled {
   color: #fff;
   padding-bottom: 0.5em;
-  margin-top: 7px;
+  margin-top: 30px;
   margin-bottom: 30px; }
   h3.styled strong {
     background: black;
     padding: 0.3em;
     font-weight: 400; }
+
+.row .column:first-child h3.styled, .row .columns:first-child h3.styled {
+  margin-top: 0; }
+
+.hotspots h3.styled {
+  margin-top: 30px !important; }
 
 .white-text {
   color: #ffffff; }
@@ -5857,8 +5863,11 @@ div.contact-details {
   color: white; }
 .footer a:hover {
   color: #DA253F; }
-.footer ul li {
+.footer ul {
+  margin-left: 0;
   list-style: none; }
+  .footer ul li {
+    list-style: none; }
 
 ul.social-footer {
   font-size: 2rem; }
@@ -5884,7 +5893,9 @@ ul.resistance {
 
 .square {
   position: relative;
-  width: 100%; }
+  width: 100%;
+  background-size: cover;
+  max-height: 396px; }
 
 .square:after {
   content: "";
@@ -5903,7 +5914,11 @@ ul.resistance {
     bottom: 0;
     margin-bottom: 2em; }
     .content .service-details h4 {
-      color: #fff; }
+      color: #fff;
+      font-size: 16px; }
+      @media screen and (min-width: 1200px) {
+        .content .service-details h4 {
+          font-size: 1.5625rem; } }
 
 .pickups {
   background: url(../images/pickups-bg.png) no-repeat center center;
@@ -5931,7 +5946,14 @@ ul.resistance {
   padding: 1em 0; }
   .post-excerpts .row span {
     text-transform: uppercase;
-    color: #191919; }
+    color: #191919;
+    font-size: 12px;
+    margin-top: -11px;
+    margin-bottom: 16px;
+    display: block; }
+    @media screen and (min-width: 57.5em) {
+      .post-excerpts .row span {
+        font-size: 16px; } }
   .post-excerpts .row button {
     margin-top: 1em; }
 
@@ -5968,7 +5990,12 @@ ul.resistance {
 .orbit-previous,
 .orbit-next {
   background: #000;
-  z-index: 1; }
+  z-index: 1;
+  display: none; }
+  @media screen and (min-width: 57.5em) {
+    .orbit-previous,
+    .orbit-next {
+      display: block; } }
 
 .caption-box {
   background: #000;
@@ -6015,5 +6042,10 @@ p.cta-links {
   .team-box img {
     padding-bottom: 1em;
     width: 100%; }
+
+#instafeed {
+  margin-bottom: 20px; }
+  #instafeed .column, #instafeed .columns {
+    text-align: center; }
 
 /*# sourceMappingURL=app.css.map */
