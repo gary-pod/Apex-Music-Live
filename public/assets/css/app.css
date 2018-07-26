@@ -5508,6 +5508,11 @@ a.thumbnail {
 .long-delay {
   animation-delay: 700ms !important; }
 
+.clear {
+  display: table;
+  width: 100%;
+  clear: both; }
+
 p {
   margin-bottom: 1rem;
   font-size: 0.8rem; }
@@ -5833,13 +5838,16 @@ ul.repairs {
   border-bottom: 1px solid #fff;
   padding: 20px 0px;
   float: left;
-  max-height: 98px;
   margin: 0 1%;
   width: 48%; }
+  @media screen and (min-width: 64em) {
+    .price-box {
+      max-height: 98px; } }
   .price-box p.package {
     font-weight: 600; }
-  .price-box p.description {
-    margin-bottom: 0; }
+  @media screen and (min-width: 64em) {
+    .price-box p.description {
+      margin-bottom: 0; } }
   .price-box p.price {
     text-align: center;
     background-color: #DA253F;

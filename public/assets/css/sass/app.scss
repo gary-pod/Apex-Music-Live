@@ -42,6 +42,11 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+.clear {
+	display: table;
+	width: 100%;
+	clear: both;
+}
 
 // TYPOGRAPHY
 p {
@@ -463,14 +468,18 @@ ul.repairs {
 	border-bottom: 1px solid #fff;
 	padding: 20px 0px;
 	float: left;
-	max-height: 98px;
 	margin: 0 1%;
 	width: 48%;
+	@media screen and #{breakpoint(large)} {
+		max-height: 98px;
+	}
 	p.package {
 		font-weight: 600;
 	}
 	p.description {
-		margin-bottom: 0;
+		@media screen and #{breakpoint(large)} {
+			margin-bottom: 0;
+		}
 	}
 	p.price {
 		text-align: center;

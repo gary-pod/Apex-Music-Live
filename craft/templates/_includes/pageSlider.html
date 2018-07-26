@@ -15,10 +15,9 @@
 							<figure class="orbit-figure">
 								<img class="orbit-image" src="{{ image.getUrl('pageSliderSize') }}" alt="Space">
 								<figcaption class="orbit-caption">
+									{% if block.slideTitle %}
 									<div class="caption-box">
-                                        {% if block.slideTitle %}
-                                            <h3>{{ block.slideTitle }}</h3>
-                                        {% endif %}
+										<h3>{{ block.slideTitle }}</h3>
                                         {% if block.slideSubTile %}
                                             <p class="bigger">{{ block.slideSubTile }}</p>
                                         {% endif %}
@@ -28,6 +27,7 @@
                                         </a>
                                         {% endif %}
 									</div>
+									{% endif %}
 								</figcaption>
 							</figure>
 						</li>
