@@ -15,7 +15,7 @@
 		{% set categories = craft.categories.group('pickups') %}
 		{% for category in categories %}
 		{% set image = category.featuredImage.first() %}
-			<div class="large-4 columns">
+			<div class="small-12 medium-4 columns">
 				<h3 class="styled text-center">
 					<strong>{{ category.title }}</strong>
 				</h3>

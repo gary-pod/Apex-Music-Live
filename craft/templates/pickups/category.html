@@ -6,14 +6,14 @@
 	</div>
 </div>
 
-<div class="full ptb concrete-bg">
+<div class="full ptb concrete-bg products">
 	<div class="row">
 		<div class="large-10 large-centered columns">
 			{# Fetch all of the entries related to this category #}
 			{% set entries = craft.entries.relatedTo(category) %}
 			{% for entry in entries %}
 				{% set image = entry.featuredImage.first() %}
-				<div class="row pt-s pb-s">
+				<div class="row">
 					<div class="large-5 columns">
 						<img class="red-border" src="{{ image.getUrl() }}" class="thumbnail" alt="{{ image.title }}">
 					</div>
@@ -25,8 +25,8 @@
 						</a>
 					</div>
 				</div>
+				<hr>
 			{% endfor %}
-		<hr>
 		</div>
 	</div>
 </div>

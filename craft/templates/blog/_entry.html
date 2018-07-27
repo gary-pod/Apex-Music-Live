@@ -25,13 +25,12 @@ template, which will # be set to the requested News entry. -#} {% extends "_layo
 	</div>
 </div>
 
-<div class="full concrete-bg ptb">
-	<div class="row">
-		<h3 class="styled center-text pb-s">
-			<strong>other blog posts</strong>
-		</h3>
-		
-		{% for blogEntry in craft.entries.section('blog').limit(3) %}
+{% for blogEntry in craft.entries.section('blog').limit(3).id('not ' ~ entry.id) %}
+	<div class="full concrete-bg ptb">
+		<div class="row">
+			<h3 class="styled center-text pb-s">
+				<strong>other blog posts</strong>
+			</h3>			
 			<div class="large-4 columns ">
 				<div class="blog-box-excerpt">
 					<h3>{{ blogEntry.title }}</h3>
@@ -46,10 +45,9 @@ template, which will # be set to the requested News entry. -#} {% extends "_layo
 					</a>
 				</div>
 			</div>
-		{% endfor %}
-
+		</div>
 	</div>
-</div>
+{% endfor %}
 
 
 {% endblock %}

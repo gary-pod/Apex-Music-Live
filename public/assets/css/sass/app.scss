@@ -48,6 +48,10 @@
 	clear: both;
 }
 
+dl {
+	margin-bottom: 0;
+}
+
 // TYPOGRAPHY
 p {
 	margin-bottom: 1rem;
@@ -211,7 +215,7 @@ span.price {
 	color: white;
 	padding: 1em;
 	text-transform: uppercase;
-	font-size: 1.125rem;
+	font-size: 0.8rem;
 	letter-spacing: 1px;
 	font-weight: 500;
 	display: inline-block;
@@ -220,9 +224,17 @@ span.price {
 	line-height: 1;
 	text-align: center;
 	background: $apex-body;
+	border: 1px solid #000;
+	@media screen and #{breakpoint(medium)} {
+		font-size: 1.125rem;
+	}
 }
 
 // NAVIGATION
+
+.title-bar {
+	border-bottom: 1px solid #eee;
+}
 
 .top-bar {
 	padding: 1em 0;
@@ -286,6 +298,10 @@ audio#pickup-sound {
 .breadcrumbs {
 	padding-top: 1em;
 	padding-left: 1em;
+	.disabled {
+		color: #db263f;
+		cursor: not-allowed;
+	}
 }
 
 // HERO IMAGE
@@ -368,6 +384,18 @@ audio#pickup-sound {
 .concrete-bg {
 	background-image: url('../images/concrete-texture.png');
 	background-repeat: repeat;
+	hr:last-child {
+		display: none;
+	}
+	h1 {
+		margin-bottom: 0;
+	}
+	h2 {
+		margin-top: 12px;
+	}
+	h3 {
+		margin-top: 6px;
+	}
 }
 
 .dark-bg {
@@ -396,8 +424,21 @@ audio#pickup-sound {
 	/* IE6-9 */
 }
 
+.small-centered {
+	h1, h2, h3, h4 {
+		margin-bottom: 0;
+	}
+}
+
 .divider {
-	border-right: 1px solid $medium-gray;
+	border-top: 1px solid $medium-gray;
+	margin: 30px 0 40px 0;
+	@media screen and #{breakpoint(medium)} {
+		margin: 0;
+		border-top: none;
+		border-right: 1px solid $medium-gray;
+	}
+
 }
 
 .red-border {
@@ -440,6 +481,18 @@ audio#pickup-sound {
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 		background-position: center;
+	}
+}
+
+.products {
+	h1 {
+		margin-top: 16px;
+		@media screen and #{breakpoint(large)} {
+			margin-top: 0;
+		}
+	}
+	hr {
+		margin: 25px 0 50px 0;
 	}
 }
 
@@ -537,6 +590,11 @@ ul.social-footer {
 .pickup-selection {
 	img {
 		border: 3px solid $apex-red;
+	}
+	h3:first-child{
+		@media screen and #{breakpoint(medium)} {
+			margin-top: 30px !important;
+		}
 	}
 }
 
@@ -645,6 +703,9 @@ ul.resistance {
 	padding: 3em;
 	background: #fff;
 	margin-bottom: 2em;
+	&:last-child {
+		margin-bottom: 0;
+	}
 	h3 {
 		text-align: center;
 		a {
@@ -666,6 +727,9 @@ ul.resistance {
 	padding: 3em;
 	background: #fff;
 	margin-bottom: 2em;
+	&:last-child {
+		margin-bottom: 0;
+	}
 	h3 {
 		text-align: center;
 	}
