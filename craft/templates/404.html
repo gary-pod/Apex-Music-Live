@@ -1,0 +1,43 @@
+{#
+ # 404 template
+ # ------------
+ #
+ # This template is loaded whenever Craft cannot figure out how to
+ # respond to an incoming request. No setup is involved to get your
+ # 404 page working; you just need to call it 404.html and put it
+ # at the root of your craft/templates/ folder.
+ #
+ # You can also create 400.html, 403.html, 500.html, and 503.html
+ # templates if you’d like. If Craft can’t find an error template
+ # to match the error code, it will just use the one in
+ # craft/app/templates/ instead.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layouts/site" %} 
+
+{% set title = "404" %}
+{% set message = " We're sorry we're getting a 404 error which means we can't find the page you were looking for. It's probably some thing we've done wrong but now we know about it and we'll try to fix it. In the meantime, try again or go back to the homepage." %}
+
+
+{% set seomaticMeta = { 
+    seoTitle: title,
+    seoDescription: message
+} %}
+
+{% block main %}
+    <div class="full ptb concrete-bg products">
+        <div class="row">
+            <div class="large-10 large-centered columns text-center">
+                <div class="error-img">
+                    <img class="img-responsive" src="{{ siteUrl }}assets/images/error-page.png" alt="error icon" />
+                </div>
+                <h1>Not Found</h1>
+                <p>{{message}}</p>
+                <a href="{{ siteUrl }}" class="button">Home</a>
+             </div>
+        </div>
+    </div>
+{% endblock %}

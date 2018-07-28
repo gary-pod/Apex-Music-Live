@@ -1,0 +1,29 @@
+
+
+{% set bodyClass = "update" %}
+
+{% extends "_layouts/site" %} 
+
+{% set title = "Update your browser" %}
+{% set message = "Your browser seems to be out of date. Please update your browser by clicking the button below." %}
+
+
+{% set seomaticMeta = { 
+    seoTitle: title,
+    seoDescription: message
+} %}
+
+{% block main %}
+    <div class="full ptb concrete-bg update">
+        <div class="row">
+            <div class="large-10 large-centered columns text-center">
+                <div class="error-img">
+                    <img class="img-responsive" src="{{ siteUrl }}assets/images/error-page.png" alt="error icon" />
+                </div>
+                <h1>Out of Date</h1>
+                <p>{{message}}</p>
+                <a href="https://updatemybrowser.org/" class="button" target="_blank">Update Browser Here</a>
+             </div>
+        </div>
+    </div>
+{% endblock %}

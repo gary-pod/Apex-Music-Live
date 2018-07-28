@@ -11,6 +11,13 @@
 		<link rel="stylesheet" type="text/css" href="{{ siteUrl }}assets/css/app.css">
 	{% endblock %}
 </head>
+
+<!--[if lt IE 11]>
+	<script>
+		window.location = "/update-browser";
+	</script>
+<![endif]-->
+
 <body {% if bodyClass is defined %}class="{{ bodyClass }}"{% endif %}>
 	
 	{% block body %}{% endblock %}
