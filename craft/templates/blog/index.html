@@ -1,15 +1,6 @@
-{#
- # News index template
- # -------------------
- #
- # This template gets loaded when "/news" is requested.
- #
- # The page first displays the most recent featured News entry, followed by the
- # remaining News entries in reverse-chronological order.
--#}
 
 {% extends "_layouts/site" %}
-
+{% set title = "Blog" %}
 {% block main %}
 
 	<div class="row pt pb-s">
