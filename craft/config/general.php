@@ -9,7 +9,7 @@
 
 return array(
 	'*' => array(
-		'devMode' => true,
+		'devMode' => false,
 		'environmentVariables' => array(
 			'assetsBaseUrl' => '/assets',
 			'assetsBasePath' => './assets',
@@ -23,6 +23,7 @@ return array(
 
 	// Give CodeKit a custom site URL
 	'apex.refresh-digital.com' => array(
+		'useCompressedJs' => true,
 		'siteUrl' => "http://apex.refresh-digital.com/",
 	)
 

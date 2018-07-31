@@ -13,7 +13,7 @@
 					<ul class="vertical medium-horizontal dropdown menu" data-responsive-menu="drilldown medium-dropdown">
 						<li>
 							<a href="{{ siteUrl }}" class="logo-link">
-								<img class="menu-logo hide-for-small-only" src="{{ siteUrl }}assets/images/menu-logo.png" width="65%" alt="apex menu logo">
+								<img class="menu-logo hide-for-small-only" src="{{ siteUrl }}assets/images/menu-logo.png" alt="apex menu logo">
 							</a>
 						</li>
 						{% nav node in craft.menus.getNodes('mainMenu') %}
@@ -55,7 +55,7 @@
 	</div>
 </header>
 
-<main id="main" role="main">
+<main id="main">
 	{% block main %}{% endblock %}
 </main>
 
@@ -73,7 +73,7 @@
 					</a>
 				</li>
 				{% endnav %}
-			</dl>
+			</ul>
 		</div>
 		<div class="large-2 columns">
 			<ul>
@@ -123,7 +123,7 @@
 					<a href="email:{{ contactMeta.email }}">E: {{ contactMeta.email }}</a>
 				</li>
 				<li>
-					<a href="tel:{{ contactMeta.telephone }}">T: {{ contactMeta.telephone }}</a>
+					<a href="tel:{{ contactMeta.telephone|replace(' ', '') }}">T: {{ contactMeta.telephone }}</a>
 				</li>
 			</ul>
 			<ul class="social-footer">

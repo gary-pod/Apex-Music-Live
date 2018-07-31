@@ -8,7 +8,7 @@
 
 <div class="full dark-bg">
 	<div class="row expanded">
-		<nav aria-label="You are here:" role="navigation">
+		<nav aria-label="You are here:">
 			<ul class="breadcrumbs">
 				<li>
 					<a href="{{ siteUrl }}">Home</a>
@@ -83,7 +83,7 @@
 				<h3>Video clips</h3>
 				<div class="plyr__video-embed" id="player">
 					<iframe src="{{ block.iframeLink }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-						allowfullscreen allowtransparency allow="autoplay"></iframe>
+						allowfullscreen allow="autoplay"></iframe>
 				</div>
 			</div>
 		{% endfor %}
@@ -122,7 +122,7 @@
 					{% endif %}
 						<div class="large-5 columns" data-equalizer-watch>
 							<h3 class="center-text">{{ category.title }}</h3>
-							<p>{{ category.shortDescription }}</p>
+							{{ category.shortDescription }}
 							<a href="{{ category.url }}" class="button hollow expanded">view {{ category.title }}
 								<i class="fas fa-long-arrow-alt-right"></i>
 							</a>
@@ -145,51 +145,14 @@
 	<div class="row">
 		<div class="large-9 small-centered columns text-center">
 			<h2 class="styled">
-				<span>Mailing list</span>
+				<strong>Mailing list</strong>
 			</h2>
 			<p class="bigger">Subscribe to the Apex Music Co news letter &amp; get the latest updates. #spamfree :)</p>
 		</div>
 		<!-- Begin MailChimp Signup Form -->
 		<div class="large-9 small-centered columns">
-				<div id="mc_embed_signup">
-					<form action="https://apexmusicco.us17.list-manage.com/subscribe/post?u=bfc5d8a2a72bc6611d7df0494&amp;id=3b47856daf" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-						<div class="row">
-							<!-- name -->
-							<div class="large-4 columns">
-								<div class="mc-field-group">
-									<label for="mce-FNAME">NAME </label>
-									<input type="text" value="" name="FNAME" class="" placeholder="Name" id="mce-FNAME">
-								</div>
-							</div>
-							<!-- emailaddress -->
-							<div class="large-4 columns">
-								<div id="mc_embed_signup_scroll">
-									<div class="mc-field-group">
-											<label for="mce-EMAIL">Email Address </label>
-											<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-									</div>
-								</div>
-							</div>
-							<div style="position: absolute; left: -5000px;" aria-hidden="true">
-								<input type="text" name="b_bfc5d8a2a72bc6611d7df0494_3b47856daf" tabindex="-1" value="">
-							</div>
-							<div class="large-4 columns">
-								<div class="clear">
-									<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button expanded">
-								</div>
-							</div>
-							<div class="large-12 columns">
-								<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-								<div id="mce-responses" class="clear">
-									<div class="response" id="mce-error-response" style="display:none"></div>
-									<div class="response" id="mce-success-response" style="display:none"></div>
-								</div>
-							</div>
-							<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='BIRTHDAY';ftypes[3]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-						</div>
-					</form>
-				</div>
-			</div>
+			{% include "_includes/mailchimpForm" %}	
+		</div>
 	</div>
 </div>
 

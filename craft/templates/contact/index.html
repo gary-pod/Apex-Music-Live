@@ -12,8 +12,9 @@
 		<h4>Apex Studio</h4>
 		{{ contactMeta.addressOne }}
 		<dl>
+			<dt>Telephone</dt>
 			<dd>
-				<a href="tel:{{ contactMeta.telephone }}">
+				<a href="tel:{{ contactMeta.telephone|replace(' ', '') }}">
 					<b><i class="fas fa-phone"></i> {{ contactMeta.telephone }}</b>
 				</a>
 			</dd>
@@ -23,8 +24,9 @@
 		<h4>Apex Workshop</h4>
 		{{ contactMeta.addressTwo }}
 		<dl>
+			<dt>Telephone</dt>
 			<dd>
-				<a href="tel:{{ contactMeta.telephone }}">
+				<a href="tel:{{ contactMeta.telephone|replace(' ', '') }}">
 					<b><i class="fas fa-phone"></i> {{ contactMeta.telephone }}</b>
 				</a>
 			</dd>

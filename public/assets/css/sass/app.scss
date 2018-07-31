@@ -280,6 +280,7 @@ ul.menu li a.logo-link {
 	text-align: center;
 	img {
 		padding-right: 2rem;
+		width: 65%;
 	}
 }
 
@@ -553,7 +554,10 @@ div.contact-details {
 		margin: 0;
 		padding: 0;
 		list-style: none;
-	}	
+	}
+	dt {
+		display: none;
+	}
 }
 
 // FOOTER STYLES

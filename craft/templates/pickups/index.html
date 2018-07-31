@@ -5,7 +5,7 @@
 
 <div class="sidekick-image">
 	{% set image = pickupsHome.fullWidthBanner.first() %}
-	<img src="{{ image.getUrl('fullWidthBanner') }}">
+	<img src="{{ image.getUrl('fullWidthBanner') }}" alt="pickup banners">
 </div>
 		
 <div class="row ptb">
@@ -23,7 +23,7 @@
 					<strong>{{ category.title }}</strong>
 				</h3>
 				<img src="{{ image.getUrl() }}" class="thumbnail" alt="{{ image.title }}">
-				<p>{{ category.shortDescription }}</p>
+				{{ category.shortDescription }}
 				<a href="{{ category.url }}" class="button expanded">View {{ category.title }}
 					<i class="fas fa-long-arrow-alt-right"></i>
 				</a>

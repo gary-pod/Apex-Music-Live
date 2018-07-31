@@ -18,7 +18,7 @@
 				{% set image = entry.featuredImage.first() %}
 				<div class="row">
 					<div class="large-5 columns">
-						<img class="red-border" src="{{ image.getUrl() }}" class="thumbnail" alt="{{ image.title }}">
+						<img class="red-border thumbnail" src="{{ image.getUrl() }}" alt="{{ image.title }}">
 					</div>
 					<div class="large-7 columns">
 						<h1>{{ entry.title }}</h1>
