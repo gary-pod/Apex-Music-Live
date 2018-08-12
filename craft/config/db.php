@@ -15,7 +15,8 @@ return array(
 	),
 	
 	'apex.local' => array(
-		'database' => 'Apex-Music',
+		// 'database' => 'Apex-Music',
+		'database' => 'Apex_Live',
 		'user' => 'root',
 		'password' => 'root'
 	),

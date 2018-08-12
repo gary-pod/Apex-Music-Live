@@ -12,7 +12,6 @@ if(window.location.pathname == '/' || window.location.pathname == '/apex-studio'
   feed.run();
 } 
 
-
 jQuery(function($) {
   // Asynchronously Load the map API 
   var script = document.createElement('script');

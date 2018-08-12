@@ -1,5 +1,6 @@
 {% extends "_layouts/base" %}
 {% block body %}
+
 <header id="header">
 	<div data-sticky-container>
 		<div class="sticky" data-sticky data-margin-top="0">
@@ -17,7 +18,7 @@
 							</a>
 						</li>
 						{% nav node in craft.menus.getNodes('mainMenu') %}
-						<li role="presentation">
+						<li role="presentation" class="{{ entry.slug == node.slug ? 'active' }}">
 							<a href="{{node.link}}" class="dropdown-toggle" data-toggle="dropdown">
 								{{ node.title }}
 							</a>

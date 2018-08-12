@@ -3,6 +3,7 @@
 @import 'motion-ui';
 @import 'foundation';
 @import 'plyr';
+@import 'player';
 @include foundation-global-styles;
 @include foundation-grid;
 @include foundation-typography;
@@ -228,6 +229,30 @@ span.price {
 	@media screen and #{breakpoint(medium)} {
 		font-size: 1.125rem;
 	}
+}
+
+.paypal-icon {
+	img {
+		border: none !important;
+		display: inline-block;
+		max-height: 49px;
+		/* display: block; */
+		padding-bottom: 17px;
+		margin-right: 0;
+		@media screen and #{breakpoint(medium)} {
+			margin-right: 12px;
+		}
+	}
+}
+
+.singles-message {
+	padding: 0px;
+    color: #da253f;
+    font-weight: 600;
+    width: 100%;
+	text-align: right;
+	display: block;
+	width: 100%;
 }
 
 // NAVIGATION
@@ -539,6 +564,10 @@ ul.repairs {
 		font-family: "Contrail One", cursive;
 		margin-bottom: 0;
 	}
+}
+
+.soundBlock {
+	margin-bottom: 20px;
 }
 
 // CONTACT PAGE

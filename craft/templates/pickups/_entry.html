@@ -63,6 +63,10 @@
 					</form>
 				</div>
 				<span class="price hollow">for the set £{{ entry.price }}</span>
+				<span class="paypal-icon"><img src="{{ siteUrl }}/assets/images/paypal-logo.png" alt="paypal logo"></span>
+				<div class="singles-message">
+					Avaiable as Single Pickups
+				</div>
 			</div>
 		</div>
 	</div>
@@ -70,23 +74,45 @@
 <!-- SOUND AND VIDEO CLIPS-->
 <div class="full light-bg pt-s pb">
 	<div class="row">
-		{% for block in entry.soundBlock %}
-		{% set sound = block.soundFile.first() %}
-			<div class="large-6 columns">
-				<h3>Sound clips</h3>
-				<audio id="pickup-sound" controls>
-					<source src="{{ sound.getUrl() }}" type="audio/mp3">
-				</audio>
-				<p><strong>{{ block.soundFileTitle }}</strong></p>
-			</div>
-			<div class="large-6 columns">
-				<h3>Video clips</h3>
-				<div class="plyr__video-embed" id="player">
-					<iframe src="{{ block.iframeLink }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-						allowfullscreen allow="autoplay"></iframe>
+		<h3>Sound clips</h3>
+			{% if entry.videoBlock %}
+				<div class="row">
+					<div class="large-6 columns">
+						{% for block in entry.soundBlock %}
+							{% set sound = block.soundFile.first() %}
+							<div class="soundBlock">
+								<h5>{{ block.soundFileTitle }}</h5>
+								<audio class="js-player" controls>
+									<source src="{{ sound.getUrl() }}" type="audio/mp3">
+								</audio>
+							</div>
+						{% endfor %}
+					</div>
+					<div class="large-6 columns">		
+						{% for block in entry.videoBlock %}
+							<div class="plyr__video-embed" id="player">
+								<iframe src="{{ block.iframeLink }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+									allowfullscreen allow="autoplay"></iframe>
+							</div>
+						{% endfor %}
+					</div>
 				</div>
-			</div>
-		{% endfor %}
+			{% else %}
+				<div class="row">
+					{% for block in entry.soundBlock %}
+					{% set sound = block.soundFile.first() %}
+						<div class="large-6 columns {% if loop.last %} end {% endif %} ">
+							<div class="soundBlock">
+								<h5>{{ block.soundFileTitle }}</h5>
+								<audio class="js-player" controls>
+									<source src="{{ sound.getUrl() }}" type="audio/mp3">
+								</audio>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+		</div>
 	</div>
 </div>
 

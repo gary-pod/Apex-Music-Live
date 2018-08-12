@@ -42,9 +42,10 @@
 				$(".hero-image").backstretch([slides], {duration: 3000, fade: 750});
 			});
 		}
-		if(window.location.pathname == '/apex-studio') {
+		if(window.location.pathname == '/apex-studio' ||  window.location.pathname == '/pickups/*') {
 			const player = new Plyr('#player');
 		}
+		const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p));
 	</script>
 
 </body>
