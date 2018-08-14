@@ -126,7 +126,7 @@
 		{% set category = entry.category.id %}
 		{% set relatedEntries = craft.entries.section('pickups').relatedTo(category).id('not ' ~ entry.id) %}
 		{% for relatedEntry in relatedEntries %}
-			<div class="large-3 columns">
+			<div class="large-3 columns end">
 				<img src="{{ siteUrl }}assets/images/single-coil-cream.jpg" class="thumbnail" alt="">
 				<h4>{{ relatedEntry.title }}</h4>
 				<a href="{{ relatedEntry.url }}" class="button expanded">details

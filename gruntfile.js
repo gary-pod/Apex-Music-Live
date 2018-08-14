@@ -5,7 +5,7 @@ module.exports = function(grunt) {
         
         watch: {
             sass: {
-                files: ['public/assets/css/sass/*.scss'],
+                files: ['./assets/css/sass/*.scss'],
                 tasks: 'sass'
             },
             concat: {
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
                 tasks: 'uglify'
             },
             js: {
-                files: ['public/assets/js/**', 'src/assets/js/*.js'],
+                files: ['./assets/js/**', 'src/assets/js/*.js'],
                 tasks: ['jshint']
             }
         },
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 
                 },
                 files: {
-                    'public/assets/css/app.css': 'public/assets/css/sass/app.scss'
+                    './assets/css/app.css': 'public/assets/css/sass/app.scss'
                 }
             }
         },
@@ -42,8 +42,8 @@ module.exports = function(grunt) {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
-                src: 'public/assets/js/master.js',
-                dest: 'public/assets/js/master.min.js'
+                src: ['./assets/js/master.js'],
+                dest: './assets/js/master.min.js'
             }
         },
         concat: {
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 src: ['node_modules/plyr/dist/plyr.min.js'],
-                dest: 'public/assets/js/plugins.js'
+                dest: './assets/js/plugins.js'
             }
         },
         jshint: {
