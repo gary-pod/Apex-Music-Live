@@ -18,13 +18,13 @@ return array(
 
 	// Give CodeKit a custom site URL
 	'.local' => array(
-		'siteUrl' => "http://{$_SERVER['SERVER_NAME']}/",
+		'siteUrl' => "http://{$_SERVER['SERVER_NAME']}",
 	),
 
 	// Give CodeKit a custom site URL
 	'apex.refresh-digital.com' => array(
 		'useCompressedJs' => true,
-		'siteUrl' => "http://apex.refresh-digital.com/",
+		'siteUrl' => "http://apex.refresh-digital.com",
 	)
 
 );
