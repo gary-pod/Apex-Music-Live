@@ -31,7 +31,6 @@ return array(
 	'apexmusic.co' => array(
 		'useCompressedJs' => true,
 		'siteUrl' => "http://apexmusic.co",
-		'omitScriptNameInUrls' => true,
 	)
 
 );
