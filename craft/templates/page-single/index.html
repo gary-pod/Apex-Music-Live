@@ -1,0 +1,21 @@
+{% extends "_layouts/site" %}
+{% set title = entry.title %}
+{% block main %}
+
+<div class="full">
+	<div class="row pt pb-s">
+		<div class="large-12 large-centered columns">
+			<h2 class="styled center-text pb-s">
+				<strong>{{ title }}</strong>
+			</h2>
+			<div class="row">
+				<div class="large-8 large-centered columns">
+					{{ entry.body }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	
+
+
+{% endblock %}

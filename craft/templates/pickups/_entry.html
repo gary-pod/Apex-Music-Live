@@ -74,10 +74,10 @@
 <!-- SOUND AND VIDEO CLIPS-->
 <div class="full light-bg pt-s pb">
 	<div class="row">
-		<h3>Sound clips</h3>
 			{% if entry.videoBlock %}
 				<div class="row">
 					<div class="large-6 columns">
+						<h3>Sound clips</h3>
 						{% for block in entry.soundBlock %}
 							{% set sound = block.soundFile.first() %}
 							<div class="soundBlock">
@@ -88,8 +88,10 @@
 							</div>
 						{% endfor %}
 					</div>
-					<div class="large-6 columns">		
+					<div class="large-6 columns">
+						<h3>Video clips</h3>		
 						{% for block in entry.videoBlock %}
+							<h5>{{ block.textBlock }}</h5>
 							<div class="plyr__video-embed" id="player">
 								<iframe src="{{ block.iframeLink }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
 									allowfullscreen allow="autoplay"></iframe>
@@ -124,10 +126,11 @@
 	</div>
 	<div class="row">
 		{% set category = entry.category.id %}
-		{% set relatedEntries = craft.entries.section('pickups').relatedTo(category).id('not ' ~ entry.id) %}
+		{% set relatedEntries = craft.entries.section('pickups').relatedTo(category).id('not ' ~ entry.id).limit(4) %}
 		{% for relatedEntry in relatedEntries %}
+		{% set image = relatedEntry.featuredImage.first() %}
 			<div class="large-3 columns end">
-				<img src="{{ siteUrl }}assets/images/single-coil-cream.jpg" class="thumbnail" alt="">
+				<img src="{{ image.getUrl() }}" class="thumbnail" alt="">
 				<h4>{{ relatedEntry.title }}</h4>
 				<a href="{{ relatedEntry.url }}" class="button expanded">details
 					<i class="fas fa-long-arrow-alt-right"></i>

@@ -25,6 +25,13 @@ return array(
 		'database' => 'refreshd_apex',
 		'user' => 'refreshd_admin',
 		'password' => 'subway08'
+	),
+
+	'apexmusic.co' => array(
+		'server' => 'db723188642.db.1and1.com',
+		'database' => 'db723188642',
+		'user' => 'dbo723188642',
+		'password' => 'Superfuckerbucker69!'
 	)
 
 );

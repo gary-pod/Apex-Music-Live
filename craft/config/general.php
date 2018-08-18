@@ -25,6 +25,12 @@ return array(
 	'apex.refresh-digital.com' => array(
 		'useCompressedJs' => true,
 		'siteUrl' => "http://apex.refresh-digital.com",
+	),	
+
+	// Give CodeKit a custom site URL
+	'apexmusic.co' => array(
+		'useCompressedJs' => true,
+		'siteUrl' => "http://apexmusic.co/",
 	)
 
 );
