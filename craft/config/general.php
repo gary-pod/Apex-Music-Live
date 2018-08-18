@@ -18,6 +18,7 @@ return array(
 
 	// Give CodeKit a custom site URL
 	'.local' => array(
+		'useCompressedJs' => false,
 		'siteUrl' => "http://{$_SERVER['SERVER_NAME']}",
 	),
 

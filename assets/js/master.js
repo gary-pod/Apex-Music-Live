@@ -12,9 +12,10 @@ if(window.location.pathname == '/' || window.location.pathname == '/apex-studio'
   feed.run();
 } 
 
+
 jQuery(function($) {
   // Asynchronously Load the map API 
-  var script = document.createElement('sscript');
+  var script = document.createElement('script');
   script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyD6otD5di-JKgq0GSvxSm7Ytz6WnEu1O5k&callback=initialize";
   document.body.appendChild(script);
 });
