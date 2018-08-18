@@ -9,7 +9,7 @@
 
 return array(
 	'*' => array(
-		'devMode' => false,
+		'devMode' => true,
 		'environmentVariables' => array(
 			'assetsBaseUrl' => '/assets',
 			'assetsBasePath' => './assets',
