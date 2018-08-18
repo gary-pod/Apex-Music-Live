@@ -30,7 +30,7 @@ return array(
 	// Give CodeKit a custom site URL
 	'apexmusic.co' => array(
 		'useCompressedJs' => true,
-		'siteUrl' => "http://apexmusic.co/",
+		'siteUrl' => "http://apexmusic.co",
 	)
 
 );
