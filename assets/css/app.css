@@ -5956,11 +5956,12 @@ ul.menu li a.logo-link {
   float: right; }
 
 .dropdown.menu a {
-  padding: 1.3rem 0.5rem 1em 0.5rem;
+  padding: 1.3rem 0.5rem 1.3em 0.5rem;
   font-size: 14px; }
   @media screen and (min-width: 64em) {
     .dropdown.menu a {
-      padding: 1.3rem 0.7rem 1rem 0.7rem; } }
+      padding: 1.3rem 0.7rem 1.3rem 0.7rem;
+      font-size: 16px; } }
 
 .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
   margin-top: 1px !important; }
@@ -6200,7 +6201,7 @@ ul.social-footer {
   font-size: 2rem; }
   ul.social-footer li {
     display: inline-block;
-    padding: 0 10px 0 0; }
+    padding: 0 2rem 0 0; }
 
 .pickup-selection img {
   border: 3px solid #DA253F; }
