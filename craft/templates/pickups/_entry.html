@@ -2,9 +2,11 @@
 
 {% set title = entry.title %}
 {% set image = entry.featuredImage.first() %}
-{% set currentCategories = craft.categories.first() %}
 
 {% block main %}
+
+{# Fetch all of the categories related to this entry #}
+{% set categories = craft.categories.relatedTo(entry) %}
 
 <div class="full dark-bg">
 	<div class="row expanded">
@@ -17,7 +19,9 @@
 					<a href="{{ siteUrl }}pickups">Pickups</a>
 				</li>
 				<li>
-					<a href="{{ currentCategories.url }}">{{ currentCategories }}</a>
+					{% for category in categories %}
+						<a href="{{ category.url }}">{{ category.title }}</a>
+					{% endfor %}					
 				</li>
 				<li class="disabled">{{ entry.title }}</li>
 			</ul>
