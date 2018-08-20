@@ -28,13 +28,13 @@ module.exports = function(grunt) {
 
                 },
                 files: {
-                    './assets/css/app.css': 'public/assets/css/sass/app.scss'
+                    './assets/css/app.css': './assets/css/sass/app.scss'
                 }
             }
         },
         imageoptim: {
               myTask: {
-                  src: ['public/assets/site', 'public/assets/images']
+                  src: ['public/assets/site', '/assets/images']
               }
         },
         uglify: {
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
             }
         },
         jshint: {
-            all: ['gruntfile.js', 'src/js/master.js']
+            all: ['gruntfile.js', '.assets/js/master.js']
         }
     });
 
