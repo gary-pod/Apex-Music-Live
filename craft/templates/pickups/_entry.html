@@ -7,6 +7,7 @@
 
 {# Fetch all of the categories related to this entry #}
 {% set categories = craft.categories.relatedTo(entry) %}
+{% set currentCategories = craft.categories.first() %}
 
 <div class="full dark-bg">
 	<div class="row expanded">
@@ -148,7 +149,6 @@
 		{% set counter = 0 %}	
 		{% for category in craft.categories.group('pickups') %}
 				{% if currentCategories.id == category.id %}
-
 				{% else %}
 					{% if counter == 1 %}
 						<div class="large-1 columns divider" data-equalizer-watch></div>
